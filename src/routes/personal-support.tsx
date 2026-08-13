@@ -68,7 +68,7 @@ function PersonalSupportPage() {
                 placeholderLabel={media.supportVideoPlaceholder}
               />
             </div>
-            <div className="mt-6 rounded-2xl border border-border bg-card p-6 shadow-soft">
+            <div className="mt-6 rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
               <p className="text-sm font-bold tracking-wide text-muted-foreground uppercase">
                 In this video, Vipin explains
               </p>
@@ -104,7 +104,7 @@ function PersonalSupportPage() {
           <Section>
             <SectionHeading className="text-xl sm:text-2xl">Who is this for?</SectionHeading>
             <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+              <div className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
                 <p className="text-sm font-bold tracking-wide text-primary uppercase">
                   This is for you if
                 </p>
@@ -117,7 +117,7 @@ function PersonalSupportPage() {
                   ))}
                 </ul>
               </div>
-              <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+              <div className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
                 <p className="text-sm font-bold tracking-wide text-muted-foreground uppercase">
                   This is NOT for you if
                 </p>

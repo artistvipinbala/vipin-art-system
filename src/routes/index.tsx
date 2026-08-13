@@ -88,7 +88,7 @@ function LandingPage() {
             <div className="mt-8">
               <a
                 href="#free-training"
-                className="inline-flex min-h-13 w-full items-center justify-center rounded-full bg-primary px-8 text-sm font-bold tracking-wide text-primary-foreground shadow-soft transition-all hover:brightness-105 sm:w-auto sm:text-base"
+                className="inline-flex min-h-13 w-full items-center justify-center rounded-full bg-gradient-gold px-8 text-sm font-bold tracking-wide text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:w-auto sm:text-base"
               >
                 {hero.cta}
               </a>
@@ -115,7 +115,7 @@ function LandingPage() {
       <Section>
         <SectionHeading>{problem.headline}</SectionHeading>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <div className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
             <p className="text-sm font-bold tracking-wide text-muted-foreground uppercase">
               Many artists can
             </p>
@@ -128,7 +128,7 @@ function LandingPage() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <div className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
             <p className="text-sm font-bold tracking-wide text-muted-foreground uppercase">
               But they still struggle with
             </p>
@@ -225,7 +225,7 @@ function LandingPage() {
 
       {/* POSITIONING */}
       <Section tone="surface">
-        <div className="rounded-3xl bg-card p-6 shadow-card sm:p-10">
+        <div className="rounded-3xl bg-gradient-card p-6 shadow-card sm:p-10">
           <SectionHeading>{positioning.question}</SectionHeading>
           <p className="text-mal mt-4 text-xl font-extrabold text-primary sm:text-2xl">
             {positioning.answer}
@@ -248,7 +248,7 @@ function LandingPage() {
       <Section id="next-step">
         <SectionHeading>{choices.headline}</SectionHeading>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="flex flex-col rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8">
+          <div className="flex flex-col rounded-3xl border border-border bg-gradient-card p-6 shadow-card sm:p-8">
             <h3 className="text-mal text-lg font-bold sm:text-xl">{choices.option1.title}</h3>
             <p className="text-mal mt-3 flex-1 text-sm text-muted-foreground">
               {choices.option1.text}
@@ -285,7 +285,7 @@ function LandingPage() {
       <Section>
         <SectionHeading>Who is this for?</SectionHeading>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <div className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
             <p className="text-sm font-bold tracking-wide text-primary uppercase">
               This is for you if
             </p>
@@ -298,7 +298,7 @@ function LandingPage() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <div className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
             <p className="text-sm font-bold tracking-wide text-muted-foreground uppercase">
               This is NOT for you if
             </p>
@@ -316,7 +316,7 @@ function LandingPage() {
 
       {/* PERSONAL MESSAGE */}
       <Section tone="surface">
-        <div className="rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-10">
+        <div className="rounded-3xl border border-border bg-gradient-card p-6 shadow-card sm:p-10">
           <SectionHeading>{personalMessage.headline}</SectionHeading>
           <div className="mt-5 space-y-4">
             {personalMessage.paragraphs.map((p) => (
@@ -348,7 +348,7 @@ function LandingPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="#free-training"
-              className="inline-flex min-h-13 w-full items-center justify-center rounded-full bg-primary px-8 text-sm font-bold tracking-wide text-primary-foreground shadow-soft sm:w-auto"
+              className="inline-flex min-h-13 w-full items-center justify-center rounded-full bg-gradient-gold px-8 text-sm font-bold tracking-wide text-primary-foreground shadow-glow sm:w-auto"
             >
               {finalCta.primary}
             </a>
