@@ -69,12 +69,11 @@ function PlanCard({
   return (
     <div
       className={
-        "flex flex-col rounded-3xl border bg-card p-6 sm:p-8 " +
-        (highlight
-          ? "border-primary shadow-card"
-          : "border-border shadow-soft")
+        "bg-gradient-card flex flex-col rounded-3xl border p-6 sm:p-8 " +
+        (highlight ? "border-primary/70 shadow-glow" : "border-border shadow-card")
       }
     >
+
       <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">{tag}</span>
       <h3 className="text-mal mt-3 text-xl font-bold">{title}</h3>
       <p className="mt-3 text-3xl font-extrabold">{price}</p>

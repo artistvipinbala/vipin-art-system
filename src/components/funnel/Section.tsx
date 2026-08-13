@@ -18,7 +18,7 @@ export function Section({
       id={id}
       className={cn(
         "scroll-mt-20 border-b border-border/60 px-5 py-14 sm:px-8 sm:py-20",
-        tone === "surface" && "bg-surface",
+        tone === "surface" && "bg-surface/60",
         className,
       )}
     >
