@@ -281,50 +281,104 @@ export const salesPage = {
   ],
 };
 
+/**
+ * ONE single offer only — ₹5,999 with every support included.
+ * (No second/higher tier. Do not re-add one.)
+ */
 export const offers = {
-  supportDuration: "[PLACEHOLDER — e.g. 90 Days]",
-  selfPaced: {
-    tag: "OPTION 1 — SELF-PACED",
-    title: "Artist Income System",
+  supportDuration: "[DUMMY — e.g. Lifetime access + weekly live class]",
+  everything: {
+    tag: "ഒറ്റ ഒരു option മാത്രം",
+    title: "Artist Income System — Full Bundle + Personal Support",
     price: "₹5,999",
+    priceNote: "One-time. Lifetime access. ഇതിന് ശേഷം hidden charges ഇല്ല.",
     includes: [
-      "Complete course",
-      "All training modules",
-      "Templates/resources",
-      "Practical implementation lessons",
-      "Community access",
-      "Future updates as applicable",
+      "എല്ലാ courses-ഉം അടങ്ങിയ full bundle — lifetime access",
+      "ആഴ്ചയിൽ ഒരു LIVE class (doubts + review) [DUMMY — day/time later]",
+      "Weekly WhatsApp support — നിങ്ങളുടെ work ഞാൻ നേരിട്ട് നോക്കും",
+      "നിങ്ങളുടെ art-നും audience-നും അനുസരിച്ചുള്ള personal direction",
+      "Ready templates — ad, landing page, WhatsApp automation",
+      "പുതിയ course-കളും updates-ഉം extra payment ഇല്ലാതെ",
+      "Artist community access",
     ],
-    cta: "GET COURSE ACCESS",
+    cta: "അകത്തേക്ക് വരാം — ₹5,999",
   },
-  personal: {
-    tag: "OPTION 2 — PERSONAL SUPPORT",
-    title: "Artist Income System + Personal Support",
-    price: "₹12,999",
-    includes: [
-      "Everything in the course",
-      "Direct personal guidance",
-      "WhatsApp support",
-      "Implementation feedback",
-      "Strategy guidance",
-      "Content/funnel feedback",
-      "Business guidance",
-      "Regular accountability",
-      "Personal support for a defined support period",
-    ],
-    cta: "GET PERSONAL SUPPORT",
-  },
+  /** Doing it alone vs coming in with me. Two columns only. */
   comparison: [
-    { feature: "Complete Course", alone: false, self: true, support: true },
-    { feature: "Templates", alone: false, self: true, support: true },
-    { feature: "Community", alone: false, self: true, support: true },
-    { feature: "Direct WhatsApp Support", alone: false, self: false, support: true },
-    { feature: "Personal Guidance", alone: false, self: false, support: true },
-    { feature: "Implementation Feedback", alone: false, self: false, support: true },
-    { feature: "Strategy Review", alone: false, self: false, support: true },
-    { feature: "Accountability", alone: false, self: false, support: true },
+    { feature: "എല്ലാ courses-ന്റെയും full bundle", alone: false, withMe: true },
+    { feature: "ആഴ്ചയിൽ LIVE class", alone: false, withMe: true },
+    { feature: "Weekly WhatsApp support", alone: false, withMe: true },
+    { feature: "നിങ്ങളുടെ work-ന് personal feedback", alone: false, withMe: true },
+    { feature: "Ready ad + funnel templates", alone: false, withMe: true },
+    { feature: "ശരിയായ order — ആദ്യം എന്ത്, പിന്നെ എന്ത്", alone: false, withMe: true },
+    { feature: "Lifetime access + future updates", alone: false, withMe: true },
+    { feature: "മാസങ്ങളുടെ trial & error", alone: true, withMe: false },
   ],
+};
 
+/**
+ * The course bundle that makes up the ₹5,999.
+ * DUMMY VALUES — owner replaces course names/prices later.
+ */
+export const bundle = {
+  headline: "ഈ ₹5,999-ൽ എന്തൊക്കെ courses വരുന്നു",
+  sub: "ഇവയെല്ലാം വേറെ വേറെ വാങ്ങിയാൽ എത്രയാകും എന്ന് നോക്കൂ. ഞാൻ ഇത് ഒരുമിച്ച് ഒരു bundle ആയി തരുന്നു.",
+  courses: [
+    { item: "[DUMMY] Artist Income System — Core Course", price: "₹9,999" },
+    { item: "[DUMMY] Instagram Growth for Artists", price: "₹4,999" },
+    { item: "[DUMMY] Meta Ads for Artists", price: "₹6,999" },
+    { item: "[DUMMY] Funnel & Landing Page Course", price: "₹5,999" },
+    { item: "[DUMMY] WhatsApp Automation Course", price: "₹3,999" },
+    { item: "[DUMMY] Art Class / Course Selling Blueprint", price: "₹4,999" },
+    { item: "[DUMMY] Artwork Pricing & Selling Masterclass", price: "₹3,999" },
+    { item: "Weekly LIVE class + WhatsApp support (lifetime)", price: "Priceless" },
+  ],
+  totalLabel: "എല്ലാം കൂടി",
+  total: "₹40,993+",
+  note: "ഇതെല്ലാം ഞാൻ വേറെ വേറെ വിൽക്കുന്നില്ല. നിങ്ങൾ ഒരു artist ആണെങ്കിൽ ഇതെല്ലാം ഒരുമിച്ച് വേണം — അതുകൊണ്ട് ഒരു bundle ആക്കി.",
+};
+
+/** Honest comparison against the traditional education route. */
+export const eduCompare = {
+  headline: "ഒരു കാര്യം ശാന്തമായി ആലോചിക്കൂ",
+  rows: [
+    {
+      title: "Normal ഒരു course / degree",
+      points: [
+        "ലക്ഷങ്ങൾ fees",
+        "3–5 വർഷം സമയം",
+        "അതും കഴിഞ്ഞ് ചെറിയ salary-യിൽ job തേടണം",
+        "പഠിച്ചത് പലതും practical അല്ല",
+      ],
+    },
+    {
+      title: "ഇവിടെ",
+      points: [
+        "₹5,999 — ഒറ്റത്തവണ",
+        "ഇന്നുതന്നെ തുടങ്ങാം",
+        "ആദ്യ ദിവസം മുതൽ earn ചെയ്യാനുള്ള opportunity",
+        "നിങ്ങളുടെ കൈയിലുള്ള art തന്നെ income ആക്കുന്നു",
+      ],
+    },
+  ],
+  closing:
+    "ഞാൻ ഇത് വലിയ വിലയ്ക്ക് വിൽക്കാൻ ആഗ്രഹിക്കുന്നില്ല. കൂടുതൽ artists ഇത് ചെയ്ത് കാണുന്നതാണ് എനിക്ക് സന്തോഷം.",
+};
+
+/**
+ * Personal letter shown at the top of the offer page — voice of Vipin,
+ * not a salesman. Keep it honest and specific.
+ */
+export const letter = {
+  eyebrow: "നിങ്ങൾക്ക് വേണ്ടി ഒരു കാര്യം പറയാം",
+  headline: "Video കണ്ടു കഴിഞ്ഞു. ഇനി ഞാൻ ഒരു salesman ആയി സംസാരിക്കുന്നില്ല.",
+  paragraphs: [
+    "ഞാനും ഒരു artist ആയി തുടങ്ങിയ ആളാണ്. വരയ്ക്കാൻ അറിയാമായിരുന്നു — പക്ഷേ അതിൽ നിന്ന് income ഉണ്ടാക്കാൻ ആരും പറഞ്ഞുതന്നില്ല.",
+    "ഇത് ഞാൻ ഒറ്റയ്ക്ക്, തെറ്റുകൾ വരുത്തി, പണം നഷ്ടപ്പെടുത്തി പഠിച്ചതാണ്. അതുകൊണ്ടാണ് ഇത് ഇത്ര open ആയി പറയുന്നത്.",
+    "ഈ page-ൽ ഞാൻ നിങ്ങളെ push ചെയ്യാൻ പോകുന്നില്ല. നിങ്ങൾക്ക് ഇത് ഒറ്റയ്ക്ക് ചെയ്യാം — video-യിൽ പറഞ്ഞതെല്ലാം free ആയി അവിടെത്തന്നെ ഉണ്ട്.",
+    "പക്ഷേ ഒറ്റയ്ക്ക് ചെയ്യുമ്പോൾ എവിടെയാണ് നിൽക്കുന്നത് എന്ന് എനിക്കറിയാം. ആ സമയത്ത് ഒരാൾ കൂടെയുണ്ടെങ്കിൽ കാര്യങ്ങൾ വളരെ വേഗം നടക്കും. അതാണ് താഴെ ഉള്ളത്.",
+  ],
+  signature: "— Vipin Bala",
 };
 
 export const whoFor = {
