@@ -102,7 +102,7 @@ function LandingPage() {
           </section>
         ) : null}
 
-        <footer className="mt-auto pt-14 text-center text-xs text-muted-foreground/70">
+        <footer className="pt-10 text-center text-xs text-muted-foreground/70">
           © {new Date().getFullYear()} {brand.name}
         </footer>
       </div>
