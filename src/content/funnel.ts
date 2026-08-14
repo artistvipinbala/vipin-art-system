@@ -780,7 +780,7 @@ export const quickIntake = {
   otherPlaceholder: "ഒരു വരിയിൽ എഴുതൂ",
   /** Honest, non-pushy note about the small fee + a soft self-selection question. */
   commitmentNote:
-    "ഇത് എന്റെ personal time കൂടി ചെലവാക്കുന്ന ഒരു dedicated support ആണ് — live classes, WhatsApp doubt support ഒക്കെ ഉള്ളതുകൊണ്ട് ഒരു ചെറിയ payment-ഓട് കൂടിയാണ് ഇത് വരുന്നത്. അതുകൊണ്ട് ശരിക്കും serious ആയവർ മാത്രം വന്നാൽ മതി.",
+    "ഇത് എന്റെ personal time കൂടി ചെലവാക്കുന്ന ഒരു dedicated support ആണ് — live classes, WhatsApp doubt support ഒക്കെ ഉള്ളതുകൊണ്ട് ഒരു ചെറിയ payment-ഓട് കൂടിയാണ് ഇത് വരുന്നത്. നിങ്ങൾക്ക് ഇപ്പോൾ ഏതാണ് ചേരുന്നത് എന്ന് മാത്രം പറഞ്ഞാൽ മതി — രണ്ട് ഉത്തരവും ok ആണ്.",
   commitmentOptions: [
     "അതെ — ചേരുന്ന കാര്യമാണെങ്കിൽ ഞാൻ ready ആണ്",
     "ആദ്യം details അറിയണം, എന്നിട്ട് തീരുമാനിക്കാം",
