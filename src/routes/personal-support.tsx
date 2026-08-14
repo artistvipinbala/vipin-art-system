@@ -11,6 +11,7 @@ import { PricingCards } from "@/components/funnel/PricingCards";
 import { ProofSection } from "@/components/funnel/ProofSection";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
 import { Eyebrow, Lead, Section, SectionHeading } from "@/components/funnel/Section";
+import { SpecialOffer } from "@/components/funnel/SpecialOffer";
 import { SupportForm } from "@/components/funnel/SupportForm";
 import { Testimonials } from "@/components/funnel/Testimonials";
 import { ValueStack } from "@/components/funnel/ValueStack";
