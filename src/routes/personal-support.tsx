@@ -49,6 +49,12 @@ function PersonalSupportPage() {
         <Eyebrow>Optional Personal Support</Eyebrow>
         <SectionHeading>{salesPage.headline}</SectionHeading>
         <Lead>{salesPage.sub}</Lead>
+
+        {/* Extra offer — revealed only on this page, never on the video page */}
+        <div className="mt-8">
+          <SpecialOffer />
+        </div>
+
         <div className="mt-8">
           <a
             href="#offers"
