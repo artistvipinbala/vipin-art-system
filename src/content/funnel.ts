@@ -542,7 +542,7 @@ export const valueStack = {
   totalLabel: "Total value",
   total: "₹28,994",
   youPayLabel: "നിങ്ങൾ കൊടുക്കുന്നത്",
-  bonusHeadline: "Bonuses",
+  bonusHeadline: "കൂടെ വരുന്ന ചില കാര്യങ്ങൾ",
   bonuses: [
     { title: "Bonus 1 — Ad Copy Swipe File", text: "Artists-ന് വേണ്ടി തയ്യാറാക്കിയ ad copy examples." },
     { title: "Bonus 2 — Pricing Sheet", text: "Artwork, class, commission pricing എങ്ങനെ decide ചെയ്യാം." },
@@ -566,10 +566,10 @@ export const guarantee = {
 
 /** Real intake limit. Owner: keep this truthful or blank it out to hide. */
 export const intake = {
-  limitLabel: "Personal Support intake",
+  limitLabel: "Intake",
   limit: "[X] people per batch",
   nextBatch: "[NEXT BATCH DATE]",
-  note: "Personal support-ൽ ഓരോ batch-ലും ഒരു limited number മാത്രം എടുക്കുന്നു — അത് honest ആയി support കൊടുക്കാൻ വേണ്ടിയാണ്.",
+  note: "ഓരോ ആഴ്ചയിലും ഒരു limited number ആളുകളെ മാത്രം ഞാൻ അകത്തേക്ക് എടുക്കുന്നു — എല്ലാവർക്കും നേരിട്ട് reply കൊടുക്കാൻ വേണ്ടിയാണ്. Fake urgency അല്ല.",
 };
 
 export const purchaseFaqs = [
