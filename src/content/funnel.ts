@@ -315,15 +315,17 @@ export const offers = {
     cta: "GET PERSONAL SUPPORT",
   },
   comparison: [
-    { feature: "Complete Course", self: true, support: true },
-    { feature: "Templates", self: true, support: true },
-    { feature: "Community", self: true, support: true },
-    { feature: "Direct WhatsApp Support", self: false, support: true },
-    { feature: "Personal Guidance", self: false, support: true },
-    { feature: "Implementation Feedback", self: false, support: true },
-    { feature: "Strategy Review", self: false, support: true },
-    { feature: "Accountability", self: false, support: true },
+    { feature: "Complete Course", alone: false, self: true, support: true },
+    { feature: "Templates", alone: false, self: true, support: true },
+    { feature: "Community", alone: false, self: true, support: true },
+    { feature: "Direct WhatsApp Support", alone: false, self: false, support: true },
+    { feature: "Personal Guidance", alone: false, self: false, support: true },
+    { feature: "Implementation Feedback", alone: false, self: false, support: true },
+    { feature: "Strategy Review", alone: false, self: false, support: true },
+    { feature: "Accountability", alone: false, self: false, support: true },
+    { feature: "Trial & error time", alone: false, self: true, support: true },
   ],
+
 };
 
 export const whoFor = {
