@@ -5,6 +5,7 @@ import { QuickIntake } from "@/components/funnel/QuickIntake";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { brand, media, pageTop, vsl } from "@/content/funnel";
 import { track } from "@/lib/track";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 
 const title = "Artwork & Art Class Sales System — Artist Vipin Bala";
@@ -53,9 +54,6 @@ function LandingPage() {
       /* ignore */
     }
     setShowIntake(true);
-    window.setTimeout(() => {
-      document.getElementById("intake")?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
   };
 
 
@@ -113,7 +111,7 @@ function LandingPage() {
         </div>
 
         {/* Appears only after the video has been watched */}
-        {unlocked && !showIntake ? (
+        {unlocked ? (
           <section className="mt-12 rounded-3xl border border-border/70 bg-gradient-card p-6 text-center shadow-card sm:p-8">
             <p className="text-mal text-base font-bold sm:text-lg">{vsl.reveal.line1}</p>
             <p className="text-mal mt-3 text-sm text-muted-foreground sm:text-base">
@@ -130,9 +128,12 @@ function LandingPage() {
           </section>
         ) : null}
 
-        {/* The 5 short questions — asked before the offer page opens */}
-        {showIntake ? (
-          <section id="intake" className="mt-12">
+        {/* The 5 short questions — asked in a popup before the offer page opens */}
+        <Dialog open={showIntake} onOpenChange={setShowIntake}>
+          <DialogContent
+            
+            className="max-h-[92svh] w-[calc(100vw-1.5rem)] max-w-lg overflow-y-auto border-none bg-transparent p-0 shadow-none sm:max-w-lg"
+          >
             <QuickIntake
               onDone={() => {
                 window.setTimeout(() => {
@@ -140,8 +141,8 @@ function LandingPage() {
                 }, 900);
               }}
             />
-          </section>
-        ) : null}
+          </DialogContent>
+        </Dialog>
 
 
         <footer className="pt-10 text-center text-xs text-muted-foreground/70">
