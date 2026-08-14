@@ -24,13 +24,19 @@ export type FeedbackInput = z.infer<typeof feedbackSchema>;
 
 export const supportApplicationSchema = z.object({
   name: z.string().trim().min(2, { message: "Name is required" }).max(100),
+  email: z.string().trim().email({ message: "Enter a valid email" }).max(255).optional().or(z.literal("")),
   whatsapp_number: phone,
-  current_stage: z.string().trim().min(1).max(200),
-  biggest_challenge: z.string().trim().min(1).max(200),
-  desired_support: z.string().trim().min(1).max(200),
-  seriousness: z.string().trim().min(1).max(200),
+  art_type: z.string().trim().max(200).optional(),
+  age_range: z.string().trim().max(50).optional(),
+  work_place: z.string().trim().max(200).optional(),
+  spend_ready: z.string().trim().max(200).optional(),
+  current_stage: z.string().trim().max(200).optional(),
+  biggest_challenge: z.string().trim().max(200).optional(),
+  desired_support: z.string().trim().max(200).optional(),
+  seriousness: z.string().trim().max(200).optional(),
   source: z.string().trim().max(100).optional(),
   campaign: z.string().trim().max(100).optional(),
 });
+
 
 export type SupportApplicationInput = z.infer<typeof supportApplicationSchema>;
