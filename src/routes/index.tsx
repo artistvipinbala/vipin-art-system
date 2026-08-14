@@ -5,6 +5,7 @@ import { QuickIntake } from "@/components/funnel/QuickIntake";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { brand, media, pageTop, vsl } from "@/content/funnel";
 import { track } from "@/lib/track";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 
 const title = "Artwork & Art Class Sales System — Artist Vipin Bala";
