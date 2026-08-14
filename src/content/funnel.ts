@@ -544,3 +544,42 @@ export const purchaseFaqs = [
     a: "[REFUND POLICY PLACEHOLDER — OWNER TO FINALIZE]",
   },
 ];
+
+/**
+ * DISTRACTION-FREE FIRST PAGE (VSL).
+ * Only a headline + the video live above the fold. The support CTA appears
+ * after the viewer has watched `gateSeconds` of the video.
+ */
+export const vsl = {
+  eyebrow: "OPEN SESSION · NO WEBINAR, NO SIGNUP",
+  headline:
+    "ഞാൻ എന്റെ Artwork-കളും Art Class-കളും എങ്ങനെ Sell ചെയ്യുന്നു — ആ full system ഞാൻ ഇവിടെ open ആയി കാണിക്കുന്നു",
+  sub: "Webinar-ന് wait ചെയ്യേണ്ട. Registration വേണ്ട. Sales drama ഇല്ല. ഞാൻ ചെയ്യുന്നത് എന്താണോ അത് അതുപോലെ — ഈ ഒരു video-യിൽ.",
+  belowVideo:
+    "Video മുഴുവൻ കാണൂ. കണ്ടു കഴിയുമ്പോൾ, നിങ്ങൾക്ക് ഏതൊക്കെ possibilities ഉണ്ട് എന്ന് വളരെ വ്യക്തമാകും.",
+  duration: "Approx. 30 minutes · No signup",
+  /** Seconds of watch time before the personal-support option appears. */
+  gateSeconds: 900,
+  reveal: {
+    line1: "ഇത് നിങ്ങൾക്ക് സ്വയം ചെയ്യാം. തീർച്ചയായും പറ്റും.",
+    line2:
+      "പക്ഷേ ഓരോ step-ഉം detail ആയി, നിങ്ങളുടെ situation നോക്കി, quickly ചെയ്തെടുക്കണം എന്നുണ്ടെങ്കിൽ — ഞാൻ personally കൂടെ നിൽക്കുന്ന ഒരു option ഉണ്ട്.",
+    cta: "എന്റെ Personal Support എങ്ങനെ എന്ന് നോക്കാം",
+    note: "ഒരു നിർബന്ധവുമില്ല. Details നോക്കിയിട്ട് നിങ്ങൾ തന്നെ തീരുമാനിക്കാം.",
+  },
+};
+
+/**
+ * Shown ONLY on the next page (after the viewer clicks through from the video).
+ * Never shown on the first page.
+ */
+export const specialOffer = {
+  eyebrow: "ഇപ്പോൾ join ചെയ്യുന്നവർക്ക് മാത്രം",
+  headline: "Video കണ്ടിട്ട് ഇപ്പോൾ തന്നെ start ചെയ്യുന്നുണ്ടെങ്കിൽ, ഒരു extra ഉണ്ട്",
+  items: [
+    "1-on-1 personal onboarding call — നിങ്ങളുടെ art-നും audience-നും അനുസരിച്ച് plan ഒരുക്കാം",
+    "എന്റെ ready-made ad + landing page + WhatsApp automation templates",
+    "ആദ്യ 30 ദിവസം direct WhatsApp priority reply",
+  ],
+  note: "ഈ extra ഈ page-ൽ നിന്ന് ഇപ്പോൾ start ചെയ്യുന്നവർക്കാണ്. Fake countdown ഒന്നും ഇല്ല — batch fill ആകുമ്പോൾ ഇത് close ചെയ്യും.",
+};

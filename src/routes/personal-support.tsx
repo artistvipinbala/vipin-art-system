@@ -11,6 +11,7 @@ import { PricingCards } from "@/components/funnel/PricingCards";
 import { ProofSection } from "@/components/funnel/ProofSection";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
 import { Eyebrow, Lead, Section, SectionHeading } from "@/components/funnel/Section";
+import { SpecialOffer } from "@/components/funnel/SpecialOffer";
 import { SupportForm } from "@/components/funnel/SupportForm";
 import { Testimonials } from "@/components/funnel/Testimonials";
 import { ValueStack } from "@/components/funnel/ValueStack";
@@ -49,6 +50,12 @@ function PersonalSupportPage() {
         <Eyebrow>Optional Personal Support</Eyebrow>
         <SectionHeading>{salesPage.headline}</SectionHeading>
         <Lead>{salesPage.sub}</Lead>
+
+        {/* Extra offer — revealed only on this page, never on the video page */}
+        <div className="mt-8">
+          <SpecialOffer />
+        </div>
+
         <div className="mt-8">
           <a
             href="#offers"
