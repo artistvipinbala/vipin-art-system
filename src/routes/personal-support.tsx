@@ -84,6 +84,15 @@ function PersonalSupportPage() {
           <Lead>
             ഇതിൽ options ഇല്ല, upsell ഇല്ല. {offers.everything.price} — അതിൽ എല്ലാം ഉണ്ട്.
           </Lead>
+          <div className="mx-auto mt-8 max-w-2xl">
+            <OfferCountdown
+              onExpiredCta={() => {
+                document
+                  .getElementById("apply")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            />
+          </div>
           <div className="mt-8">
             <PricingCards />
           </div>
@@ -91,6 +100,7 @@ function PersonalSupportPage() {
             {intake.note}
           </p>
         </div>
+
       </Section>
 
       {/* EXTRA FOR THOSE WHO START NOW — only on this page */}
