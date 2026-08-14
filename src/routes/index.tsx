@@ -2,7 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 
 import { VslPlayer } from "@/components/funnel/VslPlayer";
-import { brand, media, vsl } from "@/content/funnel";
+import { brand, media, pageTop, vsl } from "@/content/funnel";
 import { track } from "@/lib/track";
 
 const title = "Artwork & Art Class Sales System — Artist Vipin Bala";
