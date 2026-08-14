@@ -17,6 +17,7 @@ import { SpecialOffer } from "@/components/funnel/SpecialOffer";
 import { SupportForm } from "@/components/funnel/SupportForm";
 import { Testimonials } from "@/components/funnel/Testimonials";
 import { ValueStack } from "@/components/funnel/ValueStack";
+import { WhyIShare } from "@/components/funnel/WhyIShare";
 import { brand, intake, offers, whoFor } from "@/content/funnel";
 import { track } from "@/lib/track";
 
@@ -55,6 +56,11 @@ function PersonalSupportPage() {
       {/* PERSONAL LETTER */}
       <Section tone="surface">
         <Letter />
+      </Section>
+
+      {/* WHY I SHARE THIS OPENLY — my real intention */}
+      <Section>
+        <WhyIShare />
       </Section>
 
       {/* WHAT HAPPENS WHEN YOU DO IT ALONE */}
