@@ -662,5 +662,31 @@ export const specialOffer = {
     "എന്റെ ready-made ad + landing page + WhatsApp automation templates",
     "ആദ്യ 30 ദിവസം direct WhatsApp priority reply",
   ],
-  note: "ഈ extra ഈ page-ൽ നിന്ന് ഇപ്പോൾ start ചെയ്യുന്നവർക്കാണ്. Fake countdown ഒന്നും ഇല്ല — batch fill ആകുമ്പോൾ ഇത് close ചെയ്യും.",
+  note: "ഈ extra-കൾ ഈ session കണ്ടിട്ട് ഇന്ന് തന്നെ start ചെയ്യുന്നവർക്ക് വേണ്ടിയാണ് — കാരണം അവരെ ഞാൻ personally onboard ചെയ്യും. അതിന് ഒരു ദിവസം കുറച്ച് പേരെ മാത്രം എടുക്കാൻ പറ്റും.",
+};
+
+/**
+ * TODAY'S WINDOW — a real, honest 30-minute window that resets each day.
+ * The deadline is stored per day in the browser, so the date always shows
+ * today's date and the timer is short. After it ends the offer is NOT gone:
+ * the price simply goes back to the regular one.
+ */
+export const todayOffer = {
+  eyebrow: "ഇന്നത്തെ session",
+  dateLabel: "ഇന്ന്",
+  headline: "ഈ page തുറന്നത് മുതൽ 30 മിനിറ്റ് — ഈ ഉള്ളിൽ ₹5,999 rate-ൽ join ചെയ്യാം",
+  sub: "ഒരു ദിവസം കുറച്ച് പേരെ മാത്രം personally onboard ചെയ്യാൻ പറ്റും. അതുകൊണ്ടാണ് ഈ rate-ന് ഒരു ചെറിയ window വെക്കുന്നത്.",
+  windowMinutes: 30,
+  live: {
+    price: "₹5,999",
+    note: "ഈ timer തീരുന്നതിനുള്ളിൽ join ചെയ്താൽ ഈ rate-ഉം ഇന്നത്തെ extras-ഉം കിട്ടും.",
+  },
+  expired: {
+    title: "ഇന്നത്തെ ₹5,999 window കഴിഞ്ഞു",
+    body: "പക്ഷേ വഴി അടഞ്ഞില്ല. Personal support-ഓടെ ഇത് normal ആയി ₹12,000 – ₹15,000 ആണ്. അതിലും join ചെയ്യാം — same course, same live class, same WhatsApp support.",
+    priceLabel: "Regular price",
+    price: "₹12,000 – ₹15,000",
+    cta: "Regular rate-ൽ join ചെയ്യാം",
+    soft: "ഇന്ന് നിങ്ങൾ video മുഴുവൻ കണ്ടിട്ടും timer തീർന്നു പോയതാണെങ്കിൽ, WhatsApp-ൽ ഒരു message അയക്കൂ — ഞാൻ നേരിട്ട് നോക്കാം.",
+  },
 };
