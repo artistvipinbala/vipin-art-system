@@ -54,9 +54,6 @@ function LandingPage() {
       /* ignore */
     }
     setShowIntake(true);
-    window.setTimeout(() => {
-      document.getElementById("intake")?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
   };
 
 
