@@ -408,6 +408,30 @@ export const letter = {
   signature: "— Vipin Bala",
 };
 
+/**
+ * "Why am I sharing all this openly?" — Vipin's real intention / mission.
+ * Shown right after the letter on the offer page.
+ */
+export const whyIShare = {
+  eyebrow: "എന്റെ intention തുറന്നു പറയാം",
+  headline: "ഞാൻ എന്തുകൊണ്ടാണ് ഇതെല്ലാം ഇത്ര open ആയി പറഞ്ഞുതരുന്നത്?",
+  paragraphs: [
+    "സത്യം ആദ്യം പറയാം — എനിക്ക് ഇപ്പോൾ art classes-ൽ നിന്നും art works-ൽ നിന്നും നല്ല income കിട്ടുന്നുണ്ട്. ഈ course വിറ്റ് ജീവിക്കേണ്ട ഒരു ആവശ്യവും എനിക്കില്ല.",
+    "പക്ഷേ ഞാൻ എത്ര നല്ല income earn ചെയ്താലും, നമ്മുടെ society ഇന്നും “artist” എന്നത് ഒരു profession ആയി consider ചെയ്യുന്നില്ല. “ജോലി എന്താണ്?” എന്ന ചോദ്യത്തിന് “artist ആണ്” എന്ന് പറയുമ്പോൾ ഉടനെ വരുന്ന അടുത്ത ചോദ്യം — “വേറെ പണിയൊന്നും ഇല്ലേ?”",
+    "അതിലും വലിയ പ്രശ്നം ആളുകളുടെ മനസ്സിലുള്ള ചിത്രമാണ്: കള്ളു കുടിച്ച്, മുഷിഞ്ഞ ജുബ്ബയിട്ട്, മുടിയും താടിയും നീട്ടി വളർത്തിയ ഒരു പ്രാകൃത രൂപം. ഒരു artist-നെക്കുറിച്ച് പലരുടെയും mind-ൽ ഇപ്പോഴും അതാണ്.",
+    "ആ ചിത്രം മാറ്റാൻ എനിക്ക് ഒറ്റയ്ക്ക് സാധിക്കില്ല. അതിന് എനിക്ക് ഒരു കൂട്ടം successful artists വേണം — decent ആയി ജീവിക്കുന്ന, നല്ല income ഉള്ള, തലയുയർത്തി “ഞാൻ artist ആണ്” എന്ന് പറയുന്ന artists.",
+    "Trading-ന്റെ കാര്യം ഒന്ന് ഓർത്തുനോക്കൂ. ആർക്കും അതിനെക്കുറിച്ച് അറിയാത്ത കാലത്ത് ഷാരിക് ഷംസുദ്ദീനെപ്പോലുള്ളവർ online classes എടുത്തും YouTube videos ഇട്ടും അതിന് ഒരു existence ഉണ്ടാക്കിയെടുത്തു. ഇന്ന് അത് ഒരു respectable path ആണ്.",
+    "അതുപോലെ artists-ന് ഇടയിൽ ഒരു real influence ആയി മാറണം എന്നാണ് എന്റെ ആഗ്രഹം. Art-ഉം ഒരു respectable, income ഉള്ള profession ആണ് എന്ന് നാട്ടിൽ establish ചെയ്യണം.",
+  ],
+  dream: {
+    label: "എന്റെ dream",
+    text: "ഞാൻ നടത്തുന്ന ഒരു വലിയ online–offline program. ആ stage-ന് മുന്നിൽ, നല്ല രീതിയിൽ art ചെയ്ത് ജീവിക്കുന്ന artists കൊണ്ട് hall packed ആയിരിക്കുന്നു. ആ ഒരു കാഴ്ചയാണ് ഞാൻ visualize ചെയ്യുന്നത് — അതിനുവേണ്ടിയാണ് ഞാൻ ഇതെല്ലാം ചെയ്യുന്നത്.",
+  },
+  closing:
+    "അതുകൊണ്ട് നിങ്ങൾ ഈ system implement ചെയ്ത് വളരുന്നത് എനിക്ക് ഒരു sale അല്ല — അത് എന്റെ ആ dream-ന്റെ ഒരു ഭാഗമാണ്.",
+  signature: "— Vipin Bala",
+};
+
 export const whoFor = {
   yes: [
     "You are an artist",
