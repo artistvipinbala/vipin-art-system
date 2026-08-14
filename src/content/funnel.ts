@@ -165,9 +165,9 @@ export const positioning = {
 export const choices = {
   headline: "Training കണ്ടു. ഇനി നിങ്ങൾക്ക് ഏത് വഴി പോകണം?",
   option1: {
-    title: "ഞാൻ ഇത് സ്വയം ചെയ്യാൻ ആഗ്രഹിക്കുന്നു",
-    text: "Training-ൽ പഠിച്ച കാര്യങ്ങൾ ഞാൻ തന്നെ implement ചെയ്യാം.",
-    cta: "I WANT TO DO THIS MYSELF",
+    title: "ഞാൻ ഇത് സ്വയം implement ചെയ്യാം",
+    text: "Guidance വേണ്ട — full system, templates, ഉം ഉള്ള self-paced course മാത്രം മതി.",
+    cta: "GET THE COURSE — ₹5,999",
   },
   option2: {
     title: "എനിക്ക് Personal Support വേണം",
@@ -315,15 +315,16 @@ export const offers = {
     cta: "GET PERSONAL SUPPORT",
   },
   comparison: [
-    { feature: "Complete Course", self: true, support: true },
-    { feature: "Templates", self: true, support: true },
-    { feature: "Community", self: true, support: true },
-    { feature: "Direct WhatsApp Support", self: false, support: true },
-    { feature: "Personal Guidance", self: false, support: true },
-    { feature: "Implementation Feedback", self: false, support: true },
-    { feature: "Strategy Review", self: false, support: true },
-    { feature: "Accountability", self: false, support: true },
+    { feature: "Complete Course", alone: false, self: true, support: true },
+    { feature: "Templates", alone: false, self: true, support: true },
+    { feature: "Community", alone: false, self: true, support: true },
+    { feature: "Direct WhatsApp Support", alone: false, self: false, support: true },
+    { feature: "Personal Guidance", alone: false, self: false, support: true },
+    { feature: "Implementation Feedback", alone: false, self: false, support: true },
+    { feature: "Strategy Review", alone: false, self: false, support: true },
+    { feature: "Accountability", alone: false, self: false, support: true },
   ],
+
 };
 
 export const whoFor = {
@@ -410,3 +411,136 @@ export const finalCta = {
   primary: "WATCH THE FREE TRAINING",
   secondary: "I NEED PERSONAL SUPPORT",
 };
+
+/** Credibility numbers shown near the hero. Leave a value blank to hide it. */
+export const credibility = [
+  { value: "", label: "Years teaching art" },
+  { value: "", label: "Students taught" },
+  { value: "", label: "Artworks sold" },
+  { value: "", label: "Ad spend managed" },
+] as { value: string; label: string }[];
+
+/**
+ * PROOF. Owner: add real screenshots only.
+ * `src` empty => a labelled placeholder slot is shown in preview.
+ * Delete an entry to remove it entirely.
+ */
+export const proof = {
+  headline: "വാക്കുകൾ അല്ല — യഥാർത്ഥ proof",
+  text: "ഞാൻ പറയുന്ന system യഥാർത്ഥത്തിൽ work ചെയ്യുന്നു എന്നതിന്റെ evidence താഴെ കാണാം.",
+  items: [
+    { src: "", label: "[STUDENT RESULT SCREENSHOT]", caption: "Student result" },
+    { src: "", label: "[INCOME / PAYMENT SCREENSHOT]", caption: "Payments received" },
+    { src: "", label: "[ARTWORK SOLD SCREENSHOT]", caption: "Artwork sold" },
+    { src: "", label: "[WHATSAPP ENQUIRIES SCREENSHOT]", caption: "Real enquiries" },
+  ] as { src: string; label: string; caption: string }[],
+};
+
+/** REAL testimonials only. Empty array => the section does not render. */
+export const testimonials = {
+  headline: "ഈ system implement ചെയ്തവർ പറയുന്നത്",
+  items: [] as { name: string; situation: string; result: string; quote: string }[],
+};
+
+/** The honest cost of doing it completely alone. */
+export const costOfAlone = {
+  headline: "സ്വയം ചെയ്യാം. പക്ഷേ അതിന് ഒരു cost ഉണ്ട്.",
+  text: "ഇത് നിങ്ങൾക്ക് ഒറ്റയ്ക്ക് ചെയ്യാൻ പറ്റും — ഞാൻ അത് മാറ്റിപ്പറയുന്നില്ല. പക്ഷേ ഒറ്റയ്ക്ക് ചെയ്യുമ്പോൾ സാധാരണ സംഭവിക്കുന്നത് ഇതാണ്:",
+  items: [
+    "ശരിയായ order എന്താണെന്ന് അറിയാതെ മാസങ്ങൾ പോകും",
+    "Ads-ൽ പഠിക്കാനായി മാത്രം പണം നഷ്ടപ്പെടും",
+    "Content post ചെയ്യും, പക്ഷേ enquiry വരില്ല — കാരണം എന്താണെന്ന് അറിയില്ല",
+    "Funnel പകുതിയിൽ നിൽക്കും, ഒരു feedback തരാൻ ആരും ഉണ്ടാകില്ല",
+    "Pricing തെറ്റി, ചെയ്ത work-ന് കുറഞ്ഞ വില കിട്ടും",
+  ],
+  slow: {
+    title: "ഒറ്റയ്ക്ക്",
+    points: ["Trial & error", "Feedback ഇല്ല", "സമയവും ad money-യും നഷ്ടം", "പലരും പകുതിയിൽ നിർത്തും"],
+  },
+  fast: {
+    title: "Guidance-ഓടെ",
+    points: ["ശരിയായ order", "തെറ്റുകൾ നേരത്തെ correct ചെയ്യാം", "നിങ്ങളുടെ situation നോക്കി direction", "Implement ചെയ്ത് പൂർത്തിയാക്കും"],
+  },
+  closing:
+    "രണ്ട് വഴിയും ശരിയാണ്. ഏത് വഴി വേണം എന്നത് നിങ്ങളുടെ സമയത്തിന്റെ വിലയെ ആശ്രയിച്ചിരിക്കുന്നു.",
+};
+
+/** Value anchor + itemised stack. Owner: adjust values honestly. */
+export const valueStack = {
+  headline: "ഇത് ഒരു agency-യെ ചെയ്യാൻ വിട്ടാൽ എത്ര ചെലവാകും?",
+  anchors: [
+    { item: "Funnel + landing page build (freelancer/agency)", price: "₹25,000+" },
+    { item: "Ad setup & management (monthly)", price: "₹15,000+" },
+    { item: "WhatsApp automation setup", price: "₹10,000+" },
+    { item: "Content strategy consulting", price: "₹10,000+" },
+  ],
+  anchorNote:
+    "അതും ഒരു മാസത്തേക്ക് മാത്രം. അതിന് ശേഷം വീണ്ടും ചെലവ്. നിങ്ങൾ system പഠിക്കുന്നുമില്ല.",
+  includedHeadline: "ഇതിൽ നിങ്ങൾക്ക് കിട്ടുന്നത്",
+  included: [
+    { item: "Complete Artist Income System course", value: "₹9,999" },
+    { item: "Funnel & landing page structure (ready templates)", value: "₹4,999" },
+    { item: "Ad structure & targeting walkthrough", value: "₹4,999" },
+    { item: "WhatsApp automation setup guide", value: "₹2,999" },
+    { item: "Content & offer templates", value: "₹2,999" },
+    { item: "Community access + future updates", value: "₹2,999" },
+  ],
+  totalLabel: "Total value",
+  total: "₹28,994",
+  youPayLabel: "നിങ്ങൾ കൊടുക്കുന്നത്",
+  bonusHeadline: "Bonuses",
+  bonuses: [
+    { title: "Bonus 1 — Ad Copy Swipe File", text: "Artists-ന് വേണ്ടി തയ്യാറാക്കിയ ad copy examples." },
+    { title: "Bonus 2 — Pricing Sheet", text: "Artwork, class, commission pricing എങ്ങനെ decide ചെയ്യാം." },
+    { title: "Bonus 3 — 30-Day Action Plan", text: "ദിവസം തിരിച്ചുള്ള implementation checklist." },
+  ],
+  paymentPlan: "[PAYMENT PLAN — OWNER TO CONFIRM, e.g. 2 instalments available]",
+};
+
+export const guarantee = {
+  headline: "നിങ്ങളുടെ risk കുറയ്ക്കാൻ",
+  body: "[GUARANTEE / REFUND TEXT — OWNER TO FINALIZE. Example: 7 ദിവസത്തിനുള്ളിൽ course കണ്ടിട്ട് ഇത് നിങ്ങൾക്ക് useful അല്ല എന്ന് തോന്നിയാൽ, WhatsApp-ൽ message ചെയ്താൽ full refund.]",
+  honest: {
+    title: "ഇത് വാങ്ങരുത് — ഇങ്ങനെയാണെങ്കിൽ",
+    points: [
+      "Content create ചെയ്യാൻ താൽപര്യമില്ലെങ്കിൽ",
+      "ഒരാഴ്ചയ്ക്കുള്ളിൽ income പ്രതീക്ഷിക്കുന്നെങ്കിൽ",
+      "ആഴ്ചയിൽ കുറച്ച് മണിക്കൂർ പോലും മാറ്റിവയ്ക്കാൻ കഴിയില്ലെങ്കിൽ",
+    ],
+  },
+};
+
+/** Real intake limit. Owner: keep this truthful or blank it out to hide. */
+export const intake = {
+  limitLabel: "Personal Support intake",
+  limit: "[X] people per batch",
+  nextBatch: "[NEXT BATCH DATE]",
+  note: "Personal support-ൽ ഓരോ batch-ലും ഒരു limited number മാത്രം എടുക്കുന്നു — അത് honest ആയി support കൊടുക്കാൻ വേണ്ടിയാണ്.",
+};
+
+export const purchaseFaqs = [
+  {
+    q: "എനിക്ക് followers/audience ഇല്ല. അപ്പോൾ ഇത് work ചെയ്യുമോ?",
+    a: "Audience ഉണ്ടാക്കുന്നത് തന്നെ system-ന്റെ ഭാഗമാണ്. Zero-ൽ നിന്ന് content + ads വഴി എങ്ങനെ audience-ഉം enquiries-ഉം ഉണ്ടാക്കാം എന്നതാണ് പഠിപ്പിക്കുന്നത്.",
+  },
+  {
+    q: "എനിക്ക് technical കാര്യങ്ങൾ അറിയില്ല. പറ്റുമോ?",
+    a: "Step-by-step ആയി കാണിക്കുന്നു, ready templates ഉണ്ട്. Computer basic ആയി ഉപയോഗിക്കാൻ അറിയാമെങ്കിൽ മതി.",
+  },
+  {
+    q: "എന്റെ art style / Kerala-യിൽ ഇത് work ചെയ്യുമോ?",
+    a: "Portrait, painting, sketching, craft, art classes — income model മാറും, system ഒന്ന് തന്നെ. Local Kerala audience-നെ target ചെയ്യാനും ഇത് ഉപയോഗിക്കാം.",
+  },
+  {
+    q: "Ads-ന് എത്ര രൂപ വേണം?",
+    a: "ചെറിയ daily budget-ൽ തുടങ്ങാം. Ads ഇല്ലാതെ organic content വഴിയും തുടങ്ങാം — രണ്ട് വഴിയും training-ൽ ഉണ്ട്.",
+  },
+  {
+    q: "Result കിട്ടാൻ എത്ര സമയം എടുക്കും?",
+    a: "Guarantee ചെയ്യുന്നില്ല. Consistent ആയി implement ചെയ്യുന്നവർക്ക് സാധാരണ ആദ്യ enquiries കുറച്ച് ആഴ്ചകൾക്കുള്ളിൽ കാണാൻ തുടങ്ങും. നിങ്ങളുടെ effort ആണ് factor.",
+  },
+  {
+    q: "Refund ഉണ്ടോ?",
+    a: "[REFUND POLICY PLACEHOLDER — OWNER TO FINALIZE]",
+  },
+];

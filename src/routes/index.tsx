@@ -2,6 +2,8 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Check, X } from "lucide-react";
 import { useEffect } from "react";
 
+import { CostOfAlone } from "@/components/funnel/CostOfAlone";
+import { CredibilityStrip } from "@/components/funnel/CredibilityStrip";
 import { CTAButton } from "@/components/funnel/CTAButton";
 import { FaqAccordion } from "@/components/funnel/FaqAccordion";
 import { FeedbackForm } from "@/components/funnel/FeedbackForm";
@@ -9,8 +11,10 @@ import { Footer } from "@/components/funnel/Footer";
 import { Navbar } from "@/components/funnel/Navbar";
 import { NumberedCard } from "@/components/funnel/NumberedCard";
 import { Placeholder } from "@/components/funnel/Placeholder";
+import { ProofSection } from "@/components/funnel/ProofSection";
 import { Eyebrow, Lead, Section, SectionHeading } from "@/components/funnel/Section";
 import { StickyCta } from "@/components/funnel/StickyCta";
+import { Testimonials } from "@/components/funnel/Testimonials";
 import { VideoFrame } from "@/components/funnel/VideoSection";
 import {
   choices,
@@ -54,6 +58,11 @@ function LandingPage() {
   useEffect(() => {
     track("landing_page_visit");
   }, []);
+
+  const goToSelfPaced = () => {
+    track("course_purchase_click");
+    void navigate({ to: "/personal-support", hash: "offers" });
+  };
 
   const goToSupport = () => {
     track("personal_support_click");
@@ -110,6 +119,8 @@ function LandingPage() {
           </div>
         </div>
       </section>
+
+      <CredibilityStrip />
 
       {/* PROBLEM */}
       <Section>
@@ -191,6 +202,10 @@ function LandingPage() {
         <p className="text-mal mt-5 text-sm text-muted-foreground sm:text-base">{training.note}</p>
       </Section>
 
+      {/* PROOF */}
+      <ProofSection />
+      <Testimonials />
+
       {/* WHAT IS COVERED */}
       <Section tone="surface">
         <SectionHeading>{covered.headline}</SectionHeading>
@@ -244,6 +259,9 @@ function LandingPage() {
         </div>
       </Section>
 
+      {/* COST OF DOING IT ALONE */}
+      <CostOfAlone />
+
       {/* POST-VIDEO ACTION */}
       <Section id="next-step">
         <SectionHeading>{choices.headline}</SectionHeading>
@@ -253,12 +271,9 @@ function LandingPage() {
             <p className="text-mal mt-3 flex-1 text-sm text-muted-foreground">
               {choices.option1.text}
             </p>
-            <a
-              href="#feedback"
-              className="mt-6 inline-flex min-h-13 items-center justify-center rounded-full border-2 border-border bg-card px-6 text-sm font-bold tracking-wide transition-colors hover:border-primary hover:text-primary"
-            >
+            <CTAButton variant="outline" className="mt-6 w-full" onClick={goToSelfPaced}>
               {choices.option1.cta}
-            </a>
+            </CTAButton>
           </div>
           <div className="flex flex-col rounded-3xl border border-primary bg-card p-6 shadow-card sm:p-8">
             <h3 className="text-mal text-lg font-bold sm:text-xl">{choices.option2.title}</h3>
@@ -269,15 +284,6 @@ function LandingPage() {
               {choices.option2.cta}
             </CTAButton>
           </div>
-        </div>
-      </Section>
-
-      {/* FEEDBACK */}
-      <Section id="feedback" tone="surface">
-        <SectionHeading>{feedback.headline}</SectionHeading>
-        <Lead>{feedback.sub}</Lead>
-        <div className="mt-8">
-          <FeedbackForm />
         </div>
       </Section>
 
@@ -311,6 +317,15 @@ function LandingPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </Section>
+
+      {/* FEEDBACK */}
+      <Section id="feedback" tone="surface">
+        <SectionHeading>{feedback.headline}</SectionHeading>
+        <Lead>{feedback.sub}</Lead>
+        <div className="mt-8">
+          <FeedbackForm />
         </div>
       </Section>
 

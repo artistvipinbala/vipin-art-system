@@ -10,6 +10,7 @@ export type FunnelEvent =
   | "feedback_submitted"
   | "whatsapp_community_click"
   | "personal_support_click"
+  | "support_page_visit"
   | "support_form_started"
   | "support_form_completed"
   | "course_purchase_click"
