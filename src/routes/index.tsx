@@ -45,36 +45,42 @@ function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col bg-background">
-      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-5 py-8 sm:px-6 sm:py-12">
+      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-5 py-6 sm:px-6 sm:py-10">
         {/* Minimal brand line — no navigation, no distractions */}
-        <p className="text-center text-[0.7rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
+        <p className="text-center text-[0.65rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
           {brand.name}
         </p>
 
-        <header className="mt-8 text-center">
-          <p className="text-[0.7rem] font-bold tracking-[0.16em] text-primary uppercase">
-            {vsl.eyebrow}
+        {/* Video sits in the centre of the first screen */}
+        <div className="flex flex-1 flex-col justify-center py-6">
+          <header className="text-center">
+            <p className="text-[0.62rem] font-bold tracking-[0.16em] text-primary uppercase">
+              {vsl.eyebrow}
+            </p>
+            <h1 className="text-mal mx-auto mt-3 max-w-2xl text-[1.15rem] leading-[1.35] font-bold sm:text-[1.5rem]">
+              {vsl.headline}
+            </h1>
+          </header>
+
+          <div className="mt-5 rounded-[1.75rem] bg-gradient-gold p-[2px] shadow-glow">
+            <div className="overflow-hidden rounded-[1.65rem] bg-background">
+              <VslPlayer
+                embedUrl={media.trainingVideoEmbedUrl}
+                placeholderLabel={media.trainingVideoPlaceholder}
+                gateSeconds={vsl.gateSeconds}
+                onGateReached={onGateReached}
+              />
+            </div>
+          </div>
+
+          <p className="mt-3 text-center text-[0.7rem] tracking-wide text-muted-foreground/70">
+            {vsl.duration}
           </p>
-          <h1 className="text-mal mt-4 text-[1.6rem] leading-[1.25] font-extrabold sm:text-[2.1rem]">
-            {vsl.headline}
-          </h1>
-          <p className="text-mal mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
+          <p className="text-mal mx-auto mt-3 max-w-2xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
             {vsl.sub}
           </p>
-        </header>
-
-        <div className="mt-8">
-          <VslPlayer
-            embedUrl={media.trainingVideoEmbedUrl}
-            placeholderLabel={media.trainingVideoPlaceholder}
-            gateSeconds={vsl.gateSeconds}
-            onGateReached={onGateReached}
-          />
-          <p className="text-mal mt-4 text-center text-sm text-muted-foreground">
+          <p className="text-mal mx-auto mt-2 max-w-2xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
             {vsl.belowVideo}
-          </p>
-          <p className="mt-2 text-center text-xs tracking-wide text-muted-foreground/70">
-            {vsl.duration}
           </p>
         </div>
 
@@ -96,7 +102,7 @@ function LandingPage() {
           </section>
         ) : null}
 
-        <footer className="mt-auto pt-14 text-center text-xs text-muted-foreground/70">
+        <footer className="pt-10 text-center text-xs text-muted-foreground/70">
           © {new Date().getFullYear()} {brand.name}
         </footer>
       </div>
