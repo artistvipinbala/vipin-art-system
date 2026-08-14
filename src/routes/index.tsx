@@ -111,7 +111,7 @@ function LandingPage() {
         </div>
 
         {/* Appears only after the video has been watched */}
-        {unlocked && !showIntake ? (
+        {unlocked ? (
           <section className="mt-12 rounded-3xl border border-border/70 bg-gradient-card p-6 text-center shadow-card sm:p-8">
             <p className="text-mal text-base font-bold sm:text-lg">{vsl.reveal.line1}</p>
             <p className="text-mal mt-3 text-sm text-muted-foreground sm:text-base">
