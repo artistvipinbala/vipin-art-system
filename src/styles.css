@@ -27,6 +27,11 @@
   --color-sky: var(--sky);
   --color-sky-foreground: var(--sky-foreground);
   --color-surface: var(--surface);
+  --color-sheet: var(--sheet);
+  --color-sheet-foreground: var(--sheet-foreground);
+  --color-sheet-muted: var(--sheet-muted);
+  --color-sheet-border: var(--sheet-border);
+  --color-sheet-field: var(--sheet-field);
   --shadow-soft: var(--shadow-soft-value);
   --shadow-card: var(--shadow-card-value);
   --shadow-glow: var(--shadow-glow-value);
