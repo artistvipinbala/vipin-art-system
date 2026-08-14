@@ -165,9 +165,9 @@ export const positioning = {
 export const choices = {
   headline: "Training കണ്ടു. ഇനി നിങ്ങൾക്ക് ഏത് വഴി പോകണം?",
   option1: {
-    title: "ഞാൻ ഇത് സ്വയം ചെയ്യാൻ ആഗ്രഹിക്കുന്നു",
-    text: "Training-ൽ പഠിച്ച കാര്യങ്ങൾ ഞാൻ തന്നെ implement ചെയ്യാം.",
-    cta: "I WANT TO DO THIS MYSELF",
+    title: "ഞാൻ ഇത് സ്വയം implement ചെയ്യാം",
+    text: "Guidance വേണ്ട — full system, templates, ഉം ഉള്ള self-paced course മാത്രം മതി.",
+    cta: "GET THE COURSE — ₹5,999",
   },
   option2: {
     title: "എനിക്ക് Personal Support വേണം",
