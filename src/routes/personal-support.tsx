@@ -1,25 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, X } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import { ComparisonTable } from "@/components/funnel/ComparisonTable";
-import { CostOfAlone } from "@/components/funnel/CostOfAlone";
 import { EduCompare } from "@/components/funnel/EduCompare";
 import { Footer } from "@/components/funnel/Footer";
 import { Guarantee } from "@/components/funnel/Guarantee";
 import { Letter } from "@/components/funnel/Letter";
 import { OfferCountdown } from "@/components/funnel/OfferCountdown";
 import { PricingCards } from "@/components/funnel/PricingCards";
-import { ProofSection } from "@/components/funnel/ProofSection";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
+import { QuickIntake } from "@/components/funnel/QuickIntake";
 import { Lead, Section, SectionHeading } from "@/components/funnel/Section";
 import { SpecialOffer } from "@/components/funnel/SpecialOffer";
-import { SupportForm } from "@/components/funnel/SupportForm";
-import { Testimonials } from "@/components/funnel/Testimonials";
+import { StickyJoinBar } from "@/components/funnel/StickyJoinBar";
 import { ValueStack } from "@/components/funnel/ValueStack";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
 import { WhyPayment } from "@/components/funnel/WhyPayment";
-import { brand, intake, offers, whoFor } from "@/content/funnel";
+import { brand, intake, offers } from "@/content/funnel";
 import { track } from "@/lib/track";
 
 const title = "Artist Income System — ₹5,999 | Artist Vipin Bala";
@@ -41,12 +37,19 @@ export const Route = createFileRoute("/personal-support")({
 });
 
 function PersonalSupportPage() {
+  const [revealed, setRevealed] = useState(false);
+
   useEffect(() => {
     track("support_page_visit");
+    try {
+      if (window.localStorage.getItem("avb_intake_done") === "1") setRevealed(true);
+    } catch {
+      /* ignore */
+    }
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-24">
       {/* Quiet header — no nav, no distractions */}
       <div className="border-b border-border/50 px-5 py-5 text-center sm:px-8">
         <p className="text-[0.7rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
@@ -54,156 +57,100 @@ function PersonalSupportPage() {
         </p>
       </div>
 
-      {/* PERSONAL LETTER */}
+      {/* 1 — PERSONAL LETTER */}
       <Section tone="surface">
         <Letter />
       </Section>
 
-      {/* WHY I SHARE THIS OPENLY — my real intention */}
-      <Section>
-        <WhyIShare />
-      </Section>
-
-      {/* WHY THERE IS A PRICE AT ALL */}
-      <Section tone="surface">
-        <WhyPayment />
-      </Section>
-
-      {/* WHAT HAPPENS WHEN YOU DO IT ALONE */}
-      <CostOfAlone />
-
-      {/* THE HONEST MATH: normal education vs starting today */}
-      <Section>
-        <EduCompare />
-      </Section>
-
-      {/* PROOF */}
-      <ProofSection />
-      <Testimonials />
-
-      {/* BUNDLE VALUE → PRICE */}
-      <Section id="offers" tone="surface">
-        <SectionHeading className="text-xl sm:text-2xl">
-          ഇതിനുള്ളിൽ എന്തൊക്കെയുണ്ട്
-        </SectionHeading>
-        <div className="mt-8">
-          <ValueStack />
-        </div>
-
-        <div className="mt-14">
-          <SectionHeading className="text-xl sm:text-2xl">
-            ഒരു price. എല്ലാ support-ഉം ഉള്ളിൽ.
-          </SectionHeading>
-          <Lead>
-            ഇതിൽ options ഇല്ല, upsell ഇല്ല. {offers.everything.price} — അതിൽ എല്ലാം ഉണ്ട്.
-          </Lead>
-          <div className="mx-auto mt-8 max-w-2xl">
-            <OfferCountdown
-              onExpiredCta={() => {
+      {/* 2 — THE ONLY FORM: 5 questions, before any price */}
+      <Section id="apply">
+        <div className="mx-auto max-w-xl">
+          <QuickIntake
+            onDone={() => {
+              setRevealed(true);
+              window.setTimeout(() => {
                 document
-                  .getElementById("apply")
+                  .getElementById("offers")
                   ?.scrollIntoView({ behavior: "smooth" });
-              }}
-            />
-          </div>
-          <div className="mt-8">
-            <PricingCards />
-          </div>
-          <p className="text-mal mt-5 text-center text-xs text-muted-foreground">
-            {intake.note}
-          </p>
-        </div>
-
-      </Section>
-
-      {/* EXTRA FOR THOSE WHO START NOW — only on this page */}
-      <Section>
-        <div className="mx-auto max-w-2xl">
-          <SpecialOffer />
-        </div>
-      </Section>
-
-      {/* RISK REVERSAL */}
-      <Section tone="surface">
-        <Guarantee />
-      </Section>
-
-      {/* ALONE VS WITH ME */}
-      <Section>
-        <SectionHeading className="text-xl sm:text-2xl">
-          ഒറ്റയ്ക്ക് ചെയ്യുന്നതും ഒപ്പം ഞാൻ ഉള്ളതും
-        </SectionHeading>
-        <div className="mt-6">
-          <ComparisonTable />
-        </div>
-      </Section>
-
-      {/* WHO IS THIS FOR */}
-      <Section tone="surface">
-        <SectionHeading className="text-xl sm:text-2xl">
-          ഇത് ആർക്കുവേണ്ടിയാണ്
-        </SectionHeading>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
-            <p className="text-sm font-bold tracking-wide text-primary uppercase">
-              This is for you if
-            </p>
-            <ul className="mt-4 space-y-2 text-sm">
-              {whoFor.yes.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
-            <p className="text-sm font-bold tracking-wide text-muted-foreground uppercase">
-              This is NOT for you if
-            </p>
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              {whoFor.no.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/70" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      {/* OBJECTIONS */}
-      <Section>
-        <SectionHeading className="text-xl sm:text-2xl">
-          മനസ്സിൽ വരുന്ന സ്വാഭാവിക സംശയങ്ങൾ
-        </SectionHeading>
-        <div className="mt-6">
-          <PurchaseFaq />
-        </div>
-      </Section>
-
-      {/* SOFT CONTACT — not a gate */}
-      <Section id="apply" tone="surface">
-        <SectionHeading className="text-xl sm:text-2xl">
-          ഇനിയും ഒരു സംശയം ബാക്കിയുണ്ടോ?
-        </SectionHeading>
-        <Lead>
-          വാങ്ങാൻ ഈ form പൂരിപ്പിക്കേണ്ട ആവശ്യമില്ല. നിങ്ങളുടെ situation എഴുതിയാൽ ഞാൻ personally
-          നോക്കി WhatsApp-ൽ സത്യസന്ധമായി reply ചെയ്യും — ഇത് നിങ്ങൾക്ക് ചേരില്ല എന്നാണെങ്കിൽ
-          അതും പറയും.
-        </Lead>
-        <div className="mt-6">
-          <SupportForm
-            onDone={() => undefined}
-            onSkip={() =>
-              document.getElementById("offers")?.scrollIntoView({ behavior: "smooth" })
-            }
+              }, 300);
+            }}
           />
         </div>
       </Section>
 
+      {revealed ? (
+        <>
+          {/* 3 — WHAT'S INSIDE → TODAY'S WINDOW → PRICE */}
+          <Section id="offers" tone="surface">
+            <SectionHeading className="text-xl sm:text-2xl">
+              നിങ്ങൾക്ക് എന്തൊക്കെ കിട്ടും
+            </SectionHeading>
+            <div className="mt-8">
+              <ValueStack />
+            </div>
+
+            <div className="mx-auto mt-12 max-w-2xl">
+              <OfferCountdown />
+            </div>
+
+            <div className="mt-8">
+              <SectionHeading className="text-xl sm:text-2xl">
+                ഒരു price. എല്ലാ support-ഉം ഉള്ളിൽ.
+              </SectionHeading>
+              <Lead>
+                Options ഇല്ല, upsell ഇല്ല. {offers.everything.price} — അതിൽ എല്ലാം ഉണ്ട്.
+              </Lead>
+              <div className="mt-8">
+                <PricingCards />
+              </div>
+              <p className="text-mal mt-5 text-center text-xs text-muted-foreground">
+                {intake.note}
+              </p>
+            </div>
+          </Section>
+
+          {/* 4 — EXTRA FOR THOSE WHO START TODAY */}
+          <Section>
+            <div className="mx-auto max-w-2xl">
+              <SpecialOffer />
+            </div>
+          </Section>
+
+          {/* 5 — WHY I SHARE THIS OPENLY */}
+          <Section tone="surface">
+            <WhyIShare />
+          </Section>
+
+          {/* 6 — WHY THERE IS A PRICE AT ALL */}
+          <Section>
+            <WhyPayment />
+          </Section>
+
+          {/* 7 — DEGREE vs STARTING TODAY */}
+          <Section tone="surface">
+            <EduCompare />
+          </Section>
+
+          {/* 8 — RISK REVERSAL */}
+          <Section>
+            <Guarantee />
+          </Section>
+
+          {/* 9 — NATURAL DOUBTS */}
+          <Section tone="surface">
+            <SectionHeading className="text-xl sm:text-2xl">
+              മനസ്സിൽ വരുന്ന സ്വാഭാവിക സംശയങ്ങൾ
+            </SectionHeading>
+            <div className="mt-6">
+              <PurchaseFaq />
+            </div>
+          </Section>
+        </>
+      ) : null}
+
       <Footer />
+
+      {revealed ? <StickyJoinBar /> : null}
     </div>
   );
 }
