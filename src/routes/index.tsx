@@ -28,6 +28,7 @@ export const Route = createFileRoute("/")({
 function LandingPage() {
   const navigate = useNavigate();
   const [unlocked, setUnlocked] = useState(false);
+  const [showIntake, setShowIntake] = useState(false);
 
   useEffect(() => {
     track("landing_page_visit");
@@ -42,8 +43,21 @@ function LandingPage() {
     } catch {
       /* ignore */
     }
-    void navigate({ to: "/personal-support" });
+    // Ask the short intake questions here, before the offer page.
+    try {
+      if (window.localStorage.getItem("avb_intake_done") === "1") {
+        void navigate({ to: "/personal-support" });
+        return;
+      }
+    } catch {
+      /* ignore */
+    }
+    setShowIntake(true);
+    window.setTimeout(() => {
+      document.getElementById("intake")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
+
 
   return (
     <main className="flex min-h-screen flex-col bg-background">
