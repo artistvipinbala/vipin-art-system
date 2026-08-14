@@ -783,3 +783,11 @@ export const quickIntake = {
   successTitle: "കിട്ടി — thank you!",
   successSub: "ഇനി താഴെ നിങ്ങൾക്ക് എന്ത് കിട്ടും, price എന്ത് എന്ന് നോക്കാം.",
 };
+
+/** Top-of-page block shown above the VSL headline on the first screen. */
+export const pageTop = {
+  eyebrow: "MALAYALAM FREE TRAINING BY ARTIST VIPIN BALA",
+  headline:
+    "Art ചെയ്യാൻ അറിയാം… പക്ഷേ അതിൽ നിന്ന് സ്ഥിരമായി Income ഉണ്ടാക്കാൻ അറിയില്ലേ?",
+  sub: "നിങ്ങളുടെ Drawing, Painting, Craft അല്ലെങ്കിൽ Teaching Skill ഉപയോഗിച്ച് Artwork Sales, Art Classes, Workshops, Products എന്നിവ വഴി Income ഉണ്ടാക്കാനുള്ള ഒരു practical system ഈ free training-ൽ പഠിക്കാം.",
+};
