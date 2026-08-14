@@ -172,7 +172,7 @@ export const choices = {
   option2: {
     title: "എനിക്ക് Personal Support വേണം",
     text: "System ഞാൻ തന്നെ ചെയ്യാം. പക്ഷേ എന്ത് ചെയ്യണം, എങ്ങനെ implement ചെയ്യണം, എവിടെയാണ് തെറ്റുന്നത് എന്നതിൽ direct guidance വേണം.",
-    cta: "I NEED PERSONAL SUPPORT",
+    cta: "I NEED YOUR PERSONAL SUPPORT",
   },
 };
 
@@ -545,7 +545,7 @@ export const finalCta = {
   headline: "Ready to see the system?",
   text: "ആദ്യം Free Training കാണൂ. അതിന് ശേഷം നിങ്ങൾക്ക് എന്താണ് വേണ്ടത് എന്ന് തീരുമാനിക്കാം.",
   primary: "WATCH THE FREE TRAINING",
-  secondary: "I NEED PERSONAL SUPPORT",
+  secondary: "I NEED YOUR PERSONAL SUPPORT",
 };
 
 /** Credibility numbers shown near the hero. Leave a value blank to hide it. */
@@ -700,7 +700,7 @@ export const vsl = {
     line1: "ഇത് നിങ്ങൾക്ക് സ്വയം ചെയ്യാം. തീർച്ചയായും പറ്റും.",
     line2:
       "പക്ഷേ ഓരോ step-ഉം detail ആയി, നിങ്ങളുടെ situation നോക്കി, quickly ചെയ്തെടുക്കണം എന്നുണ്ടെങ്കിൽ — ഞാൻ personally കൂടെ നിൽക്കുന്ന ഒരു option ഉണ്ട്.",
-    cta: "SEE PERSONAL SUPPORT",
+    cta: "VIPIN, I NEED YOUR PERSONAL SUPPORT",
     note: "ഒരു നിർബന്ധവുമില്ല. Details നോക്കിയിട്ട് നിങ്ങൾ തന്നെ തീരുമാനിക്കാം.",
   },
 };
