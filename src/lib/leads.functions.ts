@@ -43,12 +43,13 @@ export const submitSupportApplication = createServerFn({ method: "POST" })
       .from("leads")
       .insert({
         name: data.name,
+        email: data.email || null,
         whatsapp_number: data.whatsapp_number,
         support_interest: true,
-        current_stage: data.current_stage,
-        biggest_challenge: data.biggest_challenge,
-        desired_support: data.desired_support,
-        seriousness: data.seriousness,
+        current_stage: data.current_stage ?? null,
+        biggest_challenge: data.biggest_challenge ?? null,
+        desired_support: data.desired_support ?? null,
+        seriousness: data.seriousness ?? null,
         source: data.source ?? null,
         campaign: data.campaign ?? null,
       })
@@ -63,11 +64,16 @@ export const submitSupportApplication = createServerFn({ method: "POST" })
     const { error: appError } = await supabaseAdmin.from("support_applications").insert({
       lead_id: lead.id,
       name: data.name,
+      email: data.email || null,
       whatsapp_number: data.whatsapp_number,
-      current_stage: data.current_stage,
-      biggest_challenge: data.biggest_challenge,
-      desired_support: data.desired_support,
-      seriousness: data.seriousness,
+      art_type: data.art_type ?? null,
+      age_range: data.age_range ?? null,
+      work_place: data.work_place ?? null,
+      spend_ready: data.spend_ready ?? null,
+      current_stage: data.current_stage ?? null,
+      biggest_challenge: data.biggest_challenge ?? null,
+      desired_support: data.desired_support ?? null,
+      seriousness: data.seriousness ?? null,
       status: "New",
     });
 
