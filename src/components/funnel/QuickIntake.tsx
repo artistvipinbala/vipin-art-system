@@ -1,26 +1,24 @@
 import { useServerFn } from "@tanstack/react-start";
-import { BadgeCheck, Loader2, ShieldCheck } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowLeft, ArrowRight, BadgeCheck, Loader2, ShieldCheck } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 
-import { CTAButton } from "./CTAButton";
 import { quickIntake as copy } from "@/content/funnel";
 import { getCampaignParams } from "@/lib/campaign";
 import { submitSupportApplication } from "@/lib/leads.functions";
 import { supportApplicationSchema } from "@/lib/leads.schemas";
 import { track } from "@/lib/track";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
 const STORE_KEY = "avb_lead";
-const fieldClass = "mt-2 min-h-12 rounded-xl bg-card";
-const selectClass =
-  "text-mal mt-2 min-h-12 w-full rounded-xl border border-border bg-card px-3 text-sm text-foreground";
+
+const fieldClass =
+  "text-mal mt-2 min-h-13 w-full rounded-full border border-sheet-border bg-sheet-field px-5 text-[0.95rem] text-sheet-foreground placeholder:text-sheet-muted/70 outline-none focus:border-primary focus:ring-0";
+const labelClass = "text-mal text-[0.92rem] font-medium text-sheet-foreground";
 
 type Values = {
   name: string;
-  email: string;
   whatsapp: string;
+  email: string;
   work: string;
   problem: string;
   problem_other: string;
@@ -29,8 +27,8 @@ type Values = {
 
 const empty: Values = {
   name: "",
-  email: "",
   whatsapp: "",
+  email: "",
   work: "",
   problem: "",
   problem_other: "",
@@ -38,18 +36,17 @@ const empty: Values = {
 };
 
 /**
- * The only form in the funnel: 5 short questions, one screen.
- * Asked BEFORE the price is shown. Browser autofill is enabled through
- * autoComplete + a saved copy of the last answers in this browser.
+ * One question per screen (typeform style), asked in a popup before the
+ * offer page opens. Light sheet surface so it reads clearly on mobile.
  */
 export function QuickIntake({ onDone }: { onDone: () => void }) {
   const submit = useServerFn(submitSupportApplication);
   const [values, setValues] = useState<Values>(empty);
+  const [step, setStep] = useState(0);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [done, setDone] = useState(false);
 
-  // Autofill from this browser (same artist coming back / after the video).
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem(STORE_KEY);
@@ -59,11 +56,139 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
     }
   }, []);
 
-  const set = (key: keyof Values) => (v: string) =>
+  const set = (key: keyof Values) => (v: string) => {
+    setError("");
     setValues((prev) => ({ ...prev, [key]: v }));
+  };
 
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
+  const steps = useMemo(
+    () => [
+      {
+        title: "Let's start with your name & number",
+        sub: "പേരും WhatsApp നമ്പറും മാത്രം — 1 മിനിറ്റിൽ തീരും.",
+        valid: () => values.name.trim().length > 1 && values.whatsapp.trim().length >= 10,
+        body: (
+          <>
+            <div>
+              <label htmlFor="qi-name" className={labelClass}>
+                {copy.labels.name}
+              </label>
+              <input
+                id="qi-name"
+                name="name"
+                autoComplete="name"
+                placeholder="Your full name"
+                maxLength={100}
+                value={values.name}
+                onChange={(e) => set("name")(e.target.value)}
+                className={fieldClass}
+              />
+            </div>
+            <div className="mt-5">
+              <label htmlFor="qi-phone" className={labelClass}>
+                {copy.labels.whatsapp}
+              </label>
+              <input
+                id="qi-phone"
+                name="tel"
+                inputMode="tel"
+                autoComplete="tel"
+                placeholder="10-digit mobile number"
+                maxLength={20}
+                value={values.whatsapp}
+                onChange={(e) => set("whatsapp")(e.target.value)}
+                className={fieldClass}
+              />
+            </div>
+          </>
+        ),
+      },
+      {
+        title: "Email address",
+        sub: "Details അയച്ചു തരാൻ വേണ്ടി മാത്രം.",
+        valid: () => /.+@.+\..+/.test(values.email.trim()),
+        body: (
+          <div>
+            <label htmlFor="qi-email" className={labelClass}>
+              {copy.labels.email}
+            </label>
+            <input
+              id="qi-email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              placeholder="you@email.com"
+              maxLength={255}
+              value={values.email}
+              onChange={(e) => set("email")(e.target.value)}
+              className={fieldClass}
+            />
+          </div>
+        ),
+      },
+      {
+        title: copy.labels.work,
+        sub: "ഏതാണ് നിങ്ങളോട് ഏറ്റവും ചേരുന്നത്?",
+        valid: () => Boolean(values.work),
+        body: (
+          <OptionList
+            name="work"
+            options={copy.workOptions}
+            value={values.work}
+            onChange={set("work")}
+          />
+        ),
+      },
+      {
+        title: copy.labels.problem,
+        sub: "ഒന്ന് select ചെയ്യൂ — ഇത് നോക്കിയാണ് ഞാൻ direction പറയുന്നത്.",
+        valid: () =>
+          values.problem === copy.otherOption
+            ? values.problem_other.trim().length > 2
+            : Boolean(values.problem),
+        body: (
+          <>
+            <OptionList
+              name="problem"
+              options={[...copy.problemOptions, copy.otherOption]}
+              value={values.problem}
+              onChange={set("problem")}
+            />
+            {values.problem === copy.otherOption ? (
+              <input
+                aria-label={copy.otherOption}
+                placeholder={copy.otherPlaceholder}
+                maxLength={200}
+                value={values.problem_other}
+                onChange={(e) => set("problem_other")(e.target.value)}
+                className={fieldClass}
+              />
+            ) : null}
+          </>
+        ),
+      },
+      {
+        title: copy.labels.commitment,
+        sub: copy.commitmentNote,
+        valid: () => Boolean(values.commitment),
+        body: (
+          <OptionList
+            name="commitment"
+            options={copy.commitmentOptions}
+            value={values.commitment}
+            onChange={set("commitment")}
+          />
+        ),
+      },
+    ],
+    [values],
+  );
+
+  const total = steps.length;
+  const current = steps[step]!;
+  const progress = Math.round(((step + 1) / total) * 100);
+
+  async function finish() {
     const challenge =
       values.problem === copy.otherOption ? values.problem_other : values.problem;
     const parsed = supportApplicationSchema.safeParse({
@@ -71,20 +196,13 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
       email: values.email,
       whatsapp_number: values.whatsapp,
       art_type: values.work,
-      biggest_challenge: values.commitment
-        ? `${challenge} | Ready: ${values.commitment}`
-        : challenge,
+      biggest_challenge: `${challenge} | Ready: ${values.commitment}`,
       ...getCampaignParams(),
     });
     if (!parsed.success) {
       setError(parsed.error.issues[0]?.message ?? copy.error);
       return;
     }
-    if (!values.work || !challenge.trim() || !values.commitment) {
-      setError(copy.error);
-      return;
-    }
-    setError("");
     setBusy(true);
     try {
       await submit({ data: parsed.data });
@@ -104,163 +222,132 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
     }
   }
 
+  function next() {
+    if (!current.valid()) {
+      setError(copy.error);
+      return;
+    }
+    setError("");
+    if (step === total - 1) {
+      void finish();
+      return;
+    }
+    setStep((s) => s + 1);
+  }
+
   if (done) {
     return (
-      <div className="rounded-3xl border border-primary/50 bg-gradient-card p-6 shadow-card sm:p-8">
-        <p className="text-mal flex items-center gap-2 text-base font-semibold sm:text-lg">
+      <div className="rounded-3xl bg-sheet p-7 text-sheet-foreground shadow-card">
+        <p className="text-mal flex items-center gap-2 text-lg font-bold">
           <BadgeCheck className="h-5 w-5 shrink-0 text-primary" /> {copy.successTitle}
         </p>
-        <p className="text-mal mt-2 text-sm text-muted-foreground">{copy.successSub}</p>
+        <p className="text-mal mt-2 text-sm text-sheet-muted">{copy.successSub}</p>
       </div>
     );
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
+    <div
       onFocus={() => track("support_form_started")}
-      className="rounded-3xl border border-border bg-card p-5 shadow-card sm:p-8"
+      className="flex max-h-[88svh] flex-col overflow-hidden rounded-3xl bg-sheet text-sheet-foreground shadow-card"
     >
-      <p className="text-mal text-[0.7rem] font-bold tracking-[0.14em] text-primary uppercase">
-        {copy.eyebrow}
-      </p>
-      <h3 className="text-mal mt-3 text-lg leading-snug font-bold sm:text-xl">
-        {copy.headline}
-      </h3>
-      <p className="text-mal mt-2 text-sm text-muted-foreground">{copy.sub}</p>
-
-      <div className="mt-6">
-        <Label htmlFor="qi-name" className="text-mal">
-          {copy.labels.name}
-        </Label>
-        <Input
-          id="qi-name"
-          name="name"
-          autoComplete="name"
-          value={values.name}
-          onChange={(e) => set("name")(e.target.value)}
-          className={fieldClass}
-          maxLength={100}
-        />
-      </div>
-
-      <div className="mt-4">
-        <Label htmlFor="qi-phone" className="text-mal">
-          {copy.labels.whatsapp}
-        </Label>
-        <Input
-          id="qi-phone"
-          name="tel"
-          inputMode="tel"
-          autoComplete="tel"
-          value={values.whatsapp}
-          onChange={(e) => set("whatsapp")(e.target.value)}
-          className={fieldClass}
-          maxLength={20}
-        />
-      </div>
-
-      <div className="mt-4">
-        <Label htmlFor="qi-email" className="text-mal">
-          {copy.labels.email}
-        </Label>
-        <Input
-          id="qi-email"
-          name="email"
-          type="email"
-          autoComplete="email"
-          value={values.email}
-          onChange={(e) => set("email")(e.target.value)}
-          className={fieldClass}
-          maxLength={255}
-        />
-      </div>
-
-      <div className="mt-4">
-        <Label htmlFor="qi-work" className="text-mal">
-          {copy.labels.work}
-        </Label>
-        <select
-          id="qi-work"
-          value={values.work}
-          onChange={(e) => set("work")(e.target.value)}
-          className={selectClass}
-        >
-          <option value="">{copy.placeholder}</option>
-          {copy.workOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="mt-4">
-        <Label htmlFor="qi-problem" className="text-mal">
-          {copy.labels.problem}
-        </Label>
-        <select
-          id="qi-problem"
-          value={values.problem}
-          onChange={(e) => set("problem")(e.target.value)}
-          className={selectClass}
-        >
-          <option value="">{copy.placeholder}</option>
-          {copy.problemOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-          <option value={copy.otherOption}>{copy.otherOption}</option>
-        </select>
-        {values.problem === copy.otherOption ? (
-          <Input
-            aria-label={copy.otherOption}
-            placeholder={copy.otherPlaceholder}
-            value={values.problem_other}
-            onChange={(e) => set("problem_other")(e.target.value)}
-            className={fieldClass}
-            maxLength={200}
+      {/* Step header + progress */}
+      <div className="border-b border-sheet-border px-6 pt-6 pb-4">
+        <div className="flex items-center justify-between">
+          <p className="text-[0.72rem] font-bold tracking-[0.16em] text-sheet-muted uppercase">
+            Step {step + 1} of {total}
+          </p>
+          <p className="text-[0.72rem] font-bold text-primary">{progress}%</p>
+        </div>
+        <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-sheet-border">
+          <div
+            className="h-full rounded-full bg-primary transition-all duration-300"
+            style={{ width: `${progress}%` }}
           />
-        ) : null}
-      </div>
-
-      <div className="mt-6 rounded-2xl border border-primary/30 bg-primary/5 p-4">
-        <p className="text-mal text-sm font-semibold">{copy.labels.commitment}</p>
-        <p className="text-mal mt-2 text-xs leading-relaxed text-muted-foreground">
-          {copy.commitmentNote}
-        </p>
-        <div className="mt-3 space-y-2">
-          {copy.commitmentOptions.map((option) => (
-            <label
-              key={option}
-              className="text-mal flex cursor-pointer items-start gap-2.5 rounded-xl border border-border bg-card p-3 text-xs leading-relaxed"
-            >
-              <input
-                type="radio"
-                name="commitment"
-                value={option}
-                checked={values.commitment === option}
-                onChange={() => set("commitment")(option)}
-                className="mt-0.5 h-4 w-4 shrink-0 accent-[hsl(var(--primary))]"
-              />
-              <span>{option}</span>
-            </label>
-          ))}
         </div>
       </div>
 
-      {error ? (
-        <p className="text-mal mt-4 text-xs font-medium text-destructive">{error}</p>
-      ) : null}
+      {/* Question */}
+      <div className="flex-1 overflow-y-auto px-6 py-6">
+        <h3 className="text-mal text-[1.35rem] leading-tight font-extrabold">
+          {current.title}
+        </h3>
+        <p className="text-mal mt-2 text-[0.95rem] leading-relaxed text-sheet-muted">
+          {current.sub}
+        </p>
+        <div className="mt-6">{current.body}</div>
+        {error ? (
+          <p className="text-mal mt-4 text-xs font-semibold text-destructive">{error}</p>
+        ) : null}
+        <p className="text-mal mt-6 flex items-center gap-1.5 text-[0.7rem] text-sheet-muted">
+          <ShieldCheck className="h-3.5 w-3.5 shrink-0" /> {copy.privacy}
+        </p>
+      </div>
 
-      <CTAButton type="submit" className="text-mal mt-7 w-full" disabled={busy}>
-        {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-        {copy.submit}
-      </CTAButton>
-      <p className="text-mal mt-4 flex items-center justify-center gap-1.5 text-center text-[0.7rem] text-muted-foreground">
-        <ShieldCheck className="h-3.5 w-3.5 shrink-0" /> {copy.privacy}
-      </p>
-    </form>
+      {/* Footer nav */}
+      <div className="flex items-center gap-3 border-t border-sheet-border px-6 py-4">
+        <button
+          type="button"
+          disabled={step === 0 || busy}
+          onClick={() => {
+            setError("");
+            setStep((s) => Math.max(0, s - 1));
+          }}
+          className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-sheet-border bg-sheet-field px-6 text-[0.95rem] font-semibold text-sheet-foreground disabled:opacity-40"
+        >
+          <ArrowLeft className="h-4 w-4" /> Back
+        </button>
+        <button
+          type="button"
+          disabled={busy}
+          onClick={next}
+          className="inline-flex min-h-13 flex-1 items-center justify-center gap-2 rounded-full bg-gradient-gold px-6 text-[1rem] font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 disabled:opacity-60"
+        >
+          {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+          {step === total - 1 ? "SUBMIT" : "Next"}
+          {busy ? null : <ArrowRight className="h-4 w-4" />}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function OptionList({
+  name,
+  options,
+  value,
+  onChange,
+}: {
+  name: string;
+  options: string[];
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  return (
+    <div className="space-y-2.5">
+      {options.map((option) => {
+        const active = value === option;
+        return (
+          <label
+            key={option}
+            className={`text-mal flex cursor-pointer items-start gap-3 rounded-2xl border p-4 text-[0.92rem] leading-relaxed transition-colors ${
+              active
+                ? "border-primary bg-primary/10 font-semibold"
+                : "border-sheet-border bg-sheet-field"
+            }`}
+          >
+            <input
+              type="radio"
+              name={name}
+              value={option}
+              checked={active}
+              onChange={() => onChange(option)}
+              className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--primary)]"
+            />
+            <span>{option}</span>
+          </label>
+        );
+      })}
+    </div>
   );
 }

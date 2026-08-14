@@ -27,6 +27,11 @@
   --color-sky: var(--sky);
   --color-sky-foreground: var(--sky-foreground);
   --color-surface: var(--surface);
+  --color-sheet: var(--sheet);
+  --color-sheet-foreground: var(--sheet-foreground);
+  --color-sheet-muted: var(--sheet-muted);
+  --color-sheet-border: var(--sheet-border);
+  --color-sheet-field: var(--sheet-field);
   --shadow-soft: var(--shadow-soft-value);
   --shadow-card: var(--shadow-card-value);
   --shadow-glow: var(--shadow-glow-value);
@@ -100,6 +105,11 @@
   --sky: oklch(0.607 0.218 26.7);
   --sky-foreground: oklch(1 0 0);
   --surface: oklch(0.169 0.031 278.6);
+  --sheet: oklch(0.981 0.008 85);
+  --sheet-foreground: oklch(0.24 0.02 60);
+  --sheet-muted: oklch(0.48 0.02 60);
+  --sheet-border: oklch(0.91 0.012 85);
+  --sheet-field: oklch(0.965 0.012 85);
   --gradient-gold: linear-gradient(135deg, oklch(0.7 0.188 45.1), oklch(0.63 0.224 33.4));
   --gradient-warm: linear-gradient(
     135deg,
