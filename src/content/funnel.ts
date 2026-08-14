@@ -202,67 +202,94 @@ type SupportStep = {
   options?: string[];
 };
 
+/**
+ * Personal-support questions. Deliberate order: easy, non-personal art
+ * questions first, contact details LAST — so it never feels like a payment
+ * gate. Every step is skippable via the form's skip link.
+ */
 export const supportForm = {
+  intro: {
+    eyebrow: "2 മിനിറ്റ് · Payment ഒന്നുമില്ല",
+    headline: "നിങ്ങളെ കുറിച്ച് കുറച്ച് കാര്യങ്ങൾ അറിയാമോ?",
+    sub: "ഇത് ഒരു sales form അല്ല. നിങ്ങളുടെ art എന്താണ്, ഇപ്പോൾ എവിടെ നിൽക്കുന്നു എന്ന് അറിഞ്ഞാൽ, എനിക്ക് നിങ്ങൾക്ക് ചേരുന്ന direction നേരിട്ട് പറയാൻ പറ്റും. ചേരില്ല എന്നാണെങ്കിൽ അതും ഞാൻ പറയും.",
+    start: "തുടങ്ങാം",
+    skip: "വേണ്ട, എനിക്ക് offer നേരിട്ട് കാണണം",
+  },
   steps: [
-    { key: "name", label: "Your Name", type: "text" },
-    { key: "whatsapp", label: "WhatsApp Number", type: "text" },
     {
-      key: "current_stage",
-      label: "What is your current stage?",
+      key: "art_type",
+      label: "നിങ്ങൾ ഏത് തരം art ചെയ്യുന്നു?",
       type: "choice",
       options: [
-        "I am just starting",
-        "I create art but don't sell consistently",
-        "I already sell artworks",
-        "I teach art",
-        "I already have students/customers",
-        "I have an audience but don't know how to monetize",
-        "Other",
+        "Portrait / Painting sell ചെയ്യുന്നു",
+        "Art class / teaching ചെയ്യുന്നു",
+        "രണ്ടും ചെയ്യുന്നു",
+        "Craft / handmade products",
+        "Digital art / design",
+        "ഇനി തുടങ്ങാൻ ആലോചിക്കുന്നു",
+      ],
+    },
+    {
+      key: "current_stage",
+      label: "ഇപ്പോൾ നിങ്ങൾ ഏത് stage-ൽ ആണ്?",
+      type: "choice",
+      options: [
+        "ഇപ്പോൾ തുടങ്ങുന്നു",
+        "Art ചെയ്യുന്നു, പക്ഷേ consistent ആയി sell ആകുന്നില്ല",
+        "കുറച്ച് artworks sell ചെയ്യുന്നു",
+        "Students/customers ഉണ്ട്, scale ചെയ്യണം",
+        "Audience ഉണ്ട്, monetize ചെയ്യാൻ അറിയില്ല",
       ],
     },
     {
       key: "biggest_challenge",
-      label: "What is your biggest challenge right now?",
+      label: "ഇപ്പോൾ ഏറ്റവും വലിയ challenge എന്താണ്?",
       type: "choice",
       options: [
-        "Getting customers",
-        "Creating content",
+        "Customers കിട്ടുന്നില്ല",
+        "Content create ചെയ്യാൻ അറിയില്ല",
         "Instagram growth",
-        "Selling artworks",
-        "Getting students",
+        "Artwork sell ചെയ്യാൻ",
+        "Students കിട്ടാൻ",
         "Pricing",
-        "Ads",
-        "Building a funnel",
-        "WhatsApp automation",
-        "Creating an online course",
-        "Other",
+        "Ads / marketing",
+        "Funnel & automation",
       ],
     },
     {
-      key: "desired_support",
-      label: "What are you looking for?",
+      key: "spend_ready",
+      label:
+        "മാസം ₹1,00,000 income ഉണ്ടാക്കാൻ പറ്റുന്ന ഒരു system കിട്ടുമെങ്കിൽ, അതിനുവേണ്ടി ഒറ്റത്തവണ എത്ര invest ചെയ്യാൻ തയ്യാറാണ്?",
       type: "choice",
       options: [
-        "I only want the course",
-        "I want guidance",
-        "I want personal support",
-        "I want help implementing the system",
+        "₹5,000 വരെ",
+        "₹5,000 – ₹15,000",
+        "₹15,000 – ₹50,000",
+        "Result ഉറപ്പാണെങ്കിൽ ₹1,00,000 വരെ",
       ],
     },
     {
-      key: "seriousness",
-      label: "How serious are you about implementing this system?",
+      key: "age_range",
+      label: "നിങ്ങളുടെ age?",
       type: "choice",
-      options: [
-        "Just exploring",
-        "I want to start soon",
-        "I am ready to implement",
-        "I want someone to guide me personally",
-      ],
+      options: ["18 – 24", "25 – 34", "35 – 44", "45+"],
+    },
+    {
+      key: "work_place",
+      label: "നിങ്ങൾ എവിടെ നിന്നാണ് work ചെയ്യുന്നത്? (district / city)",
+      type: "text",
+    },
+    { key: "name", label: "നിങ്ങളുടെ പേര്", type: "text" },
+    { key: "email", label: "Email", type: "text" },
+    {
+      key: "whatsapp",
+      label: "WhatsApp number — ഞാൻ ഇവിടെ personally reply ചെയ്യും",
+      type: "text",
     },
   ] as SupportStep[],
-  submit: "CONTINUE",
+  submit: "അയക്കാം",
 };
+
 
 export const salesPage = {
   headline: "Information കിട്ടുന്നത് പ്രശ്നമല്ല. Implementation ആണ് challenge.",
