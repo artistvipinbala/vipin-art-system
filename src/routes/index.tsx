@@ -62,21 +62,23 @@ function LandingPage() {
   return (
     <main className="flex min-h-screen flex-col bg-background">
       <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-5 py-6 sm:px-6 sm:py-10">
-        {/* Top block — headline first, then the video */}
-        <header className="pt-2 text-center">
+        {/* First screen — headline + video, vertically centred */}
+        <div className="flex min-h-[calc(100svh-3rem)] flex-col justify-center">
+        <header className="text-center">
           <p className="text-[0.68rem] font-bold tracking-[0.18em] text-primary uppercase">
             {pageTop.eyebrow}
           </p>
-          <h1 className="text-mal mx-auto mt-4 max-w-2xl text-[1.4rem] leading-[1.3] font-extrabold sm:text-[2rem]">
+          <h1 className="text-mal mx-auto mt-3 max-w-2xl text-[1.25rem] leading-[1.3] font-extrabold sm:text-[2rem]">
             {pageTop.headline}
           </h1>
-          <p className="text-mal mx-auto mt-4 max-w-2xl text-[0.85rem] leading-relaxed text-muted-foreground sm:text-base">
+          <p className="text-mal mx-auto mt-3 max-w-2xl text-[0.82rem] leading-relaxed text-muted-foreground sm:text-base">
             {pageTop.sub}
           </p>
         </header>
 
         {/* Video sits in the centre of the first screen */}
-        <div className="flex flex-1 flex-col justify-center py-6">
+        <div className="flex flex-col justify-center py-5">
+
           <div className="text-center">
             <p className="text-[0.62rem] font-bold tracking-[0.16em] text-primary uppercase">
               {vsl.eyebrow}
