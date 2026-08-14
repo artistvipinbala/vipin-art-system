@@ -1,9 +1,11 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 
+import { QuickIntake } from "@/components/funnel/QuickIntake";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { brand, media, pageTop, vsl } from "@/content/funnel";
 import { track } from "@/lib/track";
+
 
 const title = "Artwork & Art Class Sales System — Artist Vipin Bala";
 const description =
@@ -26,6 +28,7 @@ export const Route = createFileRoute("/")({
 function LandingPage() {
   const navigate = useNavigate();
   const [unlocked, setUnlocked] = useState(false);
+  const [showIntake, setShowIntake] = useState(false);
 
   useEffect(() => {
     track("landing_page_visit");
@@ -40,8 +43,21 @@ function LandingPage() {
     } catch {
       /* ignore */
     }
-    void navigate({ to: "/personal-support" });
+    // Ask the short intake questions here, before the offer page.
+    try {
+      if (window.localStorage.getItem("avb_intake_done") === "1") {
+        void navigate({ to: "/personal-support" });
+        return;
+      }
+    } catch {
+      /* ignore */
+    }
+    setShowIntake(true);
+    window.setTimeout(() => {
+      document.getElementById("intake")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   };
+
 
   return (
     <main className="flex min-h-screen flex-col bg-background">
@@ -94,7 +110,7 @@ function LandingPage() {
         </div>
 
         {/* Appears only after the video has been watched */}
-        {unlocked ? (
+        {unlocked && !showIntake ? (
           <section className="mt-12 rounded-3xl border border-border/70 bg-gradient-card p-6 text-center shadow-card sm:p-8">
             <p className="text-mal text-base font-bold sm:text-lg">{vsl.reveal.line1}</p>
             <p className="text-mal mt-3 text-sm text-muted-foreground sm:text-base">
@@ -110,6 +126,20 @@ function LandingPage() {
             <p className="text-mal mt-3 text-xs text-muted-foreground">{vsl.reveal.note}</p>
           </section>
         ) : null}
+
+        {/* The 5 short questions — asked before the offer page opens */}
+        {showIntake ? (
+          <section id="intake" className="mt-12">
+            <QuickIntake
+              onDone={() => {
+                window.setTimeout(() => {
+                  void navigate({ to: "/personal-support" });
+                }, 900);
+              }}
+            />
+          </section>
+        ) : null}
+
 
         <footer className="pt-10 text-center text-xs text-muted-foreground/70">
           © {new Date().getFullYear()} {brand.name}
