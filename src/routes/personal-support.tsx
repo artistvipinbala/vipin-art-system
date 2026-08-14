@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { ComparisonTable } from "@/components/funnel/ComparisonTable";
 import { CostOfAlone } from "@/components/funnel/CostOfAlone";
@@ -37,8 +37,6 @@ export const Route = createFileRoute("/personal-support")({
 });
 
 function PersonalSupportPage() {
-  const [applied, setApplied] = useState(false);
-
   useEffect(() => {
     track("support_page_visit");
   }, []);
@@ -185,7 +183,7 @@ function PersonalSupportPage() {
           തന്നാൽ ഞാൻ personally നോക്കി WhatsApp-ൽ reply ചെയ്യും.
         </Lead>
         <div className="mt-6">
-          {applied ? null : <SupportForm onDone={() => setApplied(true)} />}
+          <SupportForm onDone={() => undefined} />
         </div>
       </Section>
 
