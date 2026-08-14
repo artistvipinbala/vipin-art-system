@@ -110,7 +110,7 @@ function LandingPage() {
         </div>
 
         {/* Appears only after the video has been watched */}
-        {unlocked ? (
+        {unlocked && !showIntake ? (
           <section className="mt-12 rounded-3xl border border-border/70 bg-gradient-card p-6 text-center shadow-card sm:p-8">
             <p className="text-mal text-base font-bold sm:text-lg">{vsl.reveal.line1}</p>
             <p className="text-mal mt-3 text-sm text-muted-foreground sm:text-base">
@@ -126,6 +126,20 @@ function LandingPage() {
             <p className="text-mal mt-3 text-xs text-muted-foreground">{vsl.reveal.note}</p>
           </section>
         ) : null}
+
+        {/* The 5 short questions — asked before the offer page opens */}
+        {showIntake ? (
+          <section id="intake" className="mt-12">
+            <QuickIntake
+              onDone={() => {
+                window.setTimeout(() => {
+                  void navigate({ to: "/personal-support" });
+                }, 900);
+              }}
+            />
+          </section>
+        ) : null}
+
 
         <footer className="pt-10 text-center text-xs text-muted-foreground/70">
           © {new Date().getFullYear()} {brand.name}
