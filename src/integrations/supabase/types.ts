@@ -76,40 +76,55 @@ export type Database = {
       }
       support_applications: {
         Row: {
+          age_range: string | null
+          art_type: string | null
           biggest_challenge: string | null
           created_at: string
           current_stage: string | null
           desired_support: string | null
+          email: string | null
           id: string
           lead_id: string | null
           name: string
           seriousness: string | null
+          spend_ready: string | null
           status: string
           whatsapp_number: string
+          work_place: string | null
         }
         Insert: {
+          age_range?: string | null
+          art_type?: string | null
           biggest_challenge?: string | null
           created_at?: string
           current_stage?: string | null
           desired_support?: string | null
+          email?: string | null
           id?: string
           lead_id?: string | null
           name: string
           seriousness?: string | null
+          spend_ready?: string | null
           status?: string
           whatsapp_number: string
+          work_place?: string | null
         }
         Update: {
+          age_range?: string | null
+          art_type?: string | null
           biggest_challenge?: string | null
           created_at?: string
           current_stage?: string | null
           desired_support?: string | null
+          email?: string | null
           id?: string
           lead_id?: string | null
           name?: string
           seriousness?: string | null
+          spend_ready?: string | null
           status?: string
           whatsapp_number?: string
+          work_place?: string | null
         }
         Relationships: [
           {
