@@ -1,41 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 
-import { Footer } from "@/components/funnel/Footer";
-import {
-  AboutVipin,
-  AudienceSection,
-  IncomeStreams,
-  LearnList,
-  Mechanism,
-  PainSection,
-  Transformation,
-} from "@/components/funnel/LandingSections";
-import { PricingCards } from "@/components/funnel/PricingCards";
-import { ProofSection } from "@/components/funnel/ProofSection";
-import { Eyebrow, Lead, Section, SectionHeading } from "@/components/funnel/Section";
-import { Testimonials } from "@/components/funnel/Testimonials";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  landingFaqs,
-  landingFinalCta,
-  media,
-  offerIntro,
-  salesHero,
-  vsl,
-  vslSection,
-} from "@/content/funnel";
+import { brand, media, vsl } from "@/content/funnel";
 import { track } from "@/lib/track";
 
-const title = "Art Income Training (Malayalam) — Artist Vipin Bala";
+const title = "Artwork & Art Class Sales System — Artist Vipin Bala";
 const description =
-  "നിങ്ങളുടെ Drawing, Painting, Craft അല്ലെങ്കിൽ Teaching skill ഉപയോഗിച്ച് artwork sales, art classes, workshops, products വഴി income ഉണ്ടാക്കാനുള്ള practical system — free Malayalam training.";
+  "ഞാൻ എന്റെ artwork-കളും art class-കളും എങ്ങനെ sell ചെയ്യുന്നു — ആ full system ഒരു video-യിൽ open ആയി. Webinar അല്ല, registration വേണ്ട.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,59 +23,44 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-function scrollToOffer() {
-  document.getElementById("offer")?.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-function CtaButton({ label, onClick }: { label: string; onClick: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="text-mal inline-flex min-h-14 w-full items-center justify-center rounded-full bg-gradient-gold px-8 text-sm font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 active:scale-[0.99] sm:w-auto sm:text-base"
-    >
-      {label}
-    </button>
-  );
-}
-
 function LandingPage() {
-  const [watched, setWatched] = useState(false);
+  const navigate = useNavigate();
+  const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
     track("landing_page_visit");
   }, []);
 
-  const onGateReached = useCallback(() => setWatched(true), []);
+  const onGateReached = useCallback(() => setUnlocked(true), []);
 
-  const goOffer = () => {
-    track("course_purchase_click");
-    scrollToOffer();
+  const goNext = () => {
+    track("personal_support_click");
+    try {
+      window.sessionStorage.setItem("vb_from_video", "1");
+    } catch {
+      /* ignore */
+    }
+    void navigate({ to: "/personal-support" });
   };
 
   return (
-    <main className="bg-background">
-      {/* ---------------- HERO + VSL ---------------- */}
-      <section className="border-b border-border/60 px-5 pt-8 pb-14 sm:px-8 sm:pt-12 sm:pb-20">
-        <div className="mx-auto w-full max-w-3xl">
-          <p className="text-center text-[0.65rem] font-bold tracking-[0.2em] text-primary uppercase sm:text-xs">
-            {salesHero.eyebrow}
-          </p>
-          <h1 className="text-mal mx-auto mt-4 max-w-2xl text-center text-[1.25rem] leading-[1.35] font-bold sm:text-[1.75rem]">
-            {salesHero.headline}
-          </h1>
-          <p className="text-mal mx-auto mt-4 max-w-2xl text-center text-[0.85rem] leading-relaxed text-muted-foreground sm:text-base">
-            {salesHero.support}
-          </p>
+    <main className="flex min-h-screen flex-col bg-background">
+      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-5 py-6 sm:px-6 sm:py-10">
+        {/* Minimal brand line — no navigation, no distractions */}
+        <p className="text-center text-[0.65rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
+          {brand.name}
+        </p>
 
-          <div className="mt-9 text-center">
+        {/* Video sits in the centre of the first screen */}
+        <div className="flex flex-1 flex-col justify-center py-6">
+          <header className="text-center">
             <p className="text-[0.62rem] font-bold tracking-[0.16em] text-primary uppercase">
-              {vslSection.eyebrow}
+              {vsl.eyebrow}
             </p>
-            <h2 className="text-mal mx-auto mt-3 max-w-2xl text-base leading-snug font-bold sm:text-xl">
-              {vslSection.headline}
-            </h2>
-          </div>
+            <h1 className="text-mal mx-auto mt-3 max-w-2xl text-[1.15rem] leading-[1.35] font-bold sm:text-[1.5rem]">
+              {vsl.headline}
+            </h1>
+          </header>
 
           <div className="mt-5 rounded-[1.75rem] bg-gradient-gold p-[2px] shadow-glow">
             <div className="overflow-hidden rounded-[1.65rem] bg-background">
@@ -116,76 +73,39 @@ function LandingPage() {
             </div>
           </div>
 
-          <p className="text-mal mx-auto mt-4 max-w-2xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
-            {vslSection.sub}
+          <p className="mt-3 text-center text-[0.7rem] tracking-wide text-muted-foreground/70">
+            {vsl.duration}
           </p>
-
-          <div className="mt-6 text-center">
-            <CtaButton label={vslSection.cta} onClick={goOffer} />
-            {watched ? (
-              <p className="text-mal mt-3 text-xs text-muted-foreground">{vsl.reveal.note}</p>
-            ) : null}
-          </div>
+          <p className="text-mal mx-auto mt-3 max-w-2xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
+            {vsl.sub}
+          </p>
+          <p className="text-mal mx-auto mt-2 max-w-2xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
+            {vsl.belowVideo}
+          </p>
         </div>
-      </section>
 
-      <PainSection />
-      <IncomeStreams />
-      <Mechanism />
-      <LearnList />
-      <AudienceSection />
-      <AboutVipin />
+        {/* Appears only after the video has been watched */}
+        {unlocked ? (
+          <section className="mt-12 rounded-3xl border border-border/70 bg-gradient-card p-6 text-center shadow-card sm:p-8">
+            <p className="text-mal text-base font-bold sm:text-lg">{vsl.reveal.line1}</p>
+            <p className="text-mal mt-3 text-sm text-muted-foreground sm:text-base">
+              {vsl.reveal.line2}
+            </p>
+            <button
+              type="button"
+              onClick={goNext}
+              className="text-mal mt-7 inline-flex min-h-14 w-full items-center justify-center rounded-full bg-gradient-gold px-8 text-sm font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:w-auto sm:text-base"
+            >
+              {vsl.reveal.cta}
+            </button>
+            <p className="text-mal mt-3 text-xs text-muted-foreground">{vsl.reveal.note}</p>
+          </section>
+        ) : null}
 
-      {/* SOCIAL PROOF — placeholder slots until real screenshots/testimonials exist */}
-      <ProofSection />
-      <Testimonials />
-
-      <Transformation />
-
-      {/* ---------------- OFFER ---------------- */}
-      <Section id="offer" tone="surface">
-        <Eyebrow>{offerIntro.eyebrow}</Eyebrow>
-        <SectionHeading>{offerIntro.headline}</SectionHeading>
-        <Lead>{offerIntro.sub}</Lead>
-        <div className="mt-8">
-          <PricingCards />
-        </div>
-      </Section>
-
-      {/* ---------------- FAQ ---------------- */}
-      <Section>
-        <SectionHeading>FAQ</SectionHeading>
-        <div className="mt-6">
-          <Accordion type="single" collapsible className="w-full">
-            {landingFaqs.map((f, i) => (
-              <AccordionItem key={f.q} value={`lf-${i}`}>
-                <AccordionTrigger className="text-mal text-left text-sm font-semibold sm:text-base">
-                  {f.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-mal text-sm text-muted-foreground sm:text-base">
-                  {f.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </Section>
-
-      {/* ---------------- FINAL CTA ---------------- */}
-      <Section className="text-center">
-        <SectionHeading className="mx-auto max-w-2xl">{landingFinalCta.headline}</SectionHeading>
-        <p className="text-mal mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
-          {landingFinalCta.sub}
-        </p>
-        <div className="mt-8">
-          <CtaButton label={landingFinalCta.cta} onClick={goOffer} />
-        </div>
-        <p className="text-mal mx-auto mt-3 max-w-xl text-xs text-muted-foreground">
-          {landingFinalCta.micro}
-        </p>
-      </Section>
-
-      <Footer />
+        <footer className="pt-10 text-center text-xs text-muted-foreground/70">
+          © {new Date().getFullYear()} {brand.name}
+        </footer>
+      </div>
     </main>
   );
 }
