@@ -4,24 +4,24 @@ import { useEffect } from "react";
 
 import { ComparisonTable } from "@/components/funnel/ComparisonTable";
 import { CostOfAlone } from "@/components/funnel/CostOfAlone";
+import { EduCompare } from "@/components/funnel/EduCompare";
 import { Footer } from "@/components/funnel/Footer";
 import { Guarantee } from "@/components/funnel/Guarantee";
-import { Navbar } from "@/components/funnel/Navbar";
+import { Letter } from "@/components/funnel/Letter";
 import { PricingCards } from "@/components/funnel/PricingCards";
 import { ProofSection } from "@/components/funnel/ProofSection";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
-import { Eyebrow, Lead, Section, SectionHeading } from "@/components/funnel/Section";
+import { Lead, Section, SectionHeading } from "@/components/funnel/Section";
 import { SpecialOffer } from "@/components/funnel/SpecialOffer";
 import { SupportForm } from "@/components/funnel/SupportForm";
 import { Testimonials } from "@/components/funnel/Testimonials";
 import { ValueStack } from "@/components/funnel/ValueStack";
-import { VideoFrame } from "@/components/funnel/VideoSection";
-import { intake, media, salesPage, whoFor } from "@/content/funnel";
+import { brand, intake, offers, whoFor } from "@/content/funnel";
 import { track } from "@/lib/track";
 
-const title = "Personal Support — Artist Income System | Vipin Bala";
+const title = "Artist Income System — ₹5,999 | Artist Vipin Bala";
 const description =
-  "Implementation ആണ് challenge. Direct guidance-ഓടെ artist income system faster ആയി implement ചെയ്യാൻ optional personal support option.";
+  "എല്ലാ courses-ഉം weekly live class-ഉം WhatsApp support-ഉം lifetime access-ഉം ചേർന്ന full bundle — ₹5,999. ഒരു artist-ന് വേണ്ടി തയ്യാറാക്കിയത്.";
 
 export const Route = createFileRoute("/personal-support")({
   head: () => ({
@@ -44,93 +44,71 @@ function PersonalSupportPage() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
+      {/* Quiet header — no nav, no distractions */}
+      <div className="border-b border-border/50 px-5 py-5 text-center sm:px-8">
+        <p className="text-[0.7rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
+          {brand.name}
+        </p>
+      </div>
 
+      {/* PERSONAL LETTER */}
       <Section tone="surface">
-        <Eyebrow>Optional Personal Support</Eyebrow>
-        <SectionHeading>{salesPage.headline}</SectionHeading>
-        <Lead>{salesPage.sub}</Lead>
-
-        {/* Extra offer — revealed only on this page, never on the video page */}
-        <div className="mt-8">
-          <SpecialOffer />
-        </div>
-
-        <div className="mt-8">
-          <a
-            href="#offers"
-            className="inline-flex min-h-13 w-full items-center justify-center rounded-full bg-gradient-gold px-8 text-sm font-bold tracking-wide text-primary-foreground shadow-glow sm:w-auto"
-          >
-            SEE OPTIONS & PRICING
-          </a>
-        </div>
+        <Letter />
       </Section>
 
-      {/* SHORT EXPLAINER VIDEO */}
-      <Section>
-        <SectionHeading className="text-xl sm:text-2xl">
-          Personal Support എന്താണ് — ഒരു short video
-        </SectionHeading>
-        <div className="mt-6">
-          <VideoFrame
-            embedUrl={media.supportVideoEmbedUrl}
-            placeholderLabel={media.supportVideoPlaceholder}
-          />
-        </div>
-        <div className="mt-6 rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
-          <p className="text-sm font-bold tracking-wide text-muted-foreground uppercase">
-            In this video, Vipin explains
-          </p>
-          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-            {salesPage.videoOutline.map((item) => (
-              <li key={item} className="flex gap-2 text-sm">
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Section>
-
-      {/* COST OF DOING IT ALONE */}
+      {/* WHAT HAPPENS WHEN YOU DO IT ALONE */}
       <CostOfAlone />
+
+      {/* THE HONEST MATH: normal education vs starting today */}
+      <Section>
+        <EduCompare />
+      </Section>
 
       {/* PROOF */}
       <ProofSection />
       <Testimonials />
 
-      {/* VALUE ANCHOR + PRICE */}
-      <Section id="offers">
+      {/* BUNDLE VALUE → PRICE */}
+      <Section id="offers" tone="surface">
         <SectionHeading className="text-xl sm:text-2xl">
-          ഇതിന്റെ യഥാർത്ഥ value എത്രയാണ്?
+          ഇതിനുള്ളിൽ എന്തൊക്കെയുണ്ട്
         </SectionHeading>
         <div className="mt-8">
           <ValueStack />
         </div>
-        <div className="mt-12">
+
+        <div className="mt-14">
           <SectionHeading className="text-xl sm:text-2xl">
-            നിങ്ങൾക്ക് രണ്ട് options ഉണ്ട്
+            ഒരു price. എല്ലാ support-ഉം ഉള്ളിൽ.
           </SectionHeading>
+          <Lead>
+            ഇതിൽ options ഇല്ല, upsell ഇല്ല. {offers.everything.price} — അതിൽ എല്ലാം ഉണ്ട്.
+          </Lead>
           <div className="mt-8">
             <PricingCards />
           </div>
-          <p className="text-mal mt-5 text-xs text-muted-foreground">
-            {intake.limitLabel}: {intake.limit} · Next batch: {intake.nextBatch}
+          <p className="text-mal mt-5 text-center text-xs text-muted-foreground">
+            {intake.note}
           </p>
+        </div>
+      </Section>
+
+      {/* EXTRA FOR THOSE WHO START NOW — only on this page */}
+      <Section>
+        <div className="mx-auto max-w-2xl">
+          <SpecialOffer />
         </div>
       </Section>
 
       {/* RISK REVERSAL */}
       <Section tone="surface">
-        <div>
-          <Guarantee />
-        </div>
+        <Guarantee />
       </Section>
 
-      {/* COMPARISON */}
+      {/* ALONE VS WITH ME */}
       <Section>
         <SectionHeading className="text-xl sm:text-2xl">
-          ഒറ്റയ്ക്ക് vs Self-Paced vs Personal Support
+          ഒറ്റയ്ക്ക് ചെയ്യുന്നതും ഒപ്പം ഞാൻ ഉള്ളതും
         </SectionHeading>
         <div className="mt-6">
           <ComparisonTable />
@@ -139,7 +117,9 @@ function PersonalSupportPage() {
 
       {/* WHO IS THIS FOR */}
       <Section tone="surface">
-        <SectionHeading className="text-xl sm:text-2xl">Who is this for?</SectionHeading>
+        <SectionHeading className="text-xl sm:text-2xl">
+          ഇത് ആർക്കുവേണ്ടിയാണ്
+        </SectionHeading>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card">
             <p className="text-sm font-bold tracking-wide text-primary uppercase">
@@ -170,24 +150,25 @@ function PersonalSupportPage() {
         </div>
       </Section>
 
-      {/* OBJECTION HANDLING */}
+      {/* OBJECTIONS */}
       <Section>
         <SectionHeading className="text-xl sm:text-2xl">
-          വാങ്ങുന്നതിന് മുൻപ് സാധാരണ ചോദിക്കുന്ന ചോദ്യങ്ങൾ
+          മനസ്സിൽ വരുന്ന സ്വാഭാവിക സംശയങ്ങൾ
         </SectionHeading>
         <div className="mt-6">
           <PurchaseFaq />
         </div>
       </Section>
 
-      {/* APPLICATION FORM */}
+      {/* SOFT CONTACT — not a gate */}
       <Section id="apply" tone="surface">
         <SectionHeading className="text-xl sm:text-2xl">
-          Personal Support-ന് apply ചെയ്യാം
+          ഇനിയും ഒരു സംശയം ബാക്കിയുണ്ടോ?
         </SectionHeading>
         <Lead>
-          Batch limited ആയതുകൊണ്ട് നിങ്ങളുടെ situation ആദ്യം അറിയണം. ഈ ചോദ്യങ്ങൾക്ക് ഉത്തരം
-          തന്നാൽ ഞാൻ personally നോക്കി WhatsApp-ൽ reply ചെയ്യും.
+          വാങ്ങാൻ ഈ form പൂരിപ്പിക്കേണ്ട ആവശ്യമില്ല. നിങ്ങളുടെ situation എഴുതിയാൽ ഞാൻ personally
+          നോക്കി WhatsApp-ൽ സത്യസന്ധമായി reply ചെയ്യും — ഇത് നിങ്ങൾക്ക് ചേരില്ല എന്നാണെങ്കിൽ
+          അതും പറയും.
         </Lead>
         <div className="mt-6">
           <SupportForm onDone={() => undefined} />
