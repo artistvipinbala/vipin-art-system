@@ -128,9 +128,12 @@ function LandingPage() {
           </section>
         ) : null}
 
-        {/* The 5 short questions — asked before the offer page opens */}
-        {showIntake ? (
-          <section id="intake" className="mt-12">
+        {/* The 5 short questions — asked in a popup before the offer page opens */}
+        <Dialog open={showIntake} onOpenChange={setShowIntake}>
+          <DialogContent
+            showCloseButton
+            className="max-h-[92svh] w-[calc(100vw-1.5rem)] max-w-lg overflow-y-auto border-none bg-transparent p-0 shadow-none sm:max-w-lg"
+          >
             <QuickIntake
               onDone={() => {
                 window.setTimeout(() => {
@@ -138,8 +141,8 @@ function LandingPage() {
                 }, 900);
               }}
             />
-          </section>
-        ) : null}
+          </DialogContent>
+        </Dialog>
 
 
         <footer className="pt-10 text-center text-xs text-muted-foreground/70">
