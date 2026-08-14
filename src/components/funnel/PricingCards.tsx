@@ -6,93 +6,55 @@ import { PaymentModal } from "./PaymentModal";
 import { offers } from "@/content/funnel";
 import { track } from "@/lib/track";
 
+/** Single offer — ₹5,999 with everything included. */
 export function PricingCards() {
-  const [plan, setPlan] = useState<null | { name: string; price: string }>(null);
+  const [open, setOpen] = useState(false);
+  const plan = offers.everything;
 
   return (
     <>
-      <div className="grid gap-6 md:grid-cols-2">
-        <PlanCard
-          tag={offers.selfPaced.tag}
-          title={offers.selfPaced.title}
-          price={offers.selfPaced.price}
-          includes={offers.selfPaced.includes}
-          cta={`${offers.selfPaced.cta} — ${offers.selfPaced.price}`}
+      <div className="mx-auto max-w-2xl rounded-3xl border border-primary/60 bg-gradient-card p-6 shadow-glow sm:p-9">
+        <span className="text-mal text-xs font-bold tracking-[0.15em] text-primary uppercase">
+          {plan.tag}
+        </span>
+        <h3 className="text-mal mt-3 text-xl leading-snug font-bold sm:text-2xl">
+          {plan.title}
+        </h3>
+
+        <div className="mt-5 flex items-end gap-3">
+          <p className="text-4xl font-extrabold sm:text-5xl">{plan.price}</p>
+        </div>
+        <p className="text-mal mt-2 text-sm text-muted-foreground">{plan.priceNote}</p>
+
+        <ul className="mt-7 space-y-3">
+          {plan.includes.map((item) => (
+            <li key={item} className="text-mal flex gap-3 text-sm sm:text-base">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <CTAButton
+          className="text-mal mt-8 w-full"
           onClick={() => {
             track("course_purchase_click");
-            setPlan({ name: offers.selfPaced.title, price: offers.selfPaced.price });
+            setOpen(true);
           }}
-        />
-        <PlanCard
-          highlight
-          tag={offers.personal.tag}
-          title={offers.personal.title}
-          price={offers.personal.price}
-          includes={offers.personal.includes}
-          footnote={`Personal Support Duration: ${offers.supportDuration}`}
-          cta={`${offers.personal.cta} — ${offers.personal.price}`}
-          onClick={() => {
-            track("support_purchase_click");
-            setPlan({ name: offers.personal.title, price: offers.personal.price });
-          }}
-        />
+        >
+          {plan.cta}
+        </CTAButton>
+        <p className="text-mal mt-3 text-center text-xs text-muted-foreground">
+          {offers.supportDuration}
+        </p>
       </div>
+
       <PaymentModal
-        open={plan !== null}
-        onOpenChange={(open) => !open && setPlan(null)}
-        planName={plan?.name ?? ""}
-        price={plan?.price ?? ""}
+        open={open}
+        onOpenChange={setOpen}
+        planName={plan.title}
+        price={plan.price}
       />
     </>
-  );
-}
-
-function PlanCard({
-  tag,
-  title,
-  price,
-  includes,
-  cta,
-  onClick,
-  footnote,
-  highlight,
-}: {
-  tag: string;
-  title: string;
-  price: string;
-  includes: string[];
-  cta: string;
-  onClick: () => void;
-  footnote?: string;
-  highlight?: boolean;
-}) {
-  return (
-    <div
-      className={
-        "bg-gradient-card flex flex-col rounded-3xl border p-6 sm:p-8 " +
-        (highlight ? "border-primary/70 shadow-glow" : "border-border shadow-card")
-      }
-    >
-
-      <span className="text-xs font-bold tracking-[0.15em] text-muted-foreground">{tag}</span>
-      <h3 className="text-mal mt-3 text-xl font-bold">{title}</h3>
-      <p className="mt-3 text-3xl font-extrabold">{price}</p>
-      <ul className="mt-6 flex-1 space-y-3">
-        {includes.map((item) => (
-          <li key={item} className="flex gap-3 text-sm text-muted-foreground">
-            <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-      {footnote ? <p className="mt-5 text-xs text-muted-foreground">{footnote}</p> : null}
-      <CTAButton
-        variant={highlight ? "primary" : "outline"}
-        className="mt-6 w-full"
-        onClick={onClick}
-      >
-        {cta}
-      </CTAButton>
-    </div>
   );
 }
