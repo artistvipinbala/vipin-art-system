@@ -29,7 +29,7 @@ export function VslPlayer({
       if (gateFired.current) return;
       gateFired.current = true;
       track("video_complete");
-      onGateReached();
+      onGateReached?.();
     }, gateSeconds * 1000);
     return () => window.clearTimeout(id);
   }, [started, gateSeconds, onGateReached]);
@@ -39,7 +39,7 @@ export function VslPlayer({
   useEffect(() => {
     if (embedUrl || gateFired.current) return;
     gateFired.current = true;
-    onGateReached();
+    onGateReached?.();
   }, [embedUrl, onGateReached]);
 
   if (!embedUrl) {
