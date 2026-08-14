@@ -12,13 +12,13 @@ import { track } from "@/lib/track";
 export function VslPlayer({
   embedUrl,
   placeholderLabel,
-  gateSeconds,
+  gateSeconds = 0,
   onGateReached,
 }: {
   embedUrl: string;
   placeholderLabel: string;
-  gateSeconds: number;
-  onGateReached: () => void;
+  gateSeconds?: number;
+  onGateReached?: () => void;
 }) {
   const [started, setStarted] = useState(false);
   const gateFired = useRef(false);
