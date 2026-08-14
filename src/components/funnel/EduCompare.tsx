@@ -4,7 +4,8 @@ import { eduCompare } from "@/content/funnel";
 
 /** Traditional education (lakhs + years) vs starting today. */
 export function EduCompare() {
-  const [normal, here] = eduCompare.rows;
+  const normal = eduCompare.rows[0]!;
+  const here = eduCompare.rows[1]!;
 
   return (
     <div>
