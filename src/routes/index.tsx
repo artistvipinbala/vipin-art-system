@@ -44,17 +44,10 @@ function LandingPage() {
     } catch {
       /* ignore */
     }
-    // Ask the short intake questions here, before the offer page.
-    try {
-      if (window.localStorage.getItem("avb_intake_done") === "1") {
-        void navigate({ to: "/personal-support" });
-        return;
-      }
-    } catch {
-      /* ignore */
-    }
+    // Ask the short intake questions here, in a popup, before the offer page.
     setShowIntake(true);
   };
+
 
 
   return (
