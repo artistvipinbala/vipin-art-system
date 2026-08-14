@@ -753,7 +753,7 @@ export const todayOffer = {
 export const quickIntake = {
   eyebrow: "1 മിനിറ്റ് · 5 ചോദ്യം",
   headline: "ഇത് നിങ്ങൾക്ക് ചേരുമോ എന്ന് അറിയാൻ ഇത്രമാത്രം മതി",
-  sub: "Payment ഇവിടെയില്ല. ഇത് പൂരിപ്പിച്ചാൽ നിങ്ങൾക്കുള്ള details-ഉം ഇന്നത്തെ rate-ഉം താഴെ തുറന്നു വരും.",
+  sub: "നിങ്ങൾ ഇപ്പോൾ എവിടെ നിൽക്കുന്നു എന്ന് അറിഞ്ഞാൽ മാത്രമേ ശരിയായ ഒരു direction പറഞ്ഞു തരാൻ എനിക്ക് പറ്റും.",
   placeholder: "തിരഞ്ഞെടുക്കൂ",
   labels: {
     name: "പേര്",
@@ -761,6 +761,7 @@ export const quickIntake = {
     email: "Email",
     work: "നിങ്ങൾ ഇപ്പോൾ എന്ത് ചെയ്യുന്നു?",
     problem: "ഇപ്പോൾ ഏറ്റവും വലിയ പ്രശ്നം എന്താണ്?",
+    commitment: "ഒരു കാര്യം തുറന്നു പറയാം",
   },
   workOptions: [
     "Art works ചെയ്യുന്നു / sell ചെയ്യുന്നു",
@@ -777,12 +778,20 @@ export const quickIntake = {
   ],
   otherOption: "മറ്റൊന്ന്",
   otherPlaceholder: "ഒരു വരിയിൽ എഴുതൂ",
+  /** Honest, non-pushy note about the small fee + a soft self-selection question. */
+  commitmentNote:
+    "ഇത് എന്റെ personal time കൂടി ചെലവാക്കുന്ന ഒരു dedicated support ആണ് — live classes, WhatsApp doubt support ഒക്കെ ഉള്ളതുകൊണ്ട് ഒരു ചെറിയ payment-ഓട് കൂടിയാണ് ഇത് വരുന്നത്. അതുകൊണ്ട് ശരിക്കും serious ആയവർ മാത്രം വന്നാൽ മതി.",
+  commitmentOptions: [
+    "അതെ — ചേരുന്ന കാര്യമാണെങ്കിൽ ഞാൻ ready ആണ്",
+    "ആദ്യം details അറിയണം, എന്നിട്ട് തീരുമാനിക്കാം",
+  ],
   submit: "അടുത്തത് കാണാം",
   error: "എല്ലാ ചോദ്യങ്ങളും പൂരിപ്പിക്കണം.",
   privacy: "ഈ വിവരങ്ങൾ ഞാൻ മാത്രം കാണും. Spam ഇല്ല.",
   successTitle: "കിട്ടി — thank you!",
-  successSub: "ഇനി താഴെ നിങ്ങൾക്ക് എന്ത് കിട്ടും, price എന്ത് എന്ന് നോക്കാം.",
+  successSub: "ഇനി താഴെ നിങ്ങൾക്ക് എന്ത് കിട്ടും എന്ന് നോക്കാം.",
 };
+
 
 /** Top-of-page block shown above the VSL headline on the first screen. */
 export const pageTop = {
