@@ -8,6 +8,7 @@ import { EduCompare } from "@/components/funnel/EduCompare";
 import { Footer } from "@/components/funnel/Footer";
 import { Guarantee } from "@/components/funnel/Guarantee";
 import { Letter } from "@/components/funnel/Letter";
+import { OfferCountdown } from "@/components/funnel/OfferCountdown";
 import { PricingCards } from "@/components/funnel/PricingCards";
 import { ProofSection } from "@/components/funnel/ProofSection";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
@@ -181,7 +182,12 @@ function PersonalSupportPage() {
           അതും പറയും.
         </Lead>
         <div className="mt-6">
-          <SupportForm onDone={() => undefined} />
+          <SupportForm
+            onDone={() => undefined}
+            onSkip={() =>
+              document.getElementById("offers")?.scrollIntoView({ behavior: "smooth" })
+            }
+          />
         </div>
       </Section>
 
