@@ -18,6 +18,7 @@ import { SupportForm } from "@/components/funnel/SupportForm";
 import { Testimonials } from "@/components/funnel/Testimonials";
 import { ValueStack } from "@/components/funnel/ValueStack";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
+import { WhyPayment } from "@/components/funnel/WhyPayment";
 import { brand, intake, offers, whoFor } from "@/content/funnel";
 import { track } from "@/lib/track";
 
@@ -61,6 +62,11 @@ function PersonalSupportPage() {
       {/* WHY I SHARE THIS OPENLY — my real intention */}
       <Section>
         <WhyIShare />
+      </Section>
+
+      {/* WHY THERE IS A PRICE AT ALL */}
+      <Section tone="surface">
+        <WhyPayment />
       </Section>
 
       {/* WHAT HAPPENS WHEN YOU DO IT ALONE */}
