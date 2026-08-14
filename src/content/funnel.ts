@@ -35,7 +35,7 @@ export const hero = {
   support:
     "2 മണിക്കൂർ webinar അല്ല. അവസാനം വരുന്ന sales pitch ഉം അല്ല. ഏകദേശം 30–40 മിനിറ്റിൽ ഞാൻ personally ഉപയോഗിക്കുന്ന income system എങ്ങനെ work ചെയ്യുന്നു എന്ന് open ആയി കാണിച്ചുതരുന്ന practical training.",
   trust: ["No Hard Sales Pitch", "No Hidden Content", "Real Process", "Practical Training"],
-  cta: "FREE CLASS കാണാം",
+  cta: "WATCH FREE CLASS",
   note: "Watch the training first. Decide what you want to do afterwards.",
 };
 
@@ -287,7 +287,7 @@ export const supportForm = {
       type: "text",
     },
   ] as SupportStep[],
-  submit: "അയക്കാം",
+  submit: "SUBMIT",
 };
 
 
@@ -328,7 +328,7 @@ export const offers = {
       "പുതിയ course-കളും updates-ഉം extra payment ഇല്ലാതെ",
       "Artist community access",
     ],
-    cta: "അകത്തേക്ക് വരാം — ₹5,999",
+    cta: "JOIN NOW — ₹5,999",
   },
   /** Doing it alone vs coming in with me. Two columns only. */
   comparison: [
@@ -700,7 +700,7 @@ export const vsl = {
     line1: "ഇത് നിങ്ങൾക്ക് സ്വയം ചെയ്യാം. തീർച്ചയായും പറ്റും.",
     line2:
       "പക്ഷേ ഓരോ step-ഉം detail ആയി, നിങ്ങളുടെ situation നോക്കി, quickly ചെയ്തെടുക്കണം എന്നുണ്ടെങ്കിൽ — ഞാൻ personally കൂടെ നിൽക്കുന്ന ഒരു option ഉണ്ട്.",
-    cta: "എന്റെ Personal Support എങ്ങനെ എന്ന് നോക്കാം",
+    cta: "SEE PERSONAL SUPPORT",
     note: "ഒരു നിർബന്ധവുമില്ല. Details നോക്കിയിട്ട് നിങ്ങൾ തന്നെ തീരുമാനിക്കാം.",
   },
 };
@@ -741,7 +741,7 @@ export const todayOffer = {
     body: "പക്ഷേ വഴി അടഞ്ഞില്ല. Personal support-ഓടെ ഇത് normal ആയി ₹12,000 – ₹15,000 ആണ്. അതിലും join ചെയ്യാം — same course, same live class, same WhatsApp support.",
     priceLabel: "Regular price",
     price: "₹12,000 – ₹15,000",
-    cta: "Regular rate-ൽ join ചെയ്യാം",
+    cta: "JOIN AT REGULAR RATE",
     soft: "ഇന്ന് നിങ്ങൾ video മുഴുവൻ കണ്ടിട്ടും timer തീർന്നു പോയതാണെങ്കിൽ, WhatsApp-ൽ ഒരു message അയക്കൂ — ഞാൻ നേരിട്ട് നോക്കാം.",
   },
 };
@@ -754,7 +754,7 @@ export const quickIntake = {
   eyebrow: "1 മിനിറ്റ് · 5 ചോദ്യം",
   headline: "ഇത് നിങ്ങൾക്ക് ചേരുമോ എന്ന് അറിയാൻ ഇത്രമാത്രം മതി",
   sub: "നിങ്ങൾ ഇപ്പോൾ എവിടെ നിൽക്കുന്നു എന്ന് അറിഞ്ഞാൽ മാത്രമേ ശരിയായ ഒരു direction പറഞ്ഞു തരാൻ എനിക്ക് പറ്റും.",
-  placeholder: "തിരഞ്ഞെടുക്കൂ",
+  placeholder: "Select",
   labels: {
     name: "പേര്",
     whatsapp: "WhatsApp number",
@@ -785,7 +785,7 @@ export const quickIntake = {
     "അതെ — ചേരുന്ന കാര്യമാണെങ്കിൽ ഞാൻ ready ആണ്",
     "ആദ്യം details അറിയണം, എന്നിട്ട് തീരുമാനിക്കാം",
   ],
-  submit: "അടുത്തത് കാണാം",
+  submit: "NEXT",
   error: "എല്ലാ ചോദ്യങ്ങളും പൂരിപ്പിക്കണം.",
   privacy: "ഈ വിവരങ്ങൾ ഞാൻ മാത്രം കാണും. Spam ഇല്ല.",
   successTitle: "കിട്ടി — thank you!",
