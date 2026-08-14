@@ -110,6 +110,7 @@ function LandingPage() {
             {vsl.belowVideo}
           </p>
         </div>
+        </div>
 
         {/* Appears only after the video has been watched */}
         {unlocked && !showIntake ? (
