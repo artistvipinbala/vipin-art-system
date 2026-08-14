@@ -24,6 +24,7 @@ type Values = {
   work: string;
   problem: string;
   problem_other: string;
+  commitment: string;
 };
 
 const empty: Values = {
@@ -33,6 +34,7 @@ const empty: Values = {
   work: "",
   problem: "",
   problem_other: "",
+  commitment: "",
 };
 
 /**
@@ -69,14 +71,16 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
       email: values.email,
       whatsapp_number: values.whatsapp,
       art_type: values.work,
-      biggest_challenge: challenge,
+      biggest_challenge: values.commitment
+        ? `${challenge} | Ready: ${values.commitment}`
+        : challenge,
       ...getCampaignParams(),
     });
     if (!parsed.success) {
       setError(parsed.error.issues[0]?.message ?? copy.error);
       return;
     }
-    if (!values.work || !challenge.trim()) {
+    if (!values.work || !challenge.trim() || !values.commitment) {
       setError(copy.error);
       return;
     }
@@ -219,6 +223,31 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
             maxLength={200}
           />
         ) : null}
+      </div>
+
+      <div className="mt-6 rounded-2xl border border-primary/30 bg-primary/5 p-4">
+        <p className="text-mal text-sm font-semibold">{copy.labels.commitment}</p>
+        <p className="text-mal mt-2 text-xs leading-relaxed text-muted-foreground">
+          {copy.commitmentNote}
+        </p>
+        <div className="mt-3 space-y-2">
+          {copy.commitmentOptions.map((option) => (
+            <label
+              key={option}
+              className="text-mal flex cursor-pointer items-start gap-2.5 rounded-xl border border-border bg-card p-3 text-xs leading-relaxed"
+            >
+              <input
+                type="radio"
+                name="commitment"
+                value={option}
+                checked={values.commitment === option}
+                onChange={() => set("commitment")(option)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[hsl(var(--primary))]"
+              />
+              <span>{option}</span>
+            </label>
+          ))}
+        </div>
       </div>
 
       {error ? (
