@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { QuickIntake } from "@/components/funnel/QuickIntake";
 import { ResultsSection } from "@/components/funnel/ResultsSection";
@@ -29,15 +29,11 @@ export const Route = createFileRoute("/")({
 
 function LandingPage() {
   const navigate = useNavigate();
-  const [unlocked, setUnlocked] = useState(false);
-  void unlocked;
   const [showIntake, setShowIntake] = useState(false);
 
   useEffect(() => {
     track("landing_page_visit");
   }, []);
-
-  const onGateReached = useCallback(() => setUnlocked(true), []);
 
   const goNext = () => {
     track("personal_support_click");
@@ -91,8 +87,6 @@ function LandingPage() {
               <VslPlayer
                 embedUrl={media.trainingVideoEmbedUrl}
                 placeholderLabel={media.trainingVideoPlaceholder}
-                gateSeconds={vsl.gateSeconds}
-                onGateReached={onGateReached}
               />
             </div>
           </div>
