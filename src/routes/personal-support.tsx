@@ -51,8 +51,8 @@ function PersonalSupportPage() {
 
       {/* 1 — VIDEO FIRST */}
       <div className="mx-auto w-full max-w-3xl px-5 pt-7 sm:px-6 sm:pt-10">
-        <div className="rounded-[1.75rem] bg-gradient-gold p-[2px] shadow-glow">
-          <div className="overflow-hidden rounded-[1.65rem] bg-background">
+        <div className="surface-ink rounded-[1.5rem] border border-border p-2 shadow-card sm:p-3">
+          <div className="overflow-hidden rounded-[1.15rem]">
             <VslPlayer
               embedUrl={media.supportVideoEmbedUrl}
               placeholderLabel={media.supportVideoPlaceholder}
