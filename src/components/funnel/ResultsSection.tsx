@@ -1,8 +1,24 @@
-import { Instagram, Play } from "lucide-react";
+import { Play } from "lucide-react";
 import { useState } from "react";
 
 import proudVideo from "@/assets/proud-moment.mp4.asset.json";
-import { results } from "@/content/funnel";
+import { results, vsl } from "@/content/funnel";
+
+function SupportCta({ onClick }: { onClick?: () => void }) {
+  if (!onClick) return null;
+  return (
+    <div className="mt-8 text-center">
+      <button
+        type="button"
+        onClick={onClick}
+        className="text-mal inline-flex min-h-13 w-full items-center justify-center rounded-full bg-gradient-gold px-7 text-[0.8rem] font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:w-auto sm:text-sm"
+      >
+        {vsl.reveal.cta}
+      </button>
+      <p className="text-mal mt-2 text-[0.7rem] text-muted-foreground">{vsl.reveal.note}</p>
+    </div>
+  );
+}
 
 function Gallery({ items }: { items: { src: string; label: string }[] }) {
   return (
