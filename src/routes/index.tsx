@@ -125,7 +125,7 @@ function LandingPage() {
             <button
               type="button"
               onClick={goNext}
-              className="text-mal mt-5 inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-primary px-8 text-[0.82rem] font-bold text-primary-foreground shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 sm:w-auto sm:text-[0.92rem]"
+              className="text-mal cta-glow mt-5 inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-primary px-8 text-[0.82rem] font-bold text-ink-foreground transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 sm:w-auto sm:text-[0.92rem]"
             >
               {vsl.reveal.cta}
             </button>
