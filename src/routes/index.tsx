@@ -57,25 +57,28 @@ function LandingPage() {
         {/* First screen — headline + video, vertically centred */}
         <div className="flex min-h-[calc(100svh-3rem)] flex-col justify-center">
         <header className="text-center">
-          <p className="text-[0.68rem] font-bold tracking-[0.18em] text-primary uppercase">
+          <p className="text-[0.6rem] font-bold tracking-[0.18em] text-primary uppercase sm:text-[0.68rem]">
             {pageTop.eyebrow}
           </p>
-          <h1 className="text-mal mx-auto mt-3 max-w-2xl text-[1.25rem] leading-[1.3] font-extrabold sm:text-[2rem]">
+          <h1
+            className="text-mal text-gradient-gold mx-auto mt-2 max-w-2xl text-[1.1rem] leading-[1.3] font-extrabold sm:text-[1.7rem]"
+            style={{ filter: "drop-shadow(0 2px 18px oklch(0.7 0.188 45.1 / 0.35))" }}
+          >
             {pageTop.headline}
           </h1>
-          <p className="text-mal mx-auto mt-3 max-w-2xl text-[0.82rem] leading-relaxed text-muted-foreground sm:text-base">
+          <p className="text-mal mx-auto mt-2 max-w-xl text-[0.74rem] leading-relaxed text-muted-foreground sm:text-sm">
             {pageTop.sub}
           </p>
         </header>
 
         {/* Video sits in the centre of the first screen */}
-        <div className="flex flex-col justify-center py-5">
+        <div className="flex flex-col justify-center py-3">
 
           <div className="text-center">
-            <p className="text-[0.62rem] font-bold tracking-[0.16em] text-primary uppercase">
+            <p className="text-[0.58rem] font-bold tracking-[0.16em] text-primary uppercase">
               {vsl.eyebrow}
             </p>
-            <h2 className="text-mal mx-auto mt-3 max-w-2xl text-[1.05rem] leading-[1.35] font-bold sm:text-[1.35rem]">
+            <h2 className="text-mal mx-auto mt-2 max-w-2xl text-[0.95rem] leading-[1.35] font-bold sm:text-[1.2rem]">
               {vsl.headline}
             </h2>
           </div>
