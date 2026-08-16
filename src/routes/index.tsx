@@ -102,32 +102,23 @@ function LandingPage() {
           <p className="text-mal mx-auto mt-2 max-w-xl text-center text-[0.74rem] leading-relaxed text-muted-foreground sm:text-sm">
             {vsl.sub}
           </p>
-          <p className="text-mal mx-auto mt-1 max-w-xl text-center text-[0.74rem] leading-relaxed text-muted-foreground sm:text-sm">
-            {vsl.belowVideo}
-          </p>
-        </div>
-        </div>
 
-
-
-
-        {/* Appears only after the video has been watched */}
-        {unlocked ? (
-          <section className="mt-12 rounded-3xl border border-border/70 bg-gradient-card p-6 text-center shadow-card sm:p-8">
-            <p className="text-mal text-base font-bold sm:text-lg">{vsl.reveal.line1}</p>
-            <p className="text-mal mt-3 text-sm text-muted-foreground sm:text-base">
-              {vsl.reveal.line2}
-            </p>
+          {/* Always visible — the support option is offered right below the video */}
+          <div className="mt-4 text-center">
             <button
               type="button"
               onClick={goNext}
-              className="text-mal mt-7 inline-flex min-h-14 w-full items-center justify-center rounded-full bg-gradient-gold px-8 text-sm font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:w-auto sm:text-base"
+              className="text-mal inline-flex min-h-13 w-full items-center justify-center rounded-full bg-gradient-gold px-7 text-[0.8rem] font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:w-auto sm:text-sm"
             >
               {vsl.reveal.cta}
             </button>
-            <p className="text-mal mt-3 text-xs text-muted-foreground">{vsl.reveal.note}</p>
-          </section>
-        ) : null}
+            <p className="text-mal mx-auto mt-2 max-w-xl text-[0.7rem] leading-relaxed text-muted-foreground">
+              {vsl.belowVideo}
+            </p>
+          </div>
+        </div>
+        </div>
+
 
         {/* The 5 short questions — asked in a popup before the offer page opens */}
         <Dialog open={showIntake} onOpenChange={setShowIntake}>
