@@ -68,12 +68,8 @@ function PersonalSupportPage() {
 
       {/* 3 — WHAT'S INSIDE → TODAY'S DATE/TIME → PRICE */}
       <Section id="offers">
-        <SectionHeading className="text-xl sm:text-2xl">
-          നിങ്ങൾക്ക് എന്തൊക്കെ കിട്ടും
-        </SectionHeading>
-        <div className="mt-8">
-          <ValueStack />
-        </div>
+        <BundleBreakdown />
+
 
         <div className="mx-auto mt-12 max-w-2xl">
           <OfferCountdown />
