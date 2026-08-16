@@ -111,7 +111,35 @@ export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void
         </div>
       </div>
 
+      {/* Art classes — dashboard proof */}
+      <div className="mt-6 rounded-3xl border border-border/70 bg-gradient-card p-4 shadow-card sm:p-6">
+        <p className="text-center text-[0.62rem] font-bold tracking-[0.16em] text-primary uppercase">
+          {milestones.eyebrow}
+        </p>
+        <h3 className="text-mal mx-auto mt-3 max-w-xl text-center text-[1.05rem] leading-[1.35] font-bold sm:text-[1.3rem]">
+          {milestones.headline}
+        </h3>
+        <p className="text-mal mx-auto mt-3 max-w-xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
+          {milestones.sub}
+        </p>
+        <figure className="mt-5 overflow-hidden rounded-2xl border border-border/60 bg-background/60">
+          <img
+            src={dashboardImage.url}
+            alt="Art class dashboard showing 8,000+ joined students"
+            loading="lazy"
+            className="w-full object-contain"
+          />
+          <figcaption className="px-3 py-2 text-center text-[0.68rem] text-muted-foreground">
+            {milestones.imageCaption}
+          </figcaption>
+        </figure>
+        <p className="text-mal mt-4 text-center text-[0.75rem] leading-relaxed text-muted-foreground/85">
+          {milestones.note}
+        </p>
+      </div>
+
       <SupportCta onClick={onSupportClick} />
+
 
       {/* Their words — video */}
       <div className="mt-12 rounded-3xl border border-border/70 bg-gradient-card p-4 shadow-card sm:p-6">
