@@ -52,17 +52,15 @@ function LandingPage() {
 
   return (
     <main className="flex min-h-screen flex-col bg-background">
-      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 py-8 sm:px-8 sm:py-14">
-        {/* ── First fold: eyebrow → headline → promise → badge → curiosity → video ── */}
-        <section className="rise-in flex flex-col justify-center pb-4">
+      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-5 pt-6 pb-24 sm:px-8 sm:py-10 md:pb-10">
+        {/* ── First fold: eyebrow → headline → promise → badge → video intro → video ── */}
+        <section className="rise-in flex flex-col justify-center">
           <header className="text-center">
-            <p className="text-[0.58rem] font-semibold tracking-[0.28em] text-sky uppercase sm:text-[0.66rem]">
+            <p className="text-[0.56rem] font-semibold tracking-[0.26em] text-sky uppercase sm:text-[0.64rem]">
               {pageTop.eyebrow}
             </p>
 
-            <span className="mx-auto mt-5 block h-px w-12 bg-border" />
-
-            <h1 className="text-mal mx-auto mt-5 max-w-2xl text-[1.32rem] leading-[1.5] font-extrabold text-foreground sm:text-[2rem]">
+            <h1 className="text-mal mx-auto mt-3 max-w-2xl text-[1.28rem] leading-[1.45] font-extrabold text-foreground sm:text-[1.9rem]">
               {headlineParts[0]}
               {headlineParts.length > 1 && (
                 <>
@@ -72,31 +70,29 @@ function LandingPage() {
               )}
             </h1>
 
-            <p className="text-mal mx-auto mt-4 max-w-xl text-[0.82rem] leading-[1.85] text-muted-foreground sm:text-[0.95rem]">
+            <p className="text-mal mx-auto mt-3 max-w-xl text-[0.8rem] leading-[1.75] text-muted-foreground sm:text-[0.92rem]">
               {pageTop.sub}
             </p>
 
-            <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-[0.58rem] font-semibold tracking-[0.16em] text-secondary-foreground uppercase shadow-soft sm:text-[0.64rem]">
+            <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-[0.55rem] font-semibold tracking-[0.14em] text-secondary-foreground uppercase shadow-soft sm:text-[0.6rem]">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               {vsl.eyebrow}
             </span>
           </header>
 
           {/* Curiosity statement, right before the video */}
-          <div className="mt-9 text-center">
-            <h2 className="text-mal mx-auto max-w-2xl text-[1.02rem] leading-[1.6] font-bold text-foreground sm:text-[1.32rem]">
-              {vsl.headline}
-            </h2>
-          </div>
+          <h2 className="text-mal mx-auto mt-5 max-w-2xl text-center text-[0.96rem] leading-[1.55] font-bold text-foreground sm:text-[1.22rem]">
+            {vsl.headline}
+          </h2>
 
           {/* Video stage — the focal point of the page */}
-          <div className="mt-8">
-            <p className="mb-3 text-center text-[0.56rem] font-semibold tracking-[0.22em] text-muted-foreground uppercase sm:text-[0.62rem]">
+          <div className="mt-4">
+            <p className="mb-2 text-center text-[0.54rem] font-semibold tracking-[0.2em] text-muted-foreground uppercase sm:text-[0.6rem]">
               Free Training · Approx. 30 Minutes
             </p>
 
-            <div className="surface-ink rounded-[1.5rem] border border-border p-2 shadow-card sm:p-3">
-              <div className="overflow-hidden rounded-[1.15rem]">
+            <div className="surface-ink rounded-[1.25rem] border border-border/80 p-1.5 shadow-card">
+              <div className="overflow-hidden rounded-[1rem] ring-1 ring-primary/15">
                 <VslPlayer
                   embedUrl={media.trainingVideoEmbedUrl}
                   placeholderLabel={media.trainingVideoPlaceholder}
@@ -104,38 +100,42 @@ function LandingPage() {
               </div>
             </div>
 
-            <p className="mt-3 text-center text-[0.66rem] tracking-wide text-muted-foreground">
+            <p className="mt-2 text-center text-[0.64rem] tracking-wide text-muted-foreground">
               {vsl.duration}
             </p>
           </div>
         </section>
 
-        {/* ── Why this training matters + personal support CTA ── */}
-        <section className="pb-10">
-          <div className="rounded-[1.5rem] border border-border bg-card p-6 text-center shadow-card sm:p-8">
-            <p className="text-mal text-[0.92rem] leading-[1.7] font-bold text-foreground sm:text-[1.05rem]">
+        {/* ── CTA directly below the video ── */}
+        <section className="pt-4 pb-8">
+          <div className="rounded-[1.25rem] border border-border bg-card p-5 text-center shadow-card sm:p-7">
+            <p className="text-mal text-[0.9rem] leading-[1.65] font-bold text-foreground sm:text-[1.02rem]">
               {vsl.reveal.line1}
-            </p>
-            <p className="text-mal mx-auto mt-3 max-w-xl text-[0.82rem] leading-[1.85] text-muted-foreground sm:text-[0.9rem]">
-              {vsl.reveal.line2}
-            </p>
-            <p className="text-mal mx-auto mt-3 max-w-xl text-[0.82rem] leading-[1.85] text-muted-foreground sm:text-[0.9rem]">
-              {vsl.belowVideo}
             </p>
 
             <button
               type="button"
               onClick={goNext}
-              className="text-mal mt-6 inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-primary px-8 text-[0.82rem] font-bold text-primary-foreground shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 active:translate-y-0 sm:w-auto sm:text-[0.92rem]"
+              className="text-mal mt-5 inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-primary px-8 text-[0.82rem] font-bold text-primary-foreground shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 sm:w-auto sm:text-[0.92rem]"
             >
               {vsl.reveal.cta}
             </button>
 
-            <p className="text-mal mx-auto mt-4 max-w-xl text-[0.74rem] leading-[1.8] text-muted-foreground/90">
+            <p className="text-mal mx-auto mt-3 max-w-xl text-[0.72rem] leading-[1.75] text-muted-foreground/90">
               {vsl.reveal.note}
             </p>
+
+            <div className="mt-5 space-y-2 border-t border-border/70 pt-5">
+              <p className="text-mal mx-auto max-w-xl text-[0.8rem] leading-[1.8] text-muted-foreground sm:text-[0.88rem]">
+                {vsl.reveal.line2}
+              </p>
+              <p className="text-mal mx-auto max-w-xl text-[0.8rem] leading-[1.8] text-muted-foreground sm:text-[0.88rem]">
+                {vsl.belowVideo}
+              </p>
+            </div>
           </div>
         </section>
+
 
 
 
