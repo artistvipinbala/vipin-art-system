@@ -5,6 +5,7 @@ import { BundleBreakdown } from "@/components/funnel/BundleBreakdown";
 import { EduCompare } from "@/components/funnel/EduCompare";
 import { Footer } from "@/components/funnel/Footer";
 import { Guarantee } from "@/components/funnel/Guarantee";
+import { JoinNowInline } from "@/components/funnel/JoinNowInline";
 import { Letter } from "@/components/funnel/Letter";
 import { OfferCountdown } from "@/components/funnel/OfferCountdown";
 import { PricingCards } from "@/components/funnel/PricingCards";
