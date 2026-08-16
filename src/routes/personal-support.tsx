@@ -5,6 +5,7 @@ import { BundleBreakdown } from "@/components/funnel/BundleBreakdown";
 import { EduCompare } from "@/components/funnel/EduCompare";
 import { Footer } from "@/components/funnel/Footer";
 import { Guarantee } from "@/components/funnel/Guarantee";
+import { JoinNowInline } from "@/components/funnel/JoinNowInline";
 import { Letter } from "@/components/funnel/Letter";
 import { OfferCountdown } from "@/components/funnel/OfferCountdown";
 import { PricingCards } from "@/components/funnel/PricingCards";
@@ -49,8 +50,21 @@ function PersonalSupportPage() {
         </p>
       </div>
 
-      {/* 1 — VIDEO FIRST */}
-      <div className="mx-auto w-full max-w-3xl px-5 pt-7 sm:px-6 sm:pt-10">
+      {/* 1 — BENEFIT HEADING + VIDEO */}
+      <div className="mx-auto w-full max-w-3xl px-5 pt-7 text-center sm:px-6 sm:pt-10">
+        <p className="text-[0.7rem] font-bold tracking-[0.2em] text-primary uppercase">
+          Personal Support
+        </p>
+        <h1 className="text-mal mt-3 text-2xl leading-snug font-bold text-foreground sm:text-3xl md:text-4xl">
+          Personal support എടുത്താൽ നിങ്ങൾക്ക് കിട്ടുന്ന benefits എന്തൊക്കെയാണ്?
+        </h1>
+        <p className="text-mal mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
+          എല്ലാ courses, weekly live class, WhatsApp support, lifetime access — എല്ലാം ഒരൊറ്റ
+          bundle-ൽ. താഴെയുള്ള video-യിൽ ഇത് മുഴുവനായി പറയുന്നു.
+        </p>
+      </div>
+
+      <div className="mx-auto w-full max-w-3xl px-5 pt-6 sm:px-6">
         <div className="surface-ink rounded-[1.5rem] border border-border p-2 shadow-card sm:p-3">
           <div className="overflow-hidden rounded-[1.15rem]">
             <VslPlayer
@@ -59,7 +73,11 @@ function PersonalSupportPage() {
             />
           </div>
         </div>
+        <div className="mt-6">
+          <JoinNowInline />
+        </div>
       </div>
+
 
       {/* 2 — DESCRIPTION UNDER THE VIDEO */}
       <Section tone="surface">
@@ -75,7 +93,7 @@ function PersonalSupportPage() {
           <OfferCountdown />
         </div>
 
-        <div className="mt-8">
+        <div id="pricing" className="mt-8 scroll-mt-6">
           <SectionHeading className="text-xl sm:text-2xl">
             ഒരു price. എല്ലാ support-ഉം ഉള്ളിൽ.
           </SectionHeading>
@@ -101,6 +119,9 @@ function PersonalSupportPage() {
       {/* 5 — WHY I SHARE THIS OPENLY */}
       <Section>
         <WhyIShare />
+        <div className="mt-10">
+          <JoinNowInline />
+        </div>
       </Section>
 
       {/* 6 — WHY THERE IS A PRICE AT ALL */}
@@ -111,7 +132,11 @@ function PersonalSupportPage() {
       {/* 7 — DEGREE vs STARTING TODAY */}
       <Section>
         <EduCompare />
+        <div className="mt-10">
+          <JoinNowInline />
+        </div>
       </Section>
+
 
       {/* 8 — RISK REVERSAL */}
       <Section tone="surface">

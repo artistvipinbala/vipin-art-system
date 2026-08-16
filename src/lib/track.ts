@@ -14,6 +14,7 @@ export type FunnelEvent =
   | "support_form_started"
   | "support_form_completed"
   | "course_purchase_click"
+  | "join_now_inline_click"
   | "support_purchase_click";
 
 export function track(event: FunnelEvent, payload?: Record<string, unknown>) {

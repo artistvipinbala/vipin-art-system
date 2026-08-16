@@ -1,5 +1,7 @@
 import { Check, Gift } from "lucide-react";
 
+import { JoinNowInline } from "./JoinNowInline";
+import groupImage from "@/assets/bundle/bundle-group.jpg.asset.json";
 import { bundleBreakdown } from "@/content/bundle-breakdown";
 
 /** Bonus / course breakdown: 3D box mockup + Malayalam value points per item. */
@@ -14,6 +16,15 @@ export function BundleBreakdown() {
         <p className="text-mal mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
           {bundleBreakdown.subtitle}
         </p>
+
+        <div className="surface-ink mt-6 overflow-hidden rounded-2xl border border-border/70">
+          <img
+            src={groupImage.url}
+            alt="Artist Vipin Bala personal support bundle — all courses and toolkits"
+            className="h-full w-full object-contain"
+          />
+        </div>
+
 
         <div className="mt-6 flex flex-col items-center gap-3">
           <div>
@@ -33,47 +44,55 @@ export function BundleBreakdown() {
 
       {/* Items */}
       <div className="space-y-5">
-        {bundleBreakdown.items.map((item) => (
-          <article
-            key={item.title}
-            className="grid grid-cols-1 gap-5 rounded-3xl border border-border bg-card p-5 shadow-soft sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)] sm:items-start sm:gap-6 sm:p-6 md:grid-cols-[minmax(0,12rem)_minmax(0,1fr)]"
-          >
-            <div className="surface-ink overflow-hidden rounded-2xl border border-border/70">
-              <img
-                src={item.image}
-                alt={item.title}
-                loading="lazy"
-                className="h-full w-full object-contain"
-              />
-            </div>
-
-            <div className="min-w-0">
-              <span className="text-mal inline-block rounded-full border border-primary/40 bg-secondary px-3 py-1 text-[0.7rem] font-bold tracking-wide text-primary">
-                {item.tag}
-              </span>
-              <h3 className="mt-3 text-lg font-bold text-foreground sm:text-xl">{item.title}</h3>
-
-              <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2">
-                <span className="text-sm font-bold text-muted-foreground line-through">
-                  {item.price}
-                </span>
-                <span className="text-mal rounded-full bg-primary/15 px-3 py-1 text-[0.7rem] font-bold text-primary">
-                  {bundleBreakdown.freeBadge}
-                </span>
+        {bundleBreakdown.items.map((item, index) => (
+          <div key={item.title} className="space-y-5">
+            <article className="grid grid-cols-1 gap-5 rounded-3xl border border-border bg-card p-5 shadow-soft sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)] sm:items-start sm:gap-6 sm:p-6 md:grid-cols-[minmax(0,12rem)_minmax(0,1fr)]">
+              <div className="surface-ink overflow-hidden rounded-2xl border border-border/70">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="h-full w-full object-contain"
+                />
               </div>
 
-              <ul className="mt-4 space-y-2">
-                {item.points.map((point) => (
-                  <li key={point} className="flex gap-2">
-                    <Check className="mt-1 h-4 w-4 shrink-0 text-primary" />
-                    <span className="text-mal min-w-0 text-sm text-muted-foreground">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
+              <div className="min-w-0">
+                <span className="text-mal inline-block rounded-full border border-primary/40 bg-secondary px-3 py-1 text-[0.7rem] font-bold tracking-wide text-primary">
+                  {item.tag}
+                </span>
+                <h3 className="font-display mt-3 text-xl leading-tight font-bold tracking-tight text-foreground sm:text-2xl">
+                  {item.title}
+                </h3>
+
+                <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2">
+                  <span className="text-sm font-bold text-muted-foreground line-through">
+                    {item.price}
+                  </span>
+                  <span className="text-mal rounded-full bg-primary/15 px-3 py-1 text-[0.7rem] font-bold text-primary">
+                    {bundleBreakdown.freeBadge}
+                  </span>
+                </div>
+
+                <ul className="mt-4 space-y-2">
+                  {item.points.map((point) => (
+                    <li key={point} className="flex gap-2">
+                      <Check className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                      <span className="text-mal min-w-0 text-sm text-muted-foreground">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+
+            {(index + 1) % 3 === 0 && index + 1 < bundleBreakdown.items.length ? (
+              <JoinNowInline />
+            ) : null}
+          </div>
         ))}
       </div>
+
     </div>
   );
 }
