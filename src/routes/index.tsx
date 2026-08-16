@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { QuickIntake } from "@/components/funnel/QuickIntake";
 import { ResultsSection } from "@/components/funnel/ResultsSection";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
-import { brand, media, pageTop, vsl } from "@/content/funnel";
+import { brand, media, milestones, pageTop, vsl } from "@/content/funnel";
 import { track } from "@/lib/track";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
