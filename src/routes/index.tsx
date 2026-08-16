@@ -94,23 +94,27 @@ function LandingPage() {
           <p className="mt-2 text-center text-[0.66rem] tracking-wide text-muted-foreground/70">
             {vsl.duration}
           </p>
-          <p className="text-mal mx-auto mt-2 max-w-xl text-center text-[0.74rem] leading-relaxed text-muted-foreground sm:text-sm">
-            {vsl.sub}
-          </p>
 
-          {/* Always visible — the support option is offered right below the video */}
-          <div className="mt-4 text-center">
+          {/* Always visible — support option offered inside a card, right below the video */}
+          <div className="mt-4 rounded-2xl border border-border/60 bg-card/70 p-4 text-center shadow-card sm:p-5">
+            <p className="text-mal text-[0.8rem] leading-relaxed font-semibold sm:text-sm">
+              {vsl.reveal.line1}
+            </p>
+            <p className="text-mal mx-auto mt-2 max-w-xl text-[0.74rem] leading-relaxed text-muted-foreground sm:text-[0.82rem]">
+              {vsl.reveal.line2}
+            </p>
             <button
               type="button"
               onClick={goNext}
-              className="text-mal inline-flex min-h-13 w-full items-center justify-center rounded-full bg-gradient-gold px-7 text-[0.8rem] font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:w-auto sm:text-sm"
+              className="text-mal mt-4 inline-flex min-h-13 w-full items-center justify-center rounded-full bg-gradient-gold px-7 text-[0.8rem] font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:w-auto sm:text-sm"
             >
               {vsl.reveal.cta}
             </button>
-            <p className="text-mal mx-auto mt-2 max-w-xl text-[0.7rem] leading-relaxed text-muted-foreground">
-              {vsl.belowVideo}
+            <p className="text-mal mx-auto mt-3 max-w-xl text-[0.68rem] leading-relaxed text-muted-foreground/80">
+              {vsl.reveal.note}
             </p>
           </div>
+
         </div>
         </div>
 
