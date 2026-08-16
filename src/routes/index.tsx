@@ -99,8 +99,9 @@ function LandingPage() {
               Free Training · Approx. 30 Minutes
             </p>
 
-            <div className="surface-ink rounded-[1.25rem] border border-border/80 p-1.5 shadow-card">
-              <div className="overflow-hidden rounded-[1rem] ring-1 ring-primary/15">
+            <div className="surface-ink video-glow rounded-[1.25rem] border-2 p-1.5">
+              <div className="overflow-hidden rounded-[1rem] ring-1 ring-primary/25">
+
                 <VslPlayer
                   embedUrl={media.trainingVideoEmbedUrl}
                   placeholderLabel={media.trainingVideoPlaceholder}
@@ -124,7 +125,7 @@ function LandingPage() {
             <button
               type="button"
               onClick={goNext}
-              className="text-mal mt-5 inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-primary px-8 text-[0.82rem] font-bold text-primary-foreground shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 sm:w-auto sm:text-[0.92rem]"
+              className="text-mal cta-glow mt-5 inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-primary px-8 text-[0.82rem] font-bold text-ink-foreground transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 sm:w-auto sm:text-[0.92rem]"
             >
               {vsl.reveal.cta}
             </button>
