@@ -47,7 +47,7 @@ export function VslPlayer({
       <Placeholder
         label={placeholderLabel}
         ratio="aspect-video"
-        className="bg-foreground/[0.04]"
+        className="bg-secondary"
       />
     );
   }
@@ -60,10 +60,10 @@ export function VslPlayer({
           setStarted(true);
           track("video_play");
         }}
-        className="group relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-3xl border border-border/70 bg-foreground/[0.06] shadow-card"
+        className="group relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-[1.15rem] bg-ink"
         aria-label="Play the training video"
       >
-        <span className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-gold text-primary-foreground shadow-glow transition-transform group-hover:scale-105">
+        <span className="flex h-18 w-18 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow transition-transform duration-300 group-hover:scale-105">
           <Play className="h-7 w-7 translate-x-[2px]" />
         </span>
       </button>
@@ -71,7 +71,7 @@ export function VslPlayer({
   }
 
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-3xl border border-border/70 bg-foreground/[0.06] shadow-card">
+    <div className="aspect-video w-full overflow-hidden rounded-[1.15rem] bg-ink">
       <iframe
         src={embedUrl}
         title="Artist income system — training"
