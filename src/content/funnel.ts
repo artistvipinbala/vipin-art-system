@@ -729,22 +729,24 @@ export const specialOffer = {
 export const todayOffer = {
   eyebrow: "ഇന്നത്തെ session",
   dateLabel: "ഇന്ന്",
-  headline: "ഈ page തുറന്നത് മുതൽ 30 മിനിറ്റ് — ഈ ഉള്ളിൽ ₹5,999 rate-ൽ join ചെയ്യാം",
-  sub: "ഒരു ദിവസം കുറച്ച് പേരെ മാത്രം personally onboard ചെയ്യാൻ പറ്റും. അതുകൊണ്ടാണ് ഈ rate-ന് ഒരു ചെറിയ window വെക്കുന്നത്.",
-  windowMinutes: 30,
+  headline: "ഈ page തുറന്നത് മുതൽ 20 മിനിറ്റ് — ഈ ഉള്ളിൽ join ചെയ്യുന്ന ആദ്യ 10 പേർക്ക് മാത്രം ₹5,999",
+  sub: "ഒരു batch-ൽ കുറച്ച് പേരെ മാത്രം personally onboard ചെയ്യാൻ പറ്റും. അതുകൊണ്ടാണ് ഈ rate-ന് ഒരു ചെറിയ window-ഉം 10 seat-ഉം മാത്രം വെക്കുന്നത്.",
+  windowMinutes: 20,
+  seatsLabel: "ബാക്കിയുള്ള seats",
+  seatsSuffix: "seats മാത്രം",
+  regularNote: "ഈ time കഴിഞ്ഞാൽ പിന്നെ join ചെയ്യാൻ ₹15,000 ആയിരിക്കും.",
+  nudge:
+    "Video മുഴുവൻ കണ്ട ഒരാൾക്ക് ഈ rate ഒരു തവണ മാത്രമേ കിട്ടും — ഈ 20 മിനിറ്റ് വെറുതെ പോകാൻ വിടണ്ട. ഇന്ന് തുടങ്ങിയാൽ ഈ ആഴ്ചയിലെ live class-ൽ തന്നെ നിങ്ങൾക്ക് ഇരിക്കാം.",
   live: {
     price: "₹5,999",
     note: "ഈ timer തീരുന്നതിനുള്ളിൽ join ചെയ്താൽ ഈ rate-ഉം ഇന്നത്തെ extras-ഉം കിട്ടും.",
   },
-  expired: {
-    title: "ഇന്നത്തെ ₹5,999 window കഴിഞ്ഞു",
-    body: "പക്ഷേ വഴി അടഞ്ഞില്ല. Personal support-ഓടെ ഇത് normal ആയി ₹12,000 – ₹15,000 ആണ്. അതിലും join ചെയ്യാം — same course, same live class, same WhatsApp support.",
+  regular: {
     priceLabel: "Regular price",
-    price: "₹12,000 – ₹15,000",
-    cta: "JOIN AT REGULAR RATE",
-    soft: "ഇന്ന് നിങ്ങൾ video മുഴുവൻ കണ്ടിട്ടും timer തീർന്നു പോയതാണെങ്കിൽ, WhatsApp-ൽ ഒരു message അയക്കൂ — ഞാൻ നേരിട്ട് നോക്കാം.",
+    price: "₹15,000",
   },
 };
+
 
 /**
  * The ONLY Personal Support flow — a short 3-step consultation conversation

@@ -19,18 +19,34 @@ export function istDateLabel(now: Date) {
   }).format(now);
 }
 
+const KEY = "avb_offer_deadline";
+const WINDOW_MS = todayOffer.windowMinutes * 60_000;
+
 /**
- * One shared deadline per day, stored in the browser, so the countdown in the
- * page and the countdown in the sticky join bar always show the same time.
+ * A short rolling window that starts when the visitor opens the page. It never
+ * "expires" into a closed state — when it runs out a fresh window starts, so
+ * the price and the join option always stay available.
  */
 export function getOfferDeadline() {
-  const key = `avb_offer_deadline_${istDateKey(new Date())}`;
-  let deadline = Number(window.localStorage.getItem(key));
-  if (!deadline || Number.isNaN(deadline)) {
-    deadline = Date.now() + todayOffer.windowMinutes * 60_000;
-    window.localStorage.setItem(key, String(deadline));
+  let deadline = Number(window.sessionStorage.getItem(KEY));
+  if (!deadline || Number.isNaN(deadline) || deadline <= Date.now()) {
+    deadline = Date.now() + WINDOW_MS;
+    window.sessionStorage.setItem(KEY, String(deadline));
   }
   return deadline;
+}
+
+/** Remaining ms in the current window, rolling over automatically. */
+export function getOfferRemaining() {
+  return Math.max(0, getOfferDeadline() - Date.now());
+}
+
+/** Rotating "seats left" number so the scarcity feels live (3 → 2 → 1 …). */
+const SEAT_PATTERN = [4, 3, 2, 3, 1, 2];
+
+export function getSeatsLeft(remainingMs: number) {
+  const elapsedMinutes = Math.floor((WINDOW_MS - remainingMs) / 60_000);
+  return SEAT_PATTERN[Math.min(elapsedMinutes, SEAT_PATTERN.length - 1) % SEAT_PATTERN.length];
 }
 
 export function pad(n: number) {
