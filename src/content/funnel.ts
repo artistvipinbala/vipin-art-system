@@ -747,60 +747,84 @@ export const todayOffer = {
 };
 
 /**
- * THE ONLY FORM in the funnel — 5 short questions, asked before the price.
- * Keep this short: every extra question costs joins.
+ * The ONLY Personal Support flow — a short 3-step consultation conversation
+ * shown in a modal after any "Personal Support" CTA. Response-first: every
+ * answer gets a short human acknowledgement before the next question.
  */
 export const quickIntake = {
   eyebrow: "1 മിനിറ്റ് · Personal details ഒന്നും വേണ്ട",
   headline: "ഈ personal support നിങ്ങൾക്ക് ചേരുമോ എന്ന് നോക്കാം",
-  sub: "Name, email, phone ഒന്നും ചോദിക്കുന്നില്ല. നിങ്ങൾ ഇപ്പോൾ എവിടെ നിൽക്കുന്നു എന്ന് മാത്രം അറിഞ്ഞാൽ, ഇത് നിങ്ങൾക്ക് useful ആകുമോ എന്ന് ഞാൻ പറയാം.",
-  placeholder: "Select",
-  labels: {
-    watched: "Video മുഴുവനായി കണ്ടിരുന്നോ?",
-    work: "നിങ്ങൾ ഇപ്പോൾ എന്ത് ചെയ്യുന്നു?",
-    problem: "ഇപ്പോൾ ഏറ്റവും വലിയ പ്രശ്നം എന്താണ്?",
-    commitment: "ഒരു കാര്യം തുറന്നു പറയാം",
-  },
-  watchedSub:
-    "Art എങ്ങനെ sell ചെയ്യണം, art class എങ്ങനെ sell ചെയ്യണം — അതെല്ലാം ആ video-യിൽ full detail ആയി പറഞ്ഞിട്ടുണ്ട്. അത് മുഴുവൻ കണ്ടതിന് ശേഷം, ആവശ്യമെങ്കിൽ മാത്രം personal support എടുക്കാം.",
-  watchedOptions: {
-    yes: "അതെ, ഞാൻ video മുഴുവൻ കണ്ടു",
-    no: "ഇല്ല, ഇനിയും മുഴുവൻ കണ്ടിട്ടില്ല",
+  sub: "Name, email, phone ഒന്നും ചോദിക്കുന്നില്ല. നിങ്ങൾ ഇപ്പോൾ എവിടെ നിൽക്കുന്നു എന്ന് മാത്രം അറിഞ്ഞാൽ മതി.",
+  steps: {
+    watched: {
+      title: "ഈ training video മുഴുവനായും കണ്ടോ?",
+      sub: "ഈ video-യിൽ Artwork, Art Class, Teaching Skill എന്നിവ ഉപയോഗിച്ച് income ഉണ്ടാക്കാൻ ഞാൻ ഉപയോഗിക്കുന്ന complete system detail ആയി explain ചെയ്തിട്ടുണ്ട്. അടുത്ത questions-ലേക്ക് പോകുന്നതിന് മുമ്പ് video മുഴുവനായി കാണുന്നത് വളരെ important ആണ്.",
+      yes: "അതെ, ഞാൻ video മുഴുവനായി കണ്ടു",
+      no: "ഇല്ല, video മുഴുവനായി കണ്ടിട്ടില്ല",
+      ack: "Great 👍 Video മുഴുവനായി കണ്ടതിന് നന്ദി. ഇനി നിങ്ങളുടെ situation കുറച്ച് മനസ്സിലാക്കാം.",
+    },
+    problem: {
+      title: "ഇപ്പോൾ Art-ൽ നിങ്ങൾ നേരിടുന്ന പ്രധാന പ്രശ്നം എന്താണ്?",
+      sub: "ഒന്ന് select ചെയ്യൂ — ഇത് നോക്കിയാണ് ഇത് നിങ്ങൾക്ക് ചേരുമോ എന്ന് പറയുന്നത്.",
+      options: [
+        {
+          label: "എന്റെ Artwork ഉണ്ടാക്കുന്നുണ്ട്, പക്ഷേ Sales വരുന്നില്ല",
+          ack: "മനസ്സിലായി. Artwork ഉണ്ടാക്കാൻ കഴിയുന്നുണ്ട്, പക്ഷേ അതിനെ consistent ആയി sales ആക്കുന്നതാണ് ഇപ്പോഴത്തെ പ്രധാന challenge. 👍",
+        },
+        {
+          label: "Art Class എടുക്കാൻ അറിയാം, പക്ഷേ Students കിട്ടുന്നില്ല",
+          ack: "മനസ്സിലായി. Art പഠിപ്പിക്കാൻ കഴിവുണ്ട്, പക്ഷേ students consistently എത്തുന്ന ഒരു system ആണ് ഇപ്പോൾ വേണ്ടത്. 👍",
+        },
+        {
+          label: "Social Media ഉപയോഗിക്കുന്നുണ്ട്, പക്ഷേ Clients / Sales കിട്ടുന്നില്ല",
+          ack: "മനസ്സിലായി. Social Media-യിൽ effort ഇടുന്നുണ്ട്, പക്ഷേ അതിൽ നിന്ന് actual clients / sales convert ചെയ്യുന്നതാണ് challenge. 👍",
+        },
+        {
+          label: "എന്ത് ചെയ്യണമെന്ന് തന്നെ Clear അല്ല",
+          ack: "അതും വളരെ common ആയ ഒരു situation ആണ്. എന്താണ് ആദ്യം ചെയ്യേണ്ടത്, എങ്ങനെ step-by-step മുന്നോട്ട് പോകണം എന്നത് clear ആക്കുകയാണ് ആദ്യം വേണ്ടത്. 👍",
+        },
+      ],
+    },
+    goal: {
+      title: "ഇനി നിങ്ങൾക്ക് ഏറ്റവും പ്രധാനമായി എന്താണ് നേടേണ്ടത്?",
+      sub: "നിങ്ങളുടെ goal അനുസരിച്ചാണ് support എങ്ങനെ വേണം എന്ന് നോക്കുന്നത്.",
+      options: [
+        {
+          label: "Artwork-കളിൽ നിന്ന് regular Sales ഉണ്ടാക്കണം",
+          ack: "Perfect. നിങ്ങളുടെ focus Artwork-നെ regular income source ആക്കുന്നതിലാണ്. അതനുസരിച്ച് support എങ്ങനെ നൽകാം എന്ന് ഇനി നോക്കാം.",
+        },
+        {
+          label: "Art Class വഴി കൂടുതൽ Students നേടണം",
+          ack: "Perfect. നിങ്ങളുടെ focus Art Class-ലേക്ക് കൂടുതൽ students എത്തിക്കുന്ന system build ചെയ്യുന്നതിലാണ്.",
+        },
+        {
+          label: "എന്റെ Art skill ഉപയോഗിച്ച് ഒരു proper Income System build ചെയ്യണം",
+          ack: "Perfect. Art skill മാത്രം അല്ല, അതിനെ ഒരു repeatable income system ആക്കാനാണ് നിങ്ങൾ നോക്കുന്നത്.",
+        },
+        {
+          label: "എന്റെ situation personally discuss ചെയ്ത് എന്താണ് ചെയ്യേണ്ടതെന്ന് മനസ്സിലാക്കണം",
+          ack: "Perfect. നിങ്ങളുടെ current situation personally discuss ചെയ്ത് നിങ്ങൾക്ക് suit ചെയ്യുന്ന next step കണ്ടെത്തുന്നതാണ് ഏറ്റവും useful.",
+        },
+      ],
+    },
   },
   notWatched: {
-    title: "എങ്കിൽ ആദ്യം ആ video മുഴുവൻ കാണൂ 🙂",
-    body: "Art works-ഉം art class-ഉം എങ്ങനെ sell ചെയ്യാം എന്നത് ആ video-യിൽ step by step ആയി പറഞ്ഞിട്ടുണ്ട്. പലർക്കും അത് മാത്രം മതി — extra ഒന്നും വേണ്ട. അത് മുഴുവൻ കണ്ടിട്ട്, എന്നിട്ടും ഒരാൾ കൂടെ വേണം എന്ന് തോന്നുന്നുണ്ടെങ്കിൽ മാത്രം ഇവിടെ തിരിച്ചു വരൂ.",
-    cta: "OK, VIDEO കാണാൻ പോകാം",
-    back: "ഞാൻ കണ്ടിട്ടുണ്ട് — തുടരാം",
+    title: "അത് പ്രശ്നമില്ല 😊",
+    body: "പക്ഷേ അടുത്ത questions-ന് ശരിയായ answer നൽകാനും, Personal Support നിങ്ങൾക്ക് ശരിക്കും useful ആണോ എന്ന് മനസ്സിലാക്കാനും, ആദ്യം training video മുഴുവനായി കാണുന്നത് നല്ലതാണ്. Video മുഴുവനായി കണ്ടതിന് ശേഷം ഇവിടെ തിരിച്ചെത്താം.",
+    cta: "WATCH THE TRAINING →",
+    back: "I'LL WATCH IT NOW",
   },
-  workOptions: [
-    "Art works ചെയ്യുന്നു / sell ചെയ്യുന്നു",
-    "Art class എടുക്കുന്നു",
-    "Art works-ഉം art class-ഉം രണ്ടും",
-    "ഇനി തുടങ്ങാൻ ആലോചിക്കുന്നു",
-  ],
-  problemOptions: [
-    "Customers / students കിട്ടുന്നില്ല",
-    "Price പറയാൻ അറിയില്ല",
-    "Social media-യിൽ എന്ത് ചെയ്യണം എന്ന് അറിയില്ല",
-    "Income consistent അല്ല",
-    "എവിടെ തുടങ്ങണം എന്ന് അറിയില്ല",
-  ],
-  otherOption: "മറ്റൊന്ന്",
-  otherPlaceholder: "ഒരു വരിയിൽ എഴുതൂ",
-  /** Honest, non-pushy note about the small fee + a soft self-selection question. */
-  commitmentNote:
-    "ഇത് എന്റെ personal time കൂടി ചെലവാക്കുന്ന ഒരു dedicated support ആണ് — live classes, WhatsApp doubt support ഒക്കെ ഉള്ളതുകൊണ്ട് ഒരു ചെറിയ payment-ഓട് കൂടിയാണ് ഇത് വരുന്നത്. നിങ്ങൾക്ക് ഇപ്പോൾ ഏതാണ് ചേരുന്നത് എന്ന് മാത്രം പറഞ്ഞാൽ മതി — രണ്ട് ഉത്തരവും ok ആണ്.",
-  commitmentOptions: [
-    "അതെ — ചേരുന്ന കാര്യമാണെങ്കിൽ ഞാൻ ready ആണ്",
-    "ആദ്യം details അറിയണം, എന്നിട്ട് തീരുമാനിക്കാം",
-  ],
-  submit: "NEXT",
+  final: {
+    title: "നിങ്ങളുടെ situation കുറച്ച് മനസ്സിലായി.",
+    body: "നിങ്ങൾ പറഞ്ഞ കാര്യങ്ങൾ നോക്കിയാൽ, ഇനി നിങ്ങളുടെ situation personally discuss ചെയ്ത് അടുത്ത step എന്താണെന്ന് clear ആക്കുന്നതാണ് ഏറ്റവും useful.",
+    cta: "VIPIN, I NEED YOUR PERSONAL SUPPORT →",
+  },
+  continue: "CONTINUE →",
+  back: "← Back",
   error: "ഒരു option select ചെയ്യൂ.",
   privacy: "Personal details ഒന്നും ചോദിക്കുന്നില്ല. ഇത് നിങ്ങൾക്ക് ചേരുമോ എന്ന് നോക്കാൻ മാത്രം.",
-  successTitle: "കിട്ടി — thank you!",
-  successSub: "നിങ്ങൾ പറഞ്ഞ situation വെച്ച് ഇത് നിങ്ങൾക്ക് useful ആകുമോ എന്ന് താഴെ നോക്കാം.",
 };
+
 
 
 /** Top-of-page block shown above the VSL headline on the first screen. */
