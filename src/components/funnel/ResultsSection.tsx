@@ -109,6 +109,8 @@ export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void
         </div>
       </div>
 
+      <SupportCta onClick={onSupportClick} />
+
       {/* Artworks */}
       <div className="mt-10">
         <p className="mb-4 text-center text-[0.62rem] font-bold tracking-[0.16em] text-muted-foreground uppercase">
@@ -116,6 +118,8 @@ export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void
         </p>
         <Gallery items={results.artworks} />
       </div>
+
+      <SupportCta onClick={onSupportClick} />
 
       {/* Moments */}
       <div className="mt-10">
@@ -125,18 +129,7 @@ export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void
         <Gallery items={results.achievements} />
       </div>
 
-      <div className="mt-10 text-center">
-        <a
-          href={results.instagram.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-gradient-gold px-7 text-xs font-bold tracking-wide text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:text-sm"
-        >
-          <Instagram className="h-4 w-4" />
-          {results.instagram.label}
-        </a>
-        <p className="mt-2 text-xs text-muted-foreground">@{results.instagram.handle}</p>
-      </div>
+      <SupportCta onClick={onSupportClick} />
     </section>
   );
 }
