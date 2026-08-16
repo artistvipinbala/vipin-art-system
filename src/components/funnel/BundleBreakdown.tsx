@@ -1,5 +1,7 @@
 import { Check, Gift } from "lucide-react";
 
+import { JoinNowInline } from "./JoinNowInline";
+import groupImage from "@/assets/bundle/bundle-group.jpg.asset.json";
 import { bundleBreakdown } from "@/content/bundle-breakdown";
 
 /** Bonus / course breakdown: 3D box mockup + Malayalam value points per item. */
@@ -14,6 +16,15 @@ export function BundleBreakdown() {
         <p className="text-mal mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
           {bundleBreakdown.subtitle}
         </p>
+
+        <div className="surface-ink mt-6 overflow-hidden rounded-2xl border border-border/70">
+          <img
+            src={groupImage.url}
+            alt="Artist Vipin Bala personal support bundle — all courses and toolkits"
+            className="h-full w-full object-contain"
+          />
+        </div>
+
 
         <div className="mt-6 flex flex-col items-center gap-3">
           <div>
