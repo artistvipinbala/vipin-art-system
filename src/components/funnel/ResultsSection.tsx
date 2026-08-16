@@ -2,8 +2,9 @@ import { Play } from "lucide-react";
 import { useState } from "react";
 
 import voicesVideo from "@/assets/artist-voices.mp4.asset.json";
+import dashboardImage from "@/assets/class-dashboard.png.asset.json";
 import proudVideo from "@/assets/proud-reel.mp4.asset.json";
-import { results, vsl } from "@/content/funnel";
+import { milestones, results, vsl } from "@/content/funnel";
 
 function SupportCta({ onClick }: { onClick?: (() => void) | undefined }) {
   if (!onClick) return null;
