@@ -30,6 +30,7 @@ export const Route = createFileRoute("/")({
 function LandingPage() {
   const navigate = useNavigate();
   const [unlocked, setUnlocked] = useState(false);
+  void unlocked;
   const [showIntake, setShowIntake] = useState(false);
 
   useEffect(() => {
