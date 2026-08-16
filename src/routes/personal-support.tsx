@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 
+import { BundleBreakdown } from "@/components/funnel/BundleBreakdown";
 import { EduCompare } from "@/components/funnel/EduCompare";
 import { Footer } from "@/components/funnel/Footer";
 import { Guarantee } from "@/components/funnel/Guarantee";
@@ -10,7 +11,6 @@ import { PricingCards } from "@/components/funnel/PricingCards";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
 import { Lead, Section, SectionHeading } from "@/components/funnel/Section";
 import { SpecialOffer } from "@/components/funnel/SpecialOffer";
-import { ValueStack } from "@/components/funnel/ValueStack";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
 import { WhyPayment } from "@/components/funnel/WhyPayment";
