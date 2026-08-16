@@ -170,6 +170,21 @@ function LandingPage() {
           © {new Date().getFullYear()} {brand.name}
         </footer>
       </div>
+
+      {/* Subtle sticky mobile CTA, appears once the visitor scrolls past the video */}
+      <div
+        className={`fixed inset-x-0 bottom-0 z-40 border-t border-border/70 bg-background/95 px-4 py-3 backdrop-blur transition-all duration-300 md:hidden ${
+          showSticky ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-full opacity-0"
+        }`}
+      >
+        <button
+          type="button"
+          onClick={goNext}
+          className="text-mal flex min-h-13 w-full items-center justify-center rounded-xl bg-primary px-5 text-[0.78rem] font-bold text-primary-foreground shadow-glow"
+        >
+          I NEED YOUR PERSONAL SUPPORT
+        </button>
+      </div>
     </main>
   );
 }
