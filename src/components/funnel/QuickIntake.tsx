@@ -1,6 +1,6 @@
 import { useServerFn } from "@tanstack/react-start";
-import { ArrowLeft, ArrowRight, BadgeCheck, Loader2, ShieldCheck } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { ArrowLeft, ArrowRight, BadgeCheck, Loader2, PlayCircle, ShieldCheck } from "lucide-react";
+import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { quickIntake as copy } from "@/content/funnel";
@@ -9,16 +9,12 @@ import { submitSupportApplication } from "@/lib/leads.functions";
 import { supportApplicationSchema } from "@/lib/leads.schemas";
 import { track } from "@/lib/track";
 
-const STORE_KEY = "avb_lead";
-
 const fieldClass =
   "text-mal mt-2 min-h-13 w-full rounded-full border border-sheet-border bg-sheet-field px-5 text-[0.95rem] text-sheet-foreground placeholder:text-sheet-muted/70 outline-none focus:border-primary focus:ring-0";
 const labelClass = "text-mal text-[0.92rem] font-medium text-sheet-foreground";
 
 type Values = {
-  name: string;
-  whatsapp: string;
-  email: string;
+  watched: string;
   work: string;
   problem: string;
   problem_other: string;
@@ -26,9 +22,7 @@ type Values = {
 };
 
 const empty: Values = {
-  name: "",
-  whatsapp: "",
-  email: "",
+  watched: "",
   work: "",
   problem: "",
   problem_other: "",
@@ -36,25 +30,22 @@ const empty: Values = {
 };
 
 /**
- * One question per screen (typeform style), asked in a popup before the
- * offer page opens. Light sheet surface so it reads clearly on mobile.
+ * Suitability check (not a lead form): one question per screen, no name /
+ * email / phone. Question 1 gates on having watched the full video.
  */
-export function QuickIntake({ onDone }: { onDone: () => void }) {
+export function QuickIntake({
+  onDone,
+  onWatchVideo,
+}: {
+  onDone: () => void;
+  onWatchVideo?: () => void;
+}) {
   const submit = useServerFn(submitSupportApplication);
   const [values, setValues] = useState<Values>(empty);
   const [step, setStep] = useState(0);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [done, setDone] = useState(false);
-
-  useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORE_KEY);
-      if (saved) setValues((prev) => ({ ...prev, ...JSON.parse(saved) }));
-    } catch {
-      /* ignore */
-    }
-  }, []);
 
   const set = (key: keyof Values) => (v: string) => {
     setError("");
@@ -64,66 +55,16 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
   const steps = useMemo(
     () => [
       {
-        title: "Let's start with your name & number",
-        sub: "പേരും WhatsApp നമ്പറും മാത്രം — 1 മിനിറ്റിൽ തീരും.",
-        valid: () => values.name.trim().length > 1 && values.whatsapp.trim().length >= 10,
+        title: copy.labels.watched,
+        sub: copy.watchedSub,
+        valid: () => Boolean(values.watched),
         body: (
-          <>
-            <div>
-              <label htmlFor="qi-name" className={labelClass}>
-                {copy.labels.name}
-              </label>
-              <input
-                id="qi-name"
-                name="name"
-                autoComplete="name"
-                placeholder="Your full name"
-                maxLength={100}
-                value={values.name}
-                onChange={(e) => set("name")(e.target.value)}
-                className={fieldClass}
-              />
-            </div>
-            <div className="mt-5">
-              <label htmlFor="qi-phone" className={labelClass}>
-                {copy.labels.whatsapp}
-              </label>
-              <input
-                id="qi-phone"
-                name="tel"
-                inputMode="tel"
-                autoComplete="tel"
-                placeholder="10-digit mobile number"
-                maxLength={20}
-                value={values.whatsapp}
-                onChange={(e) => set("whatsapp")(e.target.value)}
-                className={fieldClass}
-              />
-            </div>
-          </>
-        ),
-      },
-      {
-        title: "Email address",
-        sub: "Details അയച്ചു തരാൻ വേണ്ടി മാത്രം.",
-        valid: () => /.+@.+\..+/.test(values.email.trim()),
-        body: (
-          <div>
-            <label htmlFor="qi-email" className={labelClass}>
-              {copy.labels.email}
-            </label>
-            <input
-              id="qi-email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              placeholder="you@email.com"
-              maxLength={255}
-              value={values.email}
-              onChange={(e) => set("email")(e.target.value)}
-              className={fieldClass}
-            />
-          </div>
+          <OptionList
+            name="watched"
+            options={[copy.watchedOptions.yes, copy.watchedOptions.no]}
+            value={values.watched}
+            onChange={set("watched")}
+          />
         ),
       },
       {
@@ -141,7 +82,7 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
       },
       {
         title: copy.labels.problem,
-        sub: "ഒന്ന് select ചെയ്യൂ — ഇത് നോക്കിയാണ് ഞാൻ direction പറയുന്നത്.",
+        sub: "ഒന്ന് select ചെയ്യൂ — ഇത് നോക്കിയാണ് ഇത് നിങ്ങൾക്ക് ചേരുമോ എന്ന് പറയുന്നത്.",
         valid: () =>
           values.problem === copy.otherOption
             ? values.problem_other.trim().length > 2
@@ -187,15 +128,14 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
   const total = steps.length;
   const current = steps[step]!;
   const progress = Math.round(((step + 1) / total) * 100);
+  const notWatched = values.watched === copy.watchedOptions.no;
 
   async function finish() {
     const challenge =
       values.problem === copy.otherOption ? values.problem_other : values.problem;
     const parsed = supportApplicationSchema.safeParse({
-      name: values.name,
-      email: values.email,
-      whatsapp_number: values.whatsapp,
       art_type: values.work,
+      current_stage: `Watched full video: ${values.watched}`,
       biggest_challenge: `${challenge} | Ready: ${values.commitment}`,
       ...getCampaignParams(),
     });
@@ -207,7 +147,6 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
     try {
       await submit({ data: parsed.data });
       try {
-        window.localStorage.setItem(STORE_KEY, JSON.stringify(values));
         window.localStorage.setItem("avb_intake_done", "1");
       } catch {
         /* ignore */
@@ -246,6 +185,34 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
     );
   }
 
+  /* Not watched fully → send them back to the video instead of collecting data. */
+  if (notWatched) {
+    return (
+      <div className="rounded-3xl bg-sheet p-7 text-sheet-foreground shadow-card">
+        <h3 className="text-mal text-[1.25rem] leading-tight font-extrabold">
+          {copy.notWatched.title}
+        </h3>
+        <p className="text-mal mt-3 text-[0.95rem] leading-relaxed text-sheet-muted">
+          {copy.notWatched.body}
+        </p>
+        <button
+          type="button"
+          onClick={onWatchVideo}
+          className="text-mal mt-6 inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-full bg-gradient-gold px-6 text-[1rem] font-bold text-primary-foreground shadow-glow"
+        >
+          <PlayCircle className="h-4.5 w-4.5" /> {copy.notWatched.cta}
+        </button>
+        <button
+          type="button"
+          onClick={() => set("watched")(copy.watchedOptions.yes)}
+          className="text-mal mt-3 w-full text-[0.85rem] font-semibold text-sheet-muted underline underline-offset-4"
+        >
+          {copy.notWatched.back}
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div
       onFocus={() => track("support_form_started")}
@@ -265,6 +232,9 @@ export function QuickIntake({ onDone }: { onDone: () => void }) {
             style={{ width: `${progress}%` }}
           />
         </div>
+        <p className="text-mal mt-3 text-[0.75rem] leading-relaxed text-sheet-muted">
+          {copy.sub}
+        </p>
       </div>
 
       {/* Question */}
