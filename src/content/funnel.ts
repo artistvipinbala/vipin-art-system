@@ -800,3 +800,45 @@ export const pageTop = {
     "Art ചെയ്യാൻ അറിയാം… പക്ഷേ അതിൽ നിന്ന് സ്ഥിരമായി Income ഉണ്ടാക്കാൻ അറിയില്ലേ?",
   sub: "നിങ്ങളുടെ Drawing, Painting, Craft അല്ലെങ്കിൽ Teaching Skill ഉപയോഗിച്ച് Artwork Sales, Art Classes, Workshops, Products എന്നിവ വഴി Income ഉണ്ടാക്കാനുള്ള ഒരു practical system ഈ free training-ൽ പഠിക്കാം.",
 };
+
+/**
+ * Bottom-of-first-page results block.
+ * Owner: replace/extend `artworks`, `achievements` and the proud-moment copy here.
+ */
+export const results = {
+  eyebrow: "SOME OF MY WORK & MOMENTS",
+  headline: "ഇത് വരെയുള്ള ഒരു ചെറിയ കാഴ്ച",
+  sub: "ഞാൻ ചെയ്ത artwork-കളും, ഈ യാത്രയിലെ ചില moments-ഉം. Video-യിൽ പറഞ്ഞ കാര്യങ്ങൾ എനിക്ക് എങ്ങനെ work ചെയ്തു എന്നതിന്റെ ഒരു small glimpse.",
+  proud: {
+    eyebrow: "PROUD MOMENT",
+    videoUrl: "",
+    poster: "https://tagmango.com/staticassets/1698563250469.png",
+    caption: "When I first earned 2 lakhs as an artist",
+    quote:
+      '"Are artists always meant to struggle?" — ഈ ചോദ്യത്തിന് ഉത്തരം തേടി ഞാൻ പ്രാക്ടിക്കലായി വർക്ക് ചെയ്യുമ്പോൾ, artwork-കൾ ചെയ്തു മാത്രം monthly ₹2 Lakhs+ earn ചെയ്യാൻ സാധിച്ചു.',
+    quote2:
+      "വരച്ചു കിട്ടിയ വരുമാനത്തിൽ നിന്ന് അമ്മക്ക് ഒരു ലക്ഷം രൂപ കൊടുത്തപ്പോൾ… നിങ്ങൾ ആഗ്രഹിക്കുന്നു എങ്കിൽ ഈ യാത്ര നിങ്ങൾക്കും possible ആണ്.",
+    signature: '"We Can\'t Choose Art, Art Chooses Us"',
+  },
+  artworks: [
+    { src: "https://tagmango.com/staticassets/1698393879084.jpg", label: "Caricature" },
+    { src: "https://tagmango.com/staticassets/1698393879114.jpg", label: "Digital Art" },
+    { src: "https://tagmango.com/staticassets/1698393879169.jpg", label: "Colour Pencil" },
+    { src: "https://tagmango.com/staticassets/1698393879148.jpg", label: "Colour Pencil" },
+    { src: "https://tagmango.com/staticassets/1698393879224.jpg", label: "Digital Caricature" },
+    { src: "https://tagmango.com/staticassets/1698393879227.jpg", label: "Pencil Drawing" },
+  ],
+  achievements: [
+    { src: "https://tagmango.com/staticassets/1698561155139.png", label: "Recognition" },
+    { src: "https://tagmango.com/staticassets/1698561154712.jpg", label: "On stage" },
+    { src: "https://tagmango.com/staticassets/1698565561107.jpg", label: "With students" },
+    { src: "https://tagmango.com/staticassets/1702996743854.jpg", label: "Art journey" },
+    { src: "https://tagmango.com/staticassets/1737629437076.jpg", label: "Artist Vipin Bala" },
+    { src: "https://tagmango.com/staticassets/1698565932065.jpg", label: "Art success" },
+  ],
+  instagram: {
+    handle: "artist_vipinbala",
+    url: "https://www.instagram.com/artist_vipinbala/",
+    label: "FOLLOW ON INSTAGRAM",
+  },
+};
