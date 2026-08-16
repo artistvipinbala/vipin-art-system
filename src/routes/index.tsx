@@ -30,9 +30,17 @@ export const Route = createFileRoute("/")({
 function LandingPage() {
   const navigate = useNavigate();
   const [showIntake, setShowIntake] = useState(false);
+  const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
     track("landing_page_visit");
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setShowSticky(window.scrollY > 420);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const goNext = () => {
