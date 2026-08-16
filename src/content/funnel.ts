@@ -804,7 +804,7 @@ export const pageTop = {
 /** Achievement strip shown right under the first-screen video text. */
 export const milestones = {
   eyebrow: "ART CLASSES",
-  headline: "Art Class-കളിലൂടെ — 8,000+ students",
+  headline: "Art Class-കളിലൂടെ — 8,000 students",
   sub: "കുറച്ച് മാസങ്ങൾക്കുള്ളിൽ എണ്ണായിരത്തോളം പേർ എന്റെ art class-കളിൽ join ചെയ്തു. കഴിഞ്ഞ കുറച്ച് ദിവസങ്ങളിലും ആളുകൾ join ചെയ്തുകൊണ്ടിരിക്കുന്നു — ഇത് പൂർണ്ണമായും automated ആണ്, ഞാൻ ഓരോ sale-നും പിന്നാലെ പോകേണ്ടതില്ല.",
   imageCaption: "Class dashboard — join ചെയ്തവരുടെ live count",
   note: "ഇതേ രീതി നിങ്ങൾക്കും set ചെയ്യാൻ പറ്റും. ഇത് ഒരു number കാണിക്കാൻ വേണ്ടിയല്ല — ഇത് work ചെയ്യുന്നു എന്ന് പറയാൻ വേണ്ടിയാണ്.",
@@ -816,9 +816,9 @@ export const milestones = {
  * Owner: replace/extend `artworks`, the proud-moment copy and the voices video here.
  */
 export const results = {
-  eyebrow: "RESULTS — എന്റേത് മാത്രമല്ല",
-  headline: "എനിക്ക് ഒപ്പം നടന്ന കുറച്ച് artists-ന്റെ കൂടി result",
-  sub: "എന്റെ personal support കൂടി ചേർന്നപ്പോൾ വേറെ കുറച്ച് artists-ന് ഉണ്ടായ മാറ്റങ്ങൾ എന്തൊക്കെയാണ് എന്ന് നോക്കാം. ഇത് എന്റെ മാത്രം കഥയല്ല.",
+  eyebrow: "SOME OF MY WORK & MOMENTS",
+  headline: "ഇത് വരെയുള്ള ഒരു ചെറിയ കാഴ്ച",
+  sub: "ഞാൻ ചെയ്ത artwork-കളും, ഈ യാത്രയിലെ ചില moments-ഉം. Video-യിൽ പറഞ്ഞ കാര്യങ്ങൾ എനിക്ക് എങ്ങനെ work ചെയ്തു എന്നതിന്റെ ഒരു small glimpse.",
   proud: {
     eyebrow: "PROUD MOMENT",
     videoUrl: "",
