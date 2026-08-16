@@ -4,7 +4,7 @@ import { useState } from "react";
 import proudVideo from "@/assets/proud-moment.mp4.asset.json";
 import { results, vsl } from "@/content/funnel";
 
-function SupportCta({ onClick }: { onClick?: () => void }) {
+function SupportCta({ onClick }: { onClick?: (() => void) | undefined }) {
   if (!onClick) return null;
   return (
     <div className="mt-8 text-center">
