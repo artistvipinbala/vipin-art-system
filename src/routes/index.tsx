@@ -99,8 +99,9 @@ function LandingPage() {
               Free Training · Approx. 30 Minutes
             </p>
 
-            <div className="surface-ink rounded-[1.25rem] border border-border/80 p-1.5 shadow-card">
-              <div className="overflow-hidden rounded-[1rem] ring-1 ring-primary/15">
+            <div className="surface-ink video-glow rounded-[1.25rem] border-2 p-1.5">
+              <div className="overflow-hidden rounded-[1rem] ring-1 ring-primary/25">
+
                 <VslPlayer
                   embedUrl={media.trainingVideoEmbedUrl}
                   placeholderLabel={media.trainingVideoPlaceholder}
