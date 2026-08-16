@@ -23,9 +23,9 @@ export const feedbackSchema = z.object({
 export type FeedbackInput = z.infer<typeof feedbackSchema>;
 
 export const supportApplicationSchema = z.object({
-  name: z.string().trim().min(2, { message: "Name is required" }).max(100),
+  name: z.string().trim().max(100).optional().or(z.literal("")),
   email: z.string().trim().email({ message: "Enter a valid email" }).max(255).optional().or(z.literal("")),
-  whatsapp_number: phone,
+  whatsapp_number: phone.optional().or(z.literal("")),
   art_type: z.string().trim().max(200).optional(),
   age_range: z.string().trim().max(50).optional(),
   work_place: z.string().trim().max(200).optional(),
