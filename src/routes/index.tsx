@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { QuickIntake } from "@/components/funnel/QuickIntake";
 import { ResultsSection } from "@/components/funnel/ResultsSection";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
-import { brand, media, milestones, pageTop, vsl } from "@/content/funnel";
+import { brand, media, pageTop, vsl } from "@/content/funnel";
 import { track } from "@/lib/track";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
@@ -108,36 +108,8 @@ function LandingPage() {
         </div>
         </div>
 
-        {/* Achievements so far */}
-        <section className="mt-10 rounded-3xl border border-border/70 bg-gradient-card p-5 shadow-card sm:p-7">
-          <p className="text-center text-[0.62rem] font-bold tracking-[0.16em] text-primary uppercase">
-            {milestones.eyebrow}
-          </p>
-          <h2 className="text-mal mx-auto mt-3 max-w-xl text-center text-[1.05rem] leading-[1.35] font-bold sm:text-[1.3rem]">
-            {milestones.headline}
-          </h2>
-          <p className="text-mal mx-auto mt-3 max-w-xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
-            {milestones.sub}
-          </p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {milestones.items.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-2xl border border-border/60 bg-background/40 px-4 py-4 text-center"
-              >
-                <p className="text-[1.15rem] font-extrabold text-primary sm:text-[1.35rem]">
-                  {item.value}
-                </p>
-                <p className="text-mal mt-1 text-[0.72rem] leading-snug text-muted-foreground">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="text-mal mt-5 text-center text-[0.72rem] text-muted-foreground/80">
-            {milestones.note}
-          </p>
-        </section>
+
+
 
         {/* Appears only after the video has been watched */}
         {unlocked ? (

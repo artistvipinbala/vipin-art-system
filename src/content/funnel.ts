@@ -803,16 +803,13 @@ export const pageTop = {
 
 /** Achievement strip shown right under the first-screen video text. */
 export const milestones = {
-  eyebrow: "SO FAR",
-  headline: "Artwork-കളിലൂടെ മാത്രമല്ല — Art Class-കളിലൂടെയും",
-  sub: "Artwork sales-ൽ നിന്ന് ഒരു മാസം ₹2 Lakhs+ achieve ചെയ്തു. അതിനുശേഷം recently start ചെയ്ത art class-കളിലൂടെ, ഇന്ന് (August 16) വരെ എണ്ണായിരത്തോളം പേർ ഈ class-കളിൽ join ചെയ്തു — ഇത് ഇപ്പോഴും ongoing ആണ്.",
-  items: [
-    { value: "₹2 Lakhs+", label: "Artwork sales — ഒരു മാസത്തിൽ" },
-    { value: "8,000+", label: "Art class-കളിൽ join ചെയ്തവർ" },
-    { value: "Ongoing", label: "ഓരോ ദിവസവും കൂടുന്നു" },
-  ],
-  note: "ഇത് ഒരു number കാണിക്കാൻ വേണ്ടിയല്ല — ഇത് work ചെയ്യുന്നു എന്ന് പറയാൻ വേണ്ടിയാണ്.",
+  eyebrow: "ART CLASSES",
+  headline: "Art Class-കളിലൂടെ — 8,000+ students",
+  sub: "കുറച്ച് മാസങ്ങൾക്കുള്ളിൽ എണ്ണായിരത്തോളം പേർ എന്റെ art class-കളിൽ join ചെയ്തു. കഴിഞ്ഞ കുറച്ച് ദിവസങ്ങളിലും ആളുകൾ join ചെയ്തുകൊണ്ടിരിക്കുന്നു — ഇത് പൂർണ്ണമായും automated ആണ്, ഞാൻ ഓരോ sale-നും പിന്നാലെ പോകേണ്ടതില്ല.",
+  imageCaption: "Class dashboard — join ചെയ്തവരുടെ live count",
+  note: "ഇതേ രീതി നിങ്ങൾക്കും set ചെയ്യാൻ പറ്റും. ഇത് ഒരു number കാണിക്കാൻ വേണ്ടിയല്ല — ഇത് work ചെയ്യുന്നു എന്ന് പറയാൻ വേണ്ടിയാണ്.",
 };
+
 
 /**
  * Bottom-of-first-page results block.
