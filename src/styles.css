@@ -207,6 +207,22 @@
   color: var(--ink-foreground);
 }
 
+/* Orange cinematic glow around the video stage */
+@utility video-glow {
+  border-color: color-mix(in oklab, var(--primary) 75%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--primary) 45%, transparent),
+    0 0 28px -2px color-mix(in oklab, var(--primary) 55%, transparent),
+    0 0 70px -6px color-mix(in oklab, var(--primary) 42%, transparent);
+}
+
+/* Primary CTA with the same warm glow */
+@utility cta-glow {
+  box-shadow:
+    0 10px 26px -8px color-mix(in oklab, var(--primary) 62%, transparent),
+    0 0 34px -6px color-mix(in oklab, var(--primary) 48%, transparent);
+}
+
 @utility rise-in {
   animation: rise-in 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
