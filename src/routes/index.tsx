@@ -57,9 +57,10 @@ function LandingPage() {
         {/* First screen — headline + video, vertically centred */}
         <div className="flex min-h-[calc(100svh-3rem)] flex-col justify-center">
         <header className="text-center">
-          <p className="text-[0.6rem] font-bold tracking-[0.18em] text-primary uppercase sm:text-[0.68rem]">
+          <p className="text-sky text-[0.6rem] font-bold tracking-[0.18em] uppercase sm:text-[0.68rem]">
             {pageTop.eyebrow}
           </p>
+
           <h1
             className="text-mal text-gradient-gold mx-auto mt-2 max-w-2xl text-[1.1rem] leading-[1.3] font-extrabold sm:text-[1.7rem]"
             style={{ filter: "drop-shadow(0 2px 18px oklch(0.7 0.188 45.1 / 0.35))" }}
