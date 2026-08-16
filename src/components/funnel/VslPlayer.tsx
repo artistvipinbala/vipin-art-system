@@ -47,7 +47,7 @@ export function VslPlayer({
       <Placeholder
         label={placeholderLabel}
         ratio="aspect-video"
-        className="bg-ink text-ink-foreground"
+        className="bg-secondary"
       />
     );
   }

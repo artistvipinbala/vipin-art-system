@@ -13,7 +13,7 @@ function SupportCta({ onClick }: { onClick?: (() => void) | undefined }) {
       <button
         type="button"
         onClick={onClick}
-        className="text-mal inline-flex min-h-13 w-full items-center justify-center rounded-full bg-gradient-gold px-7 text-[0.8rem] font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:w-auto sm:text-sm"
+        className="text-mal inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-primary px-8 text-[0.82rem] font-bold text-primary-foreground shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 sm:w-auto sm:text-[0.9rem]"
       >
         {vsl.reveal.cta}
       </button>
@@ -51,7 +51,7 @@ export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void
   const videoUrl = results.proud.videoUrl || proudVideo.url;
 
   return (
-    <section className="mt-16 border-t border-border/60 pt-12">
+    <section className="mt-14 border-t border-border pt-14 sm:mt-20">
       <div className="text-center">
         <p className="text-[0.62rem] font-bold tracking-[0.16em] text-primary uppercase">
           {results.eyebrow}
