@@ -94,7 +94,7 @@ function LandingPage() {
           </h2>
 
           {/* Video stage — the focal point of the page */}
-          <div className="mt-4">
+          <div id="vsl-video" className="mt-4">
             <p className="mb-2 text-center text-[0.54rem] font-semibold tracking-[0.2em] text-muted-foreground uppercase sm:text-[0.6rem]">
               Free Training · Approx. 30 Minutes
             </p>
