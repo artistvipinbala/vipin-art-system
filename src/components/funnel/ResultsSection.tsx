@@ -43,7 +43,7 @@ function Gallery({ items }: { items: { src: string; label: string }[] }) {
   );
 }
 
-export function ResultsSection() {
+export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void }) {
   const [playing, setPlaying] = useState(false);
   const videoUrl = results.proud.videoUrl || proudVideo.url;
 
