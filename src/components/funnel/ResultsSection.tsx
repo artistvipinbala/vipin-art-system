@@ -1,6 +1,7 @@
 import { Play } from "lucide-react";
 import { useState } from "react";
 
+import voicesVideo from "@/assets/artist-voices.mp4.asset.json";
 import proudVideo from "@/assets/proud-reel.mp4.asset.json";
 import { results, vsl } from "@/content/funnel";
 
@@ -45,6 +46,7 @@ function Gallery({ items }: { items: { src: string; label: string }[] }) {
 
 export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void }) {
   const [playing, setPlaying] = useState(false);
+  const [voicesPlaying, setVoicesPlaying] = useState(false);
   const videoUrl = results.proud.videoUrl || proudVideo.url;
 
   return (
@@ -111,22 +113,55 @@ export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void
 
       <SupportCta onClick={onSupportClick} />
 
+      {/* Their words — video */}
+      <div className="mt-12 rounded-3xl border border-border/70 bg-gradient-card p-4 shadow-card sm:p-6">
+        <p className="text-center text-[0.62rem] font-bold tracking-[0.16em] text-primary uppercase">
+          {results.voices.eyebrow}
+        </p>
+        <h3 className="text-mal mx-auto mt-3 max-w-xl text-center text-[1.05rem] leading-[1.35] font-bold sm:text-[1.3rem]">
+          {results.voices.headline}
+        </h3>
+        <p className="text-mal mx-auto mt-2 max-w-xl text-center text-[0.8rem] leading-relaxed text-muted-foreground sm:text-sm">
+          {results.voices.sub}
+        </p>
+        <div className="mx-auto mt-5 max-w-sm">
+          {voicesPlaying ? (
+            <video
+              src={voicesVideo.url}
+              controls
+              autoPlay
+              playsInline
+              className="aspect-[9/16] w-full rounded-2xl bg-foreground/[0.06] object-cover"
+            />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setVoicesPlaying(true)}
+              aria-label="Play artist voices video"
+              className="group relative flex aspect-[9/16] w-full items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-foreground/[0.06]"
+            >
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-gold text-primary-foreground shadow-glow transition-transform group-hover:scale-105">
+                <Play className="h-6 w-6 translate-x-[2px]" />
+              </span>
+            </button>
+          )}
+          <p className="mt-2 text-center text-[0.7rem] text-muted-foreground">
+            {results.voices.caption}
+          </p>
+        </div>
+        <p className="text-mal mx-auto mt-5 max-w-xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
+          {results.voices.closing}
+        </p>
+      </div>
+
+      <SupportCta onClick={onSupportClick} />
+
       {/* Artworks */}
       <div className="mt-10">
         <p className="mb-4 text-center text-[0.62rem] font-bold tracking-[0.16em] text-muted-foreground uppercase">
           Artworks
         </p>
         <Gallery items={results.artworks} />
-      </div>
-
-      <SupportCta onClick={onSupportClick} />
-
-      {/* Moments */}
-      <div className="mt-10">
-        <p className="mb-4 text-center text-[0.62rem] font-bold tracking-[0.16em] text-muted-foreground uppercase">
-          Moments
-        </p>
-        <Gallery items={results.achievements} />
       </div>
 
       <SupportCta onClick={onSupportClick} />
