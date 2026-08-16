@@ -95,13 +95,13 @@ function LandingPage() {
             </div>
           </div>
 
-          <p className="mt-3 text-center text-[0.7rem] tracking-wide text-muted-foreground/70">
+          <p className="mt-2 text-center text-[0.66rem] tracking-wide text-muted-foreground/70">
             {vsl.duration}
           </p>
-          <p className="text-mal mx-auto mt-3 max-w-2xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
+          <p className="text-mal mx-auto mt-2 max-w-xl text-center text-[0.74rem] leading-relaxed text-muted-foreground sm:text-sm">
             {vsl.sub}
           </p>
-          <p className="text-mal mx-auto mt-2 max-w-2xl text-center text-[0.82rem] leading-relaxed text-muted-foreground sm:text-sm">
+          <p className="text-mal mx-auto mt-1 max-w-xl text-center text-[0.74rem] leading-relaxed text-muted-foreground sm:text-sm">
             {vsl.belowVideo}
           </p>
         </div>
