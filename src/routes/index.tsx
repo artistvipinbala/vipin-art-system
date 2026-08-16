@@ -84,7 +84,7 @@ function LandingPage() {
           </div>
 
 
-          <div className="mt-5 rounded-[1.75rem] bg-gradient-gold p-[2px] shadow-glow">
+          <div className="mt-4 rounded-[1.75rem] bg-gradient-gold p-[2px] shadow-glow">
             <div className="overflow-hidden rounded-[1.65rem] bg-background">
               <VslPlayer
                 embedUrl={media.trainingVideoEmbedUrl}
