@@ -4,6 +4,7 @@ import { useState } from "react";
 import voicesVideo from "@/assets/artist-voices.mp4.asset.json";
 import dashboardImage from "@/assets/class-dashboard.png.asset.json";
 import proudVideo from "@/assets/proud-reel.mp4.asset.json";
+import voicesPoster from "@/assets/voices-poster.jpg.asset.json";
 import { milestones, results, vsl } from "@/content/funnel";
 
 function SupportCta({ onClick }: { onClick?: (() => void) | undefined }) {
@@ -153,23 +154,30 @@ export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void
         <p className="text-mal mx-auto mt-2 max-w-xl text-center text-[0.8rem] leading-relaxed text-muted-foreground sm:text-sm">
           {results.voices.sub}
         </p>
-        <div className="mx-auto mt-5 max-w-sm">
+        <div className="mx-auto mt-5 max-w-2xl">
           {voicesPlaying ? (
             <video
               src={voicesVideo.url}
+              poster={voicesPoster.url}
               controls
               autoPlay
               playsInline
-              className="aspect-[9/16] w-full rounded-2xl bg-foreground/[0.06] object-cover"
+              className="aspect-video w-full rounded-2xl bg-foreground/[0.06] object-cover"
             />
           ) : (
             <button
               type="button"
               onClick={() => setVoicesPlaying(true)}
               aria-label="Play artist voices video"
-              className="group relative flex aspect-[9/16] w-full items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-foreground/[0.06]"
+              className="group relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-foreground/[0.06]"
             >
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-gold text-primary-foreground shadow-glow transition-transform group-hover:scale-105">
+              <img
+                src={voicesPoster.url}
+                alt={results.voices.caption}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-gold text-primary-foreground shadow-glow transition-transform group-hover:scale-105">
                 <Play className="h-6 w-6 translate-x-[2px]" />
               </span>
             </button>
