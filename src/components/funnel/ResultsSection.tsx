@@ -1,8 +1,24 @@
-import { Instagram, Play } from "lucide-react";
+import { Play } from "lucide-react";
 import { useState } from "react";
 
 import proudVideo from "@/assets/proud-moment.mp4.asset.json";
-import { results } from "@/content/funnel";
+import { results, vsl } from "@/content/funnel";
+
+function SupportCta({ onClick }: { onClick?: (() => void) | undefined }) {
+  if (!onClick) return null;
+  return (
+    <div className="mt-8 text-center">
+      <button
+        type="button"
+        onClick={onClick}
+        className="text-mal inline-flex min-h-13 w-full items-center justify-center rounded-full bg-gradient-gold px-7 text-[0.8rem] font-bold text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:w-auto sm:text-sm"
+      >
+        {vsl.reveal.cta}
+      </button>
+      <p className="text-mal mt-2 text-[0.7rem] text-muted-foreground">{vsl.reveal.note}</p>
+    </div>
+  );
+}
 
 function Gallery({ items }: { items: { src: string; label: string }[] }) {
   return (
@@ -27,7 +43,7 @@ function Gallery({ items }: { items: { src: string; label: string }[] }) {
   );
 }
 
-export function ResultsSection() {
+export function ResultsSection({ onSupportClick }: { onSupportClick?: () => void }) {
   const [playing, setPlaying] = useState(false);
   const videoUrl = results.proud.videoUrl || proudVideo.url;
 
@@ -93,6 +109,8 @@ export function ResultsSection() {
         </div>
       </div>
 
+      <SupportCta onClick={onSupportClick} />
+
       {/* Artworks */}
       <div className="mt-10">
         <p className="mb-4 text-center text-[0.62rem] font-bold tracking-[0.16em] text-muted-foreground uppercase">
@@ -100,6 +118,8 @@ export function ResultsSection() {
         </p>
         <Gallery items={results.artworks} />
       </div>
+
+      <SupportCta onClick={onSupportClick} />
 
       {/* Moments */}
       <div className="mt-10">
@@ -109,18 +129,7 @@ export function ResultsSection() {
         <Gallery items={results.achievements} />
       </div>
 
-      <div className="mt-10 text-center">
-        <a
-          href={results.instagram.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-gradient-gold px-7 text-xs font-bold tracking-wide text-primary-foreground shadow-glow transition-all hover:brightness-105 sm:text-sm"
-        >
-          <Instagram className="h-4 w-4" />
-          {results.instagram.label}
-        </a>
-        <p className="mt-2 text-xs text-muted-foreground">@{results.instagram.handle}</p>
-      </div>
+      <SupportCta onClick={onSupportClick} />
     </section>
   );
 }

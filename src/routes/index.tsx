@@ -139,7 +139,7 @@ function LandingPage() {
         </Dialog>
 
 
-        <ResultsSection />
+        <ResultsSection onSupportClick={goNext} />
 
         <footer className="pt-10 text-center text-xs text-muted-foreground/70">
           © {new Date().getFullYear()} {brand.name}
