@@ -1,7 +1,7 @@
 import { Play } from "lucide-react";
 import { useState } from "react";
 
-import proudVideo from "@/assets/proud-moment.mp4.asset.json";
+import proudVideo from "@/assets/proud-reel.mp4.asset.json";
 import { results, vsl } from "@/content/funnel";
 
 function SupportCta({ onClick }: { onClick?: (() => void) | undefined }) {
