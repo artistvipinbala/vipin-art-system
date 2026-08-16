@@ -55,54 +55,58 @@ function LandingPage() {
     <main className="flex min-h-screen flex-col bg-background">
       <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-5 py-6 sm:px-6 sm:py-10">
         {/* First screen — headline + video, vertically centred */}
-        <div className="flex min-h-[calc(100svh-3rem)] flex-col justify-center gap-5">
-          <header className="text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-sky/25 bg-sky/10 px-3 py-1 text-[0.55rem] font-bold tracking-[0.16em] text-sky uppercase sm:text-[0.62rem]">
-              <span className="h-1.5 w-1.5 rounded-full bg-sky" />
-              {pageTop.eyebrow}
-            </span>
+        <div className="flex min-h-[calc(100svh-3rem)] flex-col justify-center">
+        <header className="text-center">
+          <p className="text-sky text-[0.6rem] font-bold tracking-[0.18em] uppercase sm:text-[0.68rem]">
+            {pageTop.eyebrow}
+          </p>
 
-            <h1
-              className="text-mal text-gradient-gold mx-auto mt-3 max-w-[19rem] text-[1.22rem] leading-[1.32] font-extrabold sm:max-w-2xl sm:text-[1.85rem]"
-              style={{ filter: "drop-shadow(0 2px 22px oklch(0.7 0.188 45.1 / 0.32))" }}
-            >
-              {pageTop.headline}
-            </h1>
-            <p className="text-mal mx-auto mt-2.5 max-w-[21rem] text-[0.76rem] leading-relaxed text-muted-foreground sm:max-w-xl sm:text-sm">
-              {pageTop.sub}
+          <h1
+            className="text-mal text-gradient-gold mx-auto mt-2 max-w-2xl text-[1.1rem] leading-[1.3] font-extrabold sm:text-[1.7rem]"
+            style={{ filter: "drop-shadow(0 2px 18px oklch(0.7 0.188 45.1 / 0.35))" }}
+          >
+            {pageTop.headline}
+          </h1>
+          <p className="text-mal mx-auto mt-2 max-w-xl text-[0.74rem] leading-relaxed text-muted-foreground sm:text-sm">
+            {pageTop.sub}
+          </p>
+        </header>
+
+        {/* Video sits in the centre of the first screen */}
+        <div className="flex flex-col justify-center py-3">
+
+          <div className="text-center">
+            <p className="text-[0.58rem] font-bold tracking-[0.16em] text-primary uppercase">
+              {vsl.eyebrow}
             </p>
-          </header>
-
-          {/* Video — the focal point of the first screen */}
-          <div className="flex flex-col">
-            <div className="relative rounded-[1.75rem] bg-gradient-gold p-[1.5px] shadow-glow">
-              <div
-                aria-hidden
-                className="absolute -inset-6 -z-10 rounded-[2.5rem] opacity-70 blur-2xl"
-                style={{ background: "var(--gradient-gold)", opacity: 0.18 }}
-              />
-              <div className="overflow-hidden rounded-[1.65rem] bg-background">
-                <VslPlayer
-                  embedUrl={media.trainingVideoEmbedUrl}
-                  placeholderLabel={media.trainingVideoPlaceholder}
-                  gateSeconds={vsl.gateSeconds}
-                  onGateReached={onGateReached}
-                />
-              </div>
-            </div>
-
-            <div className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[0.6rem] font-semibold tracking-[0.1em] text-muted-foreground/80 uppercase">
-              <span>{vsl.duration}</span>
-              <span className="text-primary/60">•</span>
-              <span>{vsl.eyebrow}</span>
-            </div>
-
-            <p className="text-mal mx-auto mt-3 max-w-[22rem] text-center text-[0.76rem] leading-relaxed text-muted-foreground sm:max-w-xl sm:text-sm">
-              {vsl.sub}
-            </p>
+            <h2 className="text-mal mx-auto mt-2 max-w-2xl text-[0.95rem] leading-[1.35] font-bold sm:text-[1.2rem]">
+              {vsl.headline}
+            </h2>
           </div>
-        </div>
 
+
+          <div className="mt-4 rounded-[1.75rem] bg-gradient-gold p-[2px] shadow-glow">
+            <div className="overflow-hidden rounded-[1.65rem] bg-background">
+              <VslPlayer
+                embedUrl={media.trainingVideoEmbedUrl}
+                placeholderLabel={media.trainingVideoPlaceholder}
+                gateSeconds={vsl.gateSeconds}
+                onGateReached={onGateReached}
+              />
+            </div>
+          </div>
+
+          <p className="mt-2 text-center text-[0.66rem] tracking-wide text-muted-foreground/70">
+            {vsl.duration}
+          </p>
+          <p className="text-mal mx-auto mt-2 max-w-xl text-center text-[0.74rem] leading-relaxed text-muted-foreground sm:text-sm">
+            {vsl.sub}
+          </p>
+          <p className="text-mal mx-auto mt-1 max-w-xl text-center text-[0.74rem] leading-relaxed text-muted-foreground sm:text-sm">
+            {vsl.belowVideo}
+          </p>
+        </div>
+        </div>
 
         {/* Achievements so far */}
         <section className="mt-10 rounded-3xl border border-border/70 bg-gradient-card p-5 shadow-card sm:p-7">
