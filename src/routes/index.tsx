@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 
 import { QuickIntake } from "@/components/funnel/QuickIntake";
+import { ResultsSection } from "@/components/funnel/ResultsSection";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { brand, media, pageTop, vsl } from "@/content/funnel";
 import { track } from "@/lib/track";
@@ -137,6 +138,8 @@ function LandingPage() {
           </DialogContent>
         </Dialog>
 
+
+        <ResultsSection />
 
         <footer className="pt-10 text-center text-xs text-muted-foreground/70">
           © {new Date().getFullYear()} {brand.name}
