@@ -3,49 +3,38 @@ import { useEffect, useState } from "react";
 
 import { PaymentModal } from "./PaymentModal";
 import { offers, todayOffer } from "@/content/funnel";
-import { formatLeft, getOfferDeadline, istDateLabel } from "@/lib/offer-window";
+import { formatLeft, getOfferRemaining, getSeatsLeft } from "@/lib/offer-window";
 import { track } from "@/lib/track";
 
-/** Always-visible join bar: today's date, the live countdown and one button. */
+/** Always-visible join bar: live countdown, seats left and one button. */
 export function StickyJoinBar() {
   const [open, setOpen] = useState(false);
-  const [dateLabel, setDateLabel] = useState("");
   const [left, setLeft] = useState<number | null>(null);
 
   useEffect(() => {
-    setDateLabel(istDateLabel(new Date()));
-    const deadline = getOfferDeadline();
-    const tick = () => setLeft(Math.max(0, deadline - Date.now()));
+    const tick = () => setLeft(getOfferRemaining());
     tick();
     const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
   }, []);
 
   if (left === null) return null;
-  const expired = left <= 0;
+  const seats = getSeatsLeft(left);
 
   return (
     <>
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-primary/30 bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3">
           <div className="min-w-0 flex-1">
-            <p className="truncate text-[0.65rem] font-semibold tracking-wide text-muted-foreground uppercase">
-              {dateLabel}
+            <p className="text-mal truncate text-[0.65rem] font-semibold tracking-wide text-muted-foreground uppercase">
+              {todayOffer.seatsLabel}: {seats} {todayOffer.seatsSuffix}
             </p>
             <p className="mt-0.5 flex items-center gap-1.5 text-sm font-bold">
-              {expired ? (
-                <span className="text-muted-foreground">
-                  {todayOffer.expired.price}
-                </span>
-              ) : (
-                <>
-                  <Clock className="h-3.5 w-3.5 shrink-0 text-primary" />
-                  <span className="tabular-nums" aria-live="polite">
-                    {formatLeft(left)}
-                  </span>
-                  <span className="text-primary">· {offers.everything.price}</span>
-                </>
-              )}
+              <Clock className="h-3.5 w-3.5 shrink-0 text-primary" />
+              <span className="tabular-nums" aria-live="polite">
+                {formatLeft(left)}
+              </span>
+              <span className="text-primary">· {offers.everything.price}</span>
             </p>
           </div>
           <button
@@ -56,7 +45,7 @@ export function StickyJoinBar() {
             }}
             className="text-mal inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-gradient-gold px-5 text-sm font-bold tracking-wide text-primary-foreground shadow-glow active:scale-[0.99]"
           >
-            {expired ? todayOffer.expired.cta : "JOIN ചെയ്യാം"}
+            JOIN ചെയ്യാം
           </button>
         </div>
       </div>
@@ -65,7 +54,7 @@ export function StickyJoinBar() {
         open={open}
         onOpenChange={setOpen}
         planName={offers.everything.title}
-        price={expired ? todayOffer.expired.price : offers.everything.price}
+        price={offers.everything.price}
       />
     </>
   );
