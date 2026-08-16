@@ -155,6 +155,12 @@ function LandingPage() {
             className="max-h-[92svh] w-[calc(100vw-1.5rem)] max-w-lg overflow-y-auto border-none bg-transparent p-0 shadow-none sm:max-w-lg"
           >
             <QuickIntake
+              onWatchVideo={() => {
+                setShowIntake(false);
+                document
+                  .getElementById("vsl-video")
+                  ?.scrollIntoView({ behavior: "smooth", block: "center" });
+              }}
               onDone={() => {
                 window.setTimeout(() => {
                   void navigate({ to: "/personal-support" });
