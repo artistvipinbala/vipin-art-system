@@ -751,17 +751,27 @@ export const todayOffer = {
  * Keep this short: every extra question costs joins.
  */
 export const quickIntake = {
-  eyebrow: "1 മിനിറ്റ് · 5 ചോദ്യം",
-  headline: "ഇത് നിങ്ങൾക്ക് ചേരുമോ എന്ന് അറിയാൻ ഇത്രമാത്രം മതി",
-  sub: "നിങ്ങൾ ഇപ്പോൾ എവിടെ നിൽക്കുന്നു എന്ന് അറിഞ്ഞാൽ മാത്രമേ ശരിയായ ഒരു direction പറഞ്ഞു തരാൻ എനിക്ക് പറ്റും.",
+  eyebrow: "1 മിനിറ്റ് · Personal details ഒന്നും വേണ്ട",
+  headline: "ഈ personal support നിങ്ങൾക്ക് ചേരുമോ എന്ന് നോക്കാം",
+  sub: "Name, email, phone ഒന്നും ചോദിക്കുന്നില്ല. നിങ്ങൾ ഇപ്പോൾ എവിടെ നിൽക്കുന്നു എന്ന് മാത്രം അറിഞ്ഞാൽ, ഇത് നിങ്ങൾക്ക് useful ആകുമോ എന്ന് ഞാൻ പറയാം.",
   placeholder: "Select",
   labels: {
-    name: "പേര്",
-    whatsapp: "WhatsApp number",
-    email: "Email",
+    watched: "Video മുഴുവനായി കണ്ടിരുന്നോ?",
     work: "നിങ്ങൾ ഇപ്പോൾ എന്ത് ചെയ്യുന്നു?",
     problem: "ഇപ്പോൾ ഏറ്റവും വലിയ പ്രശ്നം എന്താണ്?",
     commitment: "ഒരു കാര്യം തുറന്നു പറയാം",
+  },
+  watchedSub:
+    "Art എങ്ങനെ sell ചെയ്യണം, art class എങ്ങനെ sell ചെയ്യണം — അതെല്ലാം ആ video-യിൽ full detail ആയി പറഞ്ഞിട്ടുണ്ട്. അത് മുഴുവൻ കണ്ടതിന് ശേഷം, ആവശ്യമെങ്കിൽ മാത്രം personal support എടുക്കാം.",
+  watchedOptions: {
+    yes: "അതെ, ഞാൻ video മുഴുവൻ കണ്ടു",
+    no: "ഇല്ല, ഇനിയും മുഴുവൻ കണ്ടിട്ടില്ല",
+  },
+  notWatched: {
+    title: "എങ്കിൽ ആദ്യം ആ video മുഴുവൻ കാണൂ 🙂",
+    body: "Art works-ഉം art class-ഉം എങ്ങനെ sell ചെയ്യാം എന്നത് ആ video-യിൽ step by step ആയി പറഞ്ഞിട്ടുണ്ട്. പലർക്കും അത് മാത്രം മതി — extra ഒന്നും വേണ്ട. അത് മുഴുവൻ കണ്ടിട്ട്, എന്നിട്ടും ഒരാൾ കൂടെ വേണം എന്ന് തോന്നുന്നുണ്ടെങ്കിൽ മാത്രം ഇവിടെ തിരിച്ചു വരൂ.",
+    cta: "OK, VIDEO കാണാൻ പോകാം",
+    back: "ഞാൻ കണ്ടിട്ടുണ്ട് — തുടരാം",
   },
   workOptions: [
     "Art works ചെയ്യുന്നു / sell ചെയ്യുന്നു",
@@ -786,10 +796,10 @@ export const quickIntake = {
     "ആദ്യം details അറിയണം, എന്നിട്ട് തീരുമാനിക്കാം",
   ],
   submit: "NEXT",
-  error: "എല്ലാ ചോദ്യങ്ങളും പൂരിപ്പിക്കണം.",
-  privacy: "ഈ വിവരങ്ങൾ ഞാൻ മാത്രം കാണും. Spam ഇല്ല.",
+  error: "ഒരു option select ചെയ്യൂ.",
+  privacy: "Personal details ഒന്നും ചോദിക്കുന്നില്ല. ഇത് നിങ്ങൾക്ക് ചേരുമോ എന്ന് നോക്കാൻ മാത്രം.",
   successTitle: "കിട്ടി — thank you!",
-  successSub: "ഇനി താഴെ നിങ്ങൾക്ക് എന്ത് കിട്ടും എന്ന് നോക്കാം.",
+  successSub: "നിങ്ങൾ പറഞ്ഞ situation വെച്ച് ഇത് നിങ്ങൾക്ക് useful ആകുമോ എന്ന് താഴെ നോക്കാം.",
 };
 
 

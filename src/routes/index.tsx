@@ -94,7 +94,7 @@ function LandingPage() {
           </h2>
 
           {/* Video stage — the focal point of the page */}
-          <div className="mt-4">
+          <div id="vsl-video" className="mt-4">
             <p className="mb-2 text-center text-[0.54rem] font-semibold tracking-[0.2em] text-muted-foreground uppercase sm:text-[0.6rem]">
               Free Training · Approx. 30 Minutes
             </p>
@@ -155,6 +155,12 @@ function LandingPage() {
             className="max-h-[92svh] w-[calc(100vw-1.5rem)] max-w-lg overflow-y-auto border-none bg-transparent p-0 shadow-none sm:max-w-lg"
           >
             <QuickIntake
+              onWatchVideo={() => {
+                setShowIntake(false);
+                document
+                  .getElementById("vsl-video")
+                  ?.scrollIntoView({ behavior: "smooth", block: "center" });
+              }}
               onDone={() => {
                 window.setTimeout(() => {
                   void navigate({ to: "/personal-support" });

@@ -42,9 +42,9 @@ export const submitSupportApplication = createServerFn({ method: "POST" })
     const { data: lead, error: leadError } = await supabaseAdmin
       .from("leads")
       .insert({
-        name: data.name,
+        name: data.name || "Anonymous",
         email: data.email || null,
-        whatsapp_number: data.whatsapp_number,
+        whatsapp_number: data.whatsapp_number || null,
         support_interest: true,
         current_stage: data.current_stage ?? null,
         biggest_challenge: data.biggest_challenge ?? null,
@@ -63,9 +63,9 @@ export const submitSupportApplication = createServerFn({ method: "POST" })
 
     const { error: appError } = await supabaseAdmin.from("support_applications").insert({
       lead_id: lead.id,
-      name: data.name,
+      name: data.name || "Anonymous",
       email: data.email || null,
-      whatsapp_number: data.whatsapp_number,
+      whatsapp_number: data.whatsapp_number || "-",
       art_type: data.art_type ?? null,
       age_range: data.age_range ?? null,
       work_place: data.work_place ?? null,
