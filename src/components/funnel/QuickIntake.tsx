@@ -79,12 +79,7 @@ export function QuickIntake({
         <p className="text-mal mt-3 text-[0.95rem] leading-relaxed text-sheet-muted">
           {copy.notWatched.body}
         </p>
-        <PrimaryButton
-          onClick={() => {
-            track("intake_watch_video");
-            onWatchVideo?.();
-          }}
-        >
+        <PrimaryButton onClick={() => onWatchVideo?.()}>
           <PlayCircle className="h-4.5 w-4.5" /> {copy.notWatched.cta}
         </PrimaryButton>
         <button
