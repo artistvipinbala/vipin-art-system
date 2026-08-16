@@ -27,6 +27,9 @@
   --color-sky: var(--sky);
   --color-sky-foreground: var(--sky-foreground);
   --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink-muted: var(--ink-muted);
   --color-sheet: var(--sheet);
   --color-sheet-foreground: var(--sheet-foreground);
   --color-sheet-muted: var(--sheet-muted);
