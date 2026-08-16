@@ -4,6 +4,7 @@ import { useState } from "react";
 import voicesVideo from "@/assets/artist-voices.mp4.asset.json";
 import dashboardImage from "@/assets/class-dashboard.png.asset.json";
 import proudVideo from "@/assets/proud-reel.mp4.asset.json";
+import voicesPoster from "@/assets/voices-poster.jpg.asset.json";
 import { milestones, results, vsl } from "@/content/funnel";
 
 function SupportCta({ onClick }: { onClick?: (() => void) | undefined }) {
