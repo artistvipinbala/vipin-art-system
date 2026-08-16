@@ -801,14 +801,27 @@ export const pageTop = {
   sub: "നിങ്ങളുടെ Drawing, Painting, Craft അല്ലെങ്കിൽ Teaching Skill ഉപയോഗിച്ച് Artwork Sales, Art Classes, Workshops, Products എന്നിവ വഴി Income ഉണ്ടാക്കാനുള്ള ഒരു practical system ഈ free training-ൽ പഠിക്കാം.",
 };
 
+/** Achievement strip shown right under the first-screen video text. */
+export const milestones = {
+  eyebrow: "SO FAR",
+  headline: "Artwork-കളിലൂടെ മാത്രമല്ല — Art Class-കളിലൂടെയും",
+  sub: "Artwork sales-ൽ നിന്ന് ഒരു മാസം ₹2 Lakhs+ achieve ചെയ്തു. അതിനുശേഷം recently start ചെയ്ത art class-കളിലൂടെ, ഇന്ന് (August 16) വരെ എണ്ണായിരത്തോളം പേർ ഈ class-കളിൽ join ചെയ്തു — ഇത് ഇപ്പോഴും ongoing ആണ്.",
+  items: [
+    { value: "₹2 Lakhs+", label: "Artwork sales — ഒരു മാസത്തിൽ" },
+    { value: "8,000+", label: "Art class-കളിൽ join ചെയ്തവർ" },
+    { value: "Ongoing", label: "ഓരോ ദിവസവും കൂടുന്നു" },
+  ],
+  note: "ഇത് ഒരു number കാണിക്കാൻ വേണ്ടിയല്ല — ഇത് work ചെയ്യുന്നു എന്ന് പറയാൻ വേണ്ടിയാണ്.",
+};
+
 /**
  * Bottom-of-first-page results block.
- * Owner: replace/extend `artworks`, `achievements` and the proud-moment copy here.
+ * Owner: replace/extend `artworks`, the proud-moment copy and the voices video here.
  */
 export const results = {
-  eyebrow: "SOME OF MY WORK & MOMENTS",
-  headline: "ഇത് വരെയുള്ള ഒരു ചെറിയ കാഴ്ച",
-  sub: "ഞാൻ ചെയ്ത artwork-കളും, ഈ യാത്രയിലെ ചില moments-ഉം. Video-യിൽ പറഞ്ഞ കാര്യങ്ങൾ എനിക്ക് എങ്ങനെ work ചെയ്തു എന്നതിന്റെ ഒരു small glimpse.",
+  eyebrow: "RESULTS — എന്റേത് മാത്രമല്ല",
+  headline: "എനിക്ക് ഒപ്പം നടന്ന കുറച്ച് artists-ന്റെ കൂടി result",
+  sub: "എന്റെ personal support കൂടി ചേർന്നപ്പോൾ വേറെ കുറച്ച് artists-ന് ഉണ്ടായ മാറ്റങ്ങൾ എന്തൊക്കെയാണ് എന്ന് നോക്കാം. ഇത് എന്റെ മാത്രം കഥയല്ല.",
   proud: {
     eyebrow: "PROUD MOMENT",
     videoUrl: "",
@@ -828,17 +841,12 @@ export const results = {
     { src: "https://tagmango.com/staticassets/1698393879224.jpg", label: "Digital Caricature" },
     { src: "https://tagmango.com/staticassets/1698393879227.jpg", label: "Pencil Drawing" },
   ],
-  achievements: [
-    { src: "https://tagmango.com/staticassets/1698561155139.png", label: "Recognition" },
-    { src: "https://tagmango.com/staticassets/1698561154712.jpg", label: "On stage" },
-    { src: "https://tagmango.com/staticassets/1698565561107.jpg", label: "With students" },
-    { src: "https://tagmango.com/staticassets/1702996743854.jpg", label: "Art journey" },
-    { src: "https://tagmango.com/staticassets/1737629437076.jpg", label: "Artist Vipin Bala" },
-    { src: "https://tagmango.com/staticassets/1698565932065.jpg", label: "Art success" },
-  ],
-  instagram: {
-    handle: "artist_vipinbala",
-    url: "https://www.instagram.com/artist_vipinbala/",
-    label: "FOLLOW ON INSTAGRAM",
+  voices: {
+    eyebrow: "THEIR WORDS",
+    headline: "അവരുടെ വാക്കുകൾ ഒന്ന് കേൾക്കാം",
+    sub: "കുറച്ച് പേരെ ഈ വഴിയിൽ help ചെയ്യാൻ എനിക്ക് പറ്റിയിട്ടുണ്ട്. അവർ തന്നെ പറയുന്നത് കേൾക്കുന്നതാണ് നല്ലത്.",
+    caption: "Artists who walked this path with me",
+    closing:
+      "ഇതുപോലെ ഒരുപാട് പേരെ build ചെയ്ത് എടുത്ത്, artists-ന് നല്ലൊരു നാളെ ഒരുമിച്ച് create ചെയ്യണം — അതാണ് ആഗ്രഹം.",
   },
 };
