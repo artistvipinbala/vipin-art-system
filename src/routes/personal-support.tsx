@@ -93,7 +93,7 @@ function PersonalSupportPage() {
           <OfferCountdown />
         </div>
 
-        <div className="mt-8">
+        <div id="pricing" className="mt-8 scroll-mt-6">
           <SectionHeading className="text-xl sm:text-2xl">
             ഒരു price. എല്ലാ support-ഉം ഉള്ളിൽ.
           </SectionHeading>
@@ -119,6 +119,9 @@ function PersonalSupportPage() {
       {/* 5 — WHY I SHARE THIS OPENLY */}
       <Section>
         <WhyIShare />
+        <div className="mt-10">
+          <JoinNowInline />
+        </div>
       </Section>
 
       {/* 6 — WHY THERE IS A PRICE AT ALL */}
@@ -129,7 +132,11 @@ function PersonalSupportPage() {
       {/* 7 — DEGREE vs STARTING TODAY */}
       <Section>
         <EduCompare />
+        <div className="mt-10">
+          <JoinNowInline />
+        </div>
       </Section>
+
 
       {/* 8 — RISK REVERSAL */}
       <Section tone="surface">
