@@ -690,7 +690,7 @@ export const vsl = {
   eyebrow: "OPEN SESSION · NO WEBINAR, NO SIGNUP",
   headline:
     "ഞാൻ എന്റെ Artwork-കളും Art Class-കളും എങ്ങനെ Sell ചെയ്യുന്നു — ആ full system ഞാൻ ഇവിടെ open ആയി കാണിക്കുന്നു",
-  sub: "Webinar-ന് wait ചെയ്യേണ്ട. Registration വേണ്ട. Sales drama ഇല്ല. ഞാൻ ചെയ്യുന്നത് എന്താണോ അത് അതുപോലെ — ഈ ഒരു video-യിൽ.",
+  sub: "ഞാൻ എന്റെ Artwork-കളും Art Class-കളും എങ്ങനെ Sell ചെയ്യുന്നു — ആ full system ഞാൻ ഇവിടെ open ആയി കാണിക്കുന്നു",
   belowVideo:
     "Video മുഴുവൻ കാണൂ. കണ്ടു കഴിയുമ്പോൾ, നിങ്ങൾക്ക് ഏതൊക്കെ possibilities ഉണ്ട് എന്ന് വളരെ വ്യക്തമാകും.",
   duration: "Approx. 30 minutes · No signup",
