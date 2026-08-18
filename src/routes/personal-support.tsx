@@ -59,8 +59,7 @@ function PersonalSupportPage() {
           Personal support എടുത്താൽ നിങ്ങൾക്ക് കിട്ടുന്ന benefits എന്തൊക്കെയാണ്?
         </h1>
         <p className="text-mal mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
-          എല്ലാ courses, weekly live class, WhatsApp support, lifetime access — എല്ലാം ഒരൊറ്റ
-          bundle-ൽ. താഴെയുള്ള video-യിൽ ഇത് മുഴുവനായി പറയുന്നു.
+          {"\n"}
         </p>
       </div>
 
