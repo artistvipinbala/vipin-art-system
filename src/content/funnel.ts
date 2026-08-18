@@ -688,8 +688,7 @@ export const purchaseFaqs = [
  */
 export const vsl = {
   eyebrow: "OPEN SESSION · NO WEBINAR, NO SIGNUP",
-  headline:
-    "ഞാൻ എന്റെ Artwork-കളും Art Class-കളും എങ്ങനെ Sell ചെയ്യുന്നു — ആ full system ഞാൻ ഇവിടെ open ആയി കാണിക്കുന്നു",
+  headline: "\n",
   sub: "ഞാൻ എന്റെ Artwork-കളും Art Class-കളും എങ്ങനെ Sell ചെയ്യുന്നു — ആ full system ഞാൻ ഇവിടെ open ആയി കാണിക്കുന്നു",
   belowVideo:
     "Video മുഴുവൻ കാണൂ. കണ്ടു കഴിയുമ്പോൾ, നിങ്ങൾക്ക് ഏതൊക്കെ possibilities ഉണ്ട് എന്ന് വളരെ വ്യക്തമാകും.",
