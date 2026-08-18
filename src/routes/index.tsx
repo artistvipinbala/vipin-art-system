@@ -189,7 +189,7 @@ function LandingPage() {
           onClick={goNext}
           className="text-mal flex min-h-13 w-full items-center justify-center rounded-xl bg-primary px-5 text-[0.78rem] font-bold text-primary-foreground shadow-glow"
         >
-          I NEED YOUR PERSONAL SUPPORT
+          CLICK HERE FOR MY PERSONAL SUPPORT
         </button>
       </div>
     </main>

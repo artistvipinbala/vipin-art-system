@@ -40,7 +40,7 @@ export const hero = {
 };
 
 export const problem = {
-  headline: "Art അറിയാം. പക്ഷേ Income എങ്ങനെ ഉണ്ടാക്കണം എന്ന് അറിയില്ലേ?",
+  headline: "Art / Craft ചെയ്യാൻ അറിയാം… പക്ഷേ അതിൽ നിന്ന് സ്ഥിരമായി Income ഉണ്ടാക്കാൻ അറിയില്ലേ?",
   can: ["Draw", "Paint", "Create beautiful artworks", "Teach art", "Create content"],
   struggle: [
     "Finding customers",
@@ -692,15 +692,15 @@ export const vsl = {
   sub: "ഞാൻ എന്റെ Artwork-കളും Art Class-കളും എങ്ങനെ Sell ചെയ്യുന്നു — ആ full system ഞാൻ ഇവിടെ open ആയി കാണിക്കുന്നു",
   belowVideo:
     "Video മുഴുവൻ കാണൂ. കണ്ടു കഴിയുമ്പോൾ, നിങ്ങൾക്ക് ഏതൊക്കെ possibilities ഉണ്ട് എന്ന് വളരെ വ്യക്തമാകും.",
-  duration: "Approx. 30 minutes · No signup",
+  duration: "WATCH THE FULL VIDEO",
   /** Seconds of watch time before the personal-support option appears. */
   gateSeconds: 900,
   reveal: {
-    line1: "ഇത് നിങ്ങൾക്ക് സ്വയം ചെയ്യാം. ",
+    line1: "Video മുഴുവൻ കാണൂ. കണ്ടു കഴിയുമ്പോൾ, നിങ്ങൾക്ക് ഏതൊക്കെ possibilities ഉണ്ട് എന്ന് വളരെ വ്യക്തമാകും.",
     line2:
-      "പക്ഷേ ഓരോ step-ഉം detail ആയി, നിങ്ങളുടെ situation നോക്കി, quickly ചെയ്തെടുക്കണം എന്നുണ്ടെങ്കിൽ — ഞാൻ personally കൂടെ നിൽക്കുന്ന ഒരു option ഉണ്ട്.",
-    cta: "VIPIN, I NEED YOUR PERSONAL SUPPORT",
-    note: "എന്തായാലും ഈ training നിങ്ങൾക്ക് free ആയി തന്നെ ഉണ്ട്. ഒരു തിരക്കും ഇല്ല — details ഒന്ന് നോക്കി, നിങ്ങൾക്ക് ശരിയെന്ന് തോന്നുമ്പോൾ മാത്രം with personal support മുന്നോട്ട് പോകാം. അല്ലെങ്കിൽ ഇവിടെ നിന്ന് പഠിച്ചത് സ്വയം ചെയ്തു തുടങ്ങാം. രണ്ടും ഒരുപോലെ സന്തോഷം. 🙂",
+      "\n",
+    cta: "CLICK HERE FOR MY PERSONAL SUPPORT",
+    note: "\n",
   },
 };
 
