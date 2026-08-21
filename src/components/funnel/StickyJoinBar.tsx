@@ -47,7 +47,10 @@ export function StickyJoinBar({ revealAfterId }: { revealAfterId?: string }) {
               <span className="tabular-nums" aria-live="polite">
                 {formatLeft(left)}
               </span>
-              <span className="text-primary">· {offers.everything.price}</span>
+              <span className="text-muted-foreground line-through">
+                · {todayOffer.regular.price}
+              </span>
+              <span className="text-primary">{offers.everything.price}</span>
             </p>
           </div>
           <button
