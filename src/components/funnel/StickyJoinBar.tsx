@@ -6,10 +6,11 @@ import { offers, todayOffer } from "@/content/funnel";
 import { formatLeft, getOfferRemaining, getSeatsLeft } from "@/lib/offer-window";
 import { track } from "@/lib/track";
 
-/** Always-visible join bar: live countdown, seats left and one button. */
-export function StickyJoinBar() {
+/** Join bar fixed to the bottom: live countdown, seats left and one button. */
+export function StickyJoinBar({ revealAfterId }: { revealAfterId?: string }) {
   const [open, setOpen] = useState(false);
   const [left, setLeft] = useState<number | null>(null);
+  const [visible, setVisible] = useState(!revealAfterId);
 
   useEffect(() => {
     const tick = () => setLeft(getOfferRemaining());
@@ -18,12 +19,24 @@ export function StickyJoinBar() {
     return () => window.clearInterval(id);
   }, []);
 
-  if (left === null) return null;
+  useEffect(() => {
+    if (!revealAfterId) return;
+    const onScroll = () => {
+      const el = document.getElementById(revealAfterId);
+      if (!el) return;
+      setVisible(el.getBoundingClientRect().top <= window.innerHeight * 0.6);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [revealAfterId]);
+
+  if (left === null || !visible) return null;
   const seats = getSeatsLeft(left);
 
   return (
     <>
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-primary/30 bg-background/95 backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-primary/30 bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3">
           <div className="min-w-0 flex-1">
             <p className="text-mal truncate text-[0.65rem] font-semibold tracking-wide text-muted-foreground uppercase">
