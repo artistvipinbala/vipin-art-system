@@ -42,7 +42,7 @@ function PersonalSupportPage() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-24">
       {/* Quiet header — no nav, no distractions */}
       <div className="border-b border-border/50 px-5 py-5 text-center sm:px-8">
         <p className="text-[0.7rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
