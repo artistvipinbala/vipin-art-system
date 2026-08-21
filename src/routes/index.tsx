@@ -118,7 +118,7 @@ function LandingPage() {
         {/* ── CTA directly below the video ── */}
         <section className="pt-4 pb-8">
           <div className="rounded-[1.25rem] border border-border bg-card p-5 text-center shadow-card sm:p-7">
-            <p className="text-mal text-[0.9rem] leading-[1.65] font-bold text-foreground sm:text-[1.02rem]">
+            <p className="text-mal text-[0.9rem] leading-[1.7] font-normal text-foreground/90 sm:text-[1.02rem]">
               {vsl.reveal.line1}
             </p>
 
