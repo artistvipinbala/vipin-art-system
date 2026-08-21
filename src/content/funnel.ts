@@ -852,7 +852,7 @@ export const milestones = {
  */
 export const results = {
   eyebrow: "SOME OF MY WORK & MOMENTS",
-  headline: "ഇത് വരെയുള്ള ഒരു ചെറിയ കാഴ്ച",
+  headline: "ഇത് വരെയുള്ള Journey",
   sub: "ഞാൻ ചെയ്ത artwork-കളും, ഈ യാത്രയിലെ ചില moments-ഉം. Video-യിൽ പറഞ്ഞ കാര്യങ്ങൾ എനിക്ക് എങ്ങനെ work ചെയ്തു എന്നതിന്റെ ഒരു small glimpse.",
   proud: {
     eyebrow: "PROUD MOMENT",
