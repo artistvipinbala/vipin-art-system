@@ -58,7 +58,7 @@ export function StickyJoinBar({ revealAfterId }: { revealAfterId?: string }) {
             }}
             className="text-mal inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-gradient-gold px-5 text-sm font-bold tracking-wide text-primary-foreground shadow-glow active:scale-[0.99]"
           >
-            JOIN ചെയ്യാം
+            JOIN WITH OFFER
           </button>
         </div>
       </div>
