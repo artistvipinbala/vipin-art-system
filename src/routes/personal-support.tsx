@@ -73,7 +73,7 @@ function PersonalSupportPage() {
           </div>
         </div>
         <div className="mt-6">
-          <JoinNowInline />
+          <JoinNowInline targetId="offers" />
         </div>
       </div>
 
