@@ -153,6 +153,8 @@ function PersonalSupportPage() {
       </Section>
 
       <Footer />
+
+      <StickyJoinBar revealAfterId="offers" />
     </div>
   );
 }
