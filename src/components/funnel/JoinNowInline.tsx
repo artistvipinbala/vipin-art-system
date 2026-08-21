@@ -3,14 +3,20 @@ import { ArrowDown } from "lucide-react";
 import { track } from "@/lib/track";
 
 /** Mid-page shortcut that scrolls the visitor down to the pricing block. */
-export function JoinNowInline({ label = "JOIN NOW" }: { label?: string }) {
+export function JoinNowInline({
+  label = "JOIN NOW",
+  targetId = "pricing",
+}: {
+  label?: string;
+  targetId?: string;
+}) {
   return (
     <div className="flex justify-center">
       <button
         type="button"
         onClick={() => {
           track("join_now_inline_click");
-          document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
         }}
         className="text-mal inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-gradient-gold px-7 text-sm font-bold tracking-wide text-primary-foreground shadow-glow transition active:scale-[0.99] sm:text-base"
       >
