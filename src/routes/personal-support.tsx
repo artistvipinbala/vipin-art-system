@@ -12,6 +12,7 @@ import { PricingCards } from "@/components/funnel/PricingCards";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
 import { Lead, Section, SectionHeading } from "@/components/funnel/Section";
 import { SpecialOffer } from "@/components/funnel/SpecialOffer";
+import { StickyJoinBar } from "@/components/funnel/StickyJoinBar";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
 import { WhyPayment } from "@/components/funnel/WhyPayment";
