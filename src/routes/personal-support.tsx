@@ -12,6 +12,7 @@ import { PricingCards } from "@/components/funnel/PricingCards";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
 import { Lead, Section, SectionHeading } from "@/components/funnel/Section";
 import { SpecialOffer } from "@/components/funnel/SpecialOffer";
+import { StickyJoinBar } from "@/components/funnel/StickyJoinBar";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
 import { WhyPayment } from "@/components/funnel/WhyPayment";
@@ -42,7 +43,7 @@ function PersonalSupportPage() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-24">
       {/* Quiet header — no nav, no distractions */}
       <div className="border-b border-border/50 px-5 py-5 text-center sm:px-8">
         <p className="text-[0.7rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
@@ -73,7 +74,7 @@ function PersonalSupportPage() {
           </div>
         </div>
         <div className="mt-6">
-          <JoinNowInline />
+          <JoinNowInline targetId="offers" />
         </div>
       </div>
 
@@ -153,6 +154,8 @@ function PersonalSupportPage() {
       </Section>
 
       <Footer />
+
+      <StickyJoinBar revealAfterId="offers" />
     </div>
   );
 }
