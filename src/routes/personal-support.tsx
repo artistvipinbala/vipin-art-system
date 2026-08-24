@@ -79,7 +79,7 @@ function PersonalSupportPage() {
       <Section tone="surface">
         <Letter />
         <div className="mt-10">
-          <PhotoStrip />
+          <PhotoStrip photo="stage" />
         </div>
       </Section>
 
@@ -100,6 +100,9 @@ function PersonalSupportPage() {
 
       {/* 5 — WHY I SHARE THIS OPENLY */}
       <Section>
+        <div className="mb-12">
+          <PhotoStrip photo="seminar" />
+        </div>
         <WhyIShare />
         <div className="mt-10">
           <JoinNowInline />
@@ -108,6 +111,9 @@ function PersonalSupportPage() {
 
       {/* 6 — DEGREE vs STARTING TODAY */}
       <Section>
+        <div className="mb-12">
+          <PhotoStrip photo="achievers" />
+        </div>
         <EduCompare />
         <div className="mt-10">
           <JoinNowInline />
