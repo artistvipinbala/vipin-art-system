@@ -129,7 +129,7 @@ function PersonalSupportPage() {
       {/* 9 — NATURAL DOUBTS */}
       <Section>
         <SectionHeading className="text-xl sm:text-2xl">
-          മനസ്സിൽ വരുന്ന സ്വാഭാവിക സംശയങ്ങൾ
+          Frequently Asked Questions
         </SectionHeading>
         <div className="mt-6">
           <PurchaseFaq />
