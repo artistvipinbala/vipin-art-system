@@ -728,14 +728,15 @@ export const specialOffer = {
 export const todayOffer = {
   eyebrow: "ഇന്നത്തെ session",
   dateLabel: "ഇന്ന്",
-  headline: "ഈ page തുറന്നത് മുതൽ 20 മിനിറ്റ് — ഈ ഉള്ളിൽ join ചെയ്യുന്ന ആദ്യ 10 പേർക്ക് മാത്രം ₹5,999",
-  sub: "ഒരു batch-ൽ കുറച്ച് പേരെ മാത്രം personally onboard ചെയ്യാൻ പറ്റും. അതുകൊണ്ടാണ് ഈ rate-ന് ഒരു ചെറിയ window-ഉം 10 seat-ഉം മാത്രം വെക്കുന്നത്.",
+  headline: "Limited time offer — ഇപ്പോൾ join ചെയ്യുന്നവർക്ക് മാത്രം ₹5,999",
+  sub: "ഒരു batch-ൽ കുറച്ച് പേരെ മാത്രം personally onboard ചെയ്യാൻ പറ്റും. അതുകൊണ്ട് ഈ special rate കുറച്ച് സമയത്തേക്ക് മാത്രമാണ് available.",
   windowMinutes: 20,
   seatsLabel: "ബാക്കിയുള്ള seats",
   seatsSuffix: "seats മാത്രം",
-  regularNote: "ഈ time കഴിഞ്ഞാൽ പിന്നെ join ചെയ്യാൻ ₹15,000 ആയിരിക്കും.",
+  regularNote: "ഈ offer window കഴിഞ്ഞാൽ പിന്നെ join ചെയ്യാൻ ₹15,000 ആയിരിക്കും.",
   nudge:
-    "Video മുഴുവൻ കണ്ട ഒരാൾക്ക് ഈ rate ഒരു തവണ മാത്രമേ കിട്ടും — ഈ 20 മിനിറ്റ് വെറുതെ പോകാൻ വിടണ്ട. ഇന്ന് തുടങ്ങിയാൽ ഈ ആഴ്ചയിലെ live class-ൽ തന്നെ നിങ്ങൾക്ക് ഇരിക്കാം.",
+    "ഈ rate എപ്പോഴും ഉണ്ടാവില്ല — ഇപ്പോൾ available ആയ ഈ window-ൽ തന്നെ ഒരു തീരുമാനം എടുക്കാം. ഇന്ന് തുടങ്ങിയാൽ ഈ ആഴ്ചയിലെ live class-ൽ തന്നെ നിങ്ങൾക്ക് ഇരിക്കാം.",
+
   live: {
     price: "₹5,999",
     note: "ഈ timer തീരുന്നതിനുള്ളിൽ join ചെയ്താൽ ഈ rate-ഉം ഇന്നത്തെ extras-ഉം കിട്ടും.",
