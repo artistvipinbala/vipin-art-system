@@ -88,10 +88,6 @@ function LandingPage() {
             </span>
           </header>
 
-          {/* Curiosity statement, right before the video */}
-          <h2 className="text-mal mx-auto mt-5 max-w-2xl text-center text-[0.96rem] leading-[1.55] font-bold text-foreground sm:text-[1.22rem]">
-            {vsl.headline}
-          </h2>
 
           {/* Video stage — the focal point of the page */}
           <div id="vsl-video" className="mt-4">
