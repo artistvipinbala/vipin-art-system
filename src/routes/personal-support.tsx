@@ -81,7 +81,11 @@ function PersonalSupportPage() {
       {/* 2 — DESCRIPTION UNDER THE VIDEO */}
       <Section tone="surface">
         <Letter />
+        <div className="mt-10">
+          <PhotoStrip />
+        </div>
       </Section>
+
 
       {/* 3 — WHAT'S INSIDE → TODAY'S DATE/TIME → PRICE */}
       <Section id="offers">
