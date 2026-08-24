@@ -313,16 +313,16 @@ export const salesPage = {
  * (No second/higher tier. Do not re-add one.)
  */
 export const offers = {
-  supportDuration: "[DUMMY — e.g. Lifetime access + weekly live class]",
+  supportDuration: "Lifetime access + weekly support",
   everything: {
-    tag: "ഒറ്റ ഒരു option മാത്രം",
+    tag: "",
     title: "Artist Income System — Full Bundle + Personal Support",
     price: "₹5,999",
-    priceNote: "One-time. Lifetime access. ഇതിന് ശേഷം hidden charges ഇല്ല.",
+    priceNote: "One-time. Lifetime access.\u00a0",
     includes: [
       "എല്ലാ courses-ഉം അടങ്ങിയ full bundle — lifetime access",
-      "ആഴ്ചയിൽ ഒരു LIVE class (doubts + review) [DUMMY — day/time later]",
-      "Weekly WhatsApp support — നിങ്ങളുടെ work ഞാൻ നേരിട്ട് നോക്കും",
+      "ആഴ്ചയിൽ ഒരു LIVE class / whatsaapp support (doubts + review)",
+      "", 
       "നിങ്ങളുടെ art-നും audience-നും അനുസരിച്ചുള്ള personal direction",
       "Ready templates — ad, landing page, WhatsApp automation",
       "പുതിയ course-കളും updates-ഉം extra payment ഇല്ലാതെ",
