@@ -42,15 +42,12 @@ export function QuickIntake({
 
   const step = stage === "final" ? 3 : stage === "not-watched" ? 1 : stage;
 
-  function advance(to: Stage, ackText: string, label: string) {
-    setPending(label);
+  function advance(to: Stage, ackText: string, _label: string) {
+    setPending("");
     setAck(ackText);
-    if (timer.current) window.clearTimeout(timer.current);
-    timer.current = window.setTimeout(() => {
-      setPending("");
-      setStage(to);
-    }, 1100);
+    setStage(to);
   }
+
 
   async function finish() {
     const problemLabel = problem !== null ? copy.steps.problem.options[problem]!.label : "";
@@ -188,17 +185,17 @@ export function QuickIntake({
               key={option}
               type="button"
               onClick={() => pick(option, index)}
-              className={`text-mal flex w-full items-start gap-3 rounded-2xl border p-4 text-left text-[0.92rem] leading-relaxed transition-colors ${
+              className={`text-mal group flex w-full items-start gap-3 rounded-2xl border p-4 text-left text-[0.92rem] leading-relaxed transition-all duration-200 active:scale-[0.985] ${
                 active
-                  ? "border-primary bg-primary/10 font-semibold"
-                  : "border-sheet-border bg-sheet-field hover:border-primary/40"
+                  ? "border-primary bg-primary/10 font-semibold shadow-glow"
+                  : "border-sheet-border bg-sheet-field hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-card"
               }`}
             >
               <span
-                className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
+                className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-all ${
                   active
                     ? "border-primary bg-gradient-gold text-primary-foreground"
-                    : "border-sheet-border"
+                    : "border-sheet-border group-hover:border-primary/60"
                 }`}
               >
                 {active ? <Check className="h-3 w-3" /> : null}
@@ -209,11 +206,6 @@ export function QuickIntake({
         })}
       </div>
 
-      {pending ? (
-        <div className="mt-5">
-          <AckBanner text={ack} />
-        </div>
-      ) : null}
 
       {stage === 1 ? null : (
         <BackLink
@@ -240,8 +232,11 @@ export function QuickIntake({
 function AckBanner({ text }: { text: string }) {
   if (!text) return null;
   return (
-    <div className="flex items-start gap-3 rounded-2xl border border-primary/30 bg-primary/8 p-4">
-      <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-gold text-primary-foreground">
+    <div
+      key={text}
+      className="rise-in flex items-start gap-3 rounded-2xl border border-primary/30 bg-primary/8 p-4"
+    >
+      <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-gold text-primary-foreground shadow-glow">
         <Check className="h-4 w-4" />
       </span>
       <p className="text-mal text-[0.95rem] leading-relaxed font-medium">{text}</p>
@@ -259,15 +254,20 @@ function Shell({
   onFocus?: () => void;
 }) {
   return (
-    <div
-      onFocus={onFocus}
-      className="max-h-[88svh] overflow-y-auto rounded-[1.75rem] bg-sheet px-6 py-7 text-sheet-foreground shadow-card sm:px-8"
-    >
-      <StepDots current={step} />
-      <div className="mt-6">{children}</div>
+    <div className="rounded-[1.9rem] bg-gradient-gold p-[1.5px] shadow-glow">
+      <div
+        onFocus={onFocus}
+        className="max-h-[88svh] overflow-y-auto rounded-[1.8rem] bg-sheet px-6 py-7 text-sheet-foreground sm:px-8"
+      >
+        <StepDots current={step} />
+        <div key={step} className="rise-in mt-6">
+          {children}
+        </div>
+      </div>
     </div>
   );
 }
+
 
 function StepDots({ current }: { current: number }) {
   return (
