@@ -11,7 +11,7 @@ import { OfferCountdown } from "@/components/funnel/OfferCountdown";
 import { PhotoStrip } from "@/components/funnel/PhotoStrip";
 import { PricingCards } from "@/components/funnel/PricingCards";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
-import { Section } from "@/components/funnel/Section";
+import { Section, SectionHeading } from "@/components/funnel/Section";
 import { StickyJoinBar } from "@/components/funnel/StickyJoinBar";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
