@@ -232,8 +232,11 @@ export function QuickIntake({
 function AckBanner({ text }: { text: string }) {
   if (!text) return null;
   return (
-    <div className="flex items-start gap-3 rounded-2xl border border-primary/30 bg-primary/8 p-4">
-      <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-gold text-primary-foreground">
+    <div
+      key={text}
+      className="rise-in flex items-start gap-3 rounded-2xl border border-primary/30 bg-primary/8 p-4"
+    >
+      <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-gold text-primary-foreground shadow-glow">
         <Check className="h-4 w-4" />
       </span>
       <p className="text-mal text-[0.95rem] leading-relaxed font-medium">{text}</p>
@@ -251,15 +254,20 @@ function Shell({
   onFocus?: () => void;
 }) {
   return (
-    <div
-      onFocus={onFocus}
-      className="max-h-[88svh] overflow-y-auto rounded-[1.75rem] bg-sheet px-6 py-7 text-sheet-foreground shadow-card sm:px-8"
-    >
-      <StepDots current={step} />
-      <div className="mt-6">{children}</div>
+    <div className="rounded-[1.9rem] bg-gradient-gold p-[1.5px] shadow-glow">
+      <div
+        onFocus={onFocus}
+        className="max-h-[88svh] overflow-y-auto rounded-[1.8rem] bg-sheet px-6 py-7 text-sheet-foreground sm:px-8"
+      >
+        <StepDots current={step} />
+        <div key={step} className="rise-in mt-6">
+          {children}
+        </div>
+      </div>
     </div>
   );
 }
+
 
 function StepDots({ current }: { current: number }) {
   return (
