@@ -97,13 +97,6 @@ function PersonalSupportPage() {
         </div>
       </Section>
 
-      {/* 4 — EXTRA FOR THOSE WHO START TODAY */}
-      <Section tone="surface">
-        <div className="mx-auto max-w-2xl">
-          <SpecialOffer />
-        </div>
-      </Section>
-
       {/* 5 — WHY I SHARE THIS OPENLY */}
       <Section>
         <WhyIShare />
