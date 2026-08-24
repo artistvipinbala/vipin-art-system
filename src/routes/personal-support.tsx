@@ -8,10 +8,10 @@ import { Guarantee } from "@/components/funnel/Guarantee";
 import { JoinNowInline } from "@/components/funnel/JoinNowInline";
 import { Letter } from "@/components/funnel/Letter";
 import { OfferCountdown } from "@/components/funnel/OfferCountdown";
+import { PhotoStrip } from "@/components/funnel/PhotoStrip";
 import { PricingCards } from "@/components/funnel/PricingCards";
 import { PurchaseFaq } from "@/components/funnel/PurchaseFaq";
-import { Lead, Section, SectionHeading } from "@/components/funnel/Section";
-import { SpecialOffer } from "@/components/funnel/SpecialOffer";
+import { Section, SectionHeading } from "@/components/funnel/Section";
 import { StickyJoinBar } from "@/components/funnel/StickyJoinBar";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
@@ -58,9 +58,6 @@ function PersonalSupportPage() {
         <h1 className="text-mal mt-3 text-2xl leading-snug font-bold text-foreground sm:text-3xl md:text-4xl">
           Personal Support benefits എന്തൊക്കെയാണ്?
         </h1>
-        <p className="text-mal mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
-          {"\n"}
-        </p>
       </div>
 
       <div className="mx-auto w-full max-w-3xl px-5 pt-6 sm:px-6">
@@ -81,7 +78,11 @@ function PersonalSupportPage() {
       {/* 2 — DESCRIPTION UNDER THE VIDEO */}
       <Section tone="surface">
         <Letter />
+        <div className="mt-10">
+          <PhotoStrip />
+        </div>
       </Section>
+
 
       {/* 3 — WHAT'S INSIDE → TODAY'S DATE/TIME → PRICE */}
       <Section id="offers">
@@ -93,21 +94,7 @@ function PersonalSupportPage() {
         </div>
 
         <div id="pricing" className="mt-8 scroll-mt-6">
-          <SectionHeading className="text-xl sm:text-2xl">{"\n"}</SectionHeading>
-          <Lead>{"\n"}</Lead>
-          <div className="mt-8">
-            <PricingCards />
-          </div>
-          <p className="text-mal mt-5 text-center text-xs text-muted-foreground">
-            {"\n"}
-          </p>
-        </div>
-      </Section>
-
-      {/* 4 — EXTRA FOR THOSE WHO START TODAY */}
-      <Section tone="surface">
-        <div className="mx-auto max-w-2xl">
-          <SpecialOffer />
+          <PricingCards />
         </div>
       </Section>
 

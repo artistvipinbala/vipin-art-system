@@ -88,10 +88,6 @@ function LandingPage() {
             </span>
           </header>
 
-          {/* Curiosity statement, right before the video */}
-          <h2 className="text-mal mx-auto mt-5 max-w-2xl text-center text-[0.96rem] leading-[1.55] font-bold text-foreground sm:text-[1.22rem]">
-            {vsl.headline}
-          </h2>
 
           {/* Video stage — the focal point of the page */}
           <div id="vsl-video" className="mt-4">
@@ -130,20 +126,10 @@ function LandingPage() {
               {vsl.reveal.cta}
             </button>
 
-            <p className="text-mal mx-auto mt-3 max-w-xl text-[0.72rem] leading-[1.75] text-muted-foreground/90">
-              {vsl.reveal.note}
-            </p>
-
-            <div className="mt-5 space-y-2 border-t border-border/70 pt-5">
-              <p className="text-mal mx-auto max-w-xl text-[0.8rem] leading-[1.8] text-muted-foreground sm:text-[0.88rem]">
-                {vsl.reveal.line2}
-              </p>
-              <p className="text-mal mx-auto max-w-xl text-[0.8rem] leading-[1.8] text-muted-foreground sm:text-[0.88rem]">
-                {vsl.belowVideo}
-              </p>
-            </div>
           </div>
         </section>
+
+
 
 
 
