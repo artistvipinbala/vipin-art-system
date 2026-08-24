@@ -57,7 +57,7 @@ function PersonalSupportPage() {
           Personal Support
         </p>
         <h1 className="text-mal mt-3 text-2xl leading-snug font-bold text-foreground sm:text-3xl md:text-4xl">
-          Personal support എടുത്താൽ നിങ്ങൾക്ക് കിട്ടുന്ന benefits എന്തൊക്കെയാണ്?
+          Personal Support benefits എന്തൊക്കെയാണ്?
         </h1>
         <p className="text-mal mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
           {"\n"}

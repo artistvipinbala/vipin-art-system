@@ -10,17 +10,17 @@ import teach from "@/assets/bundle/teach_art.jpg.asset.json";
 import weekly from "@/assets/bundle/weekly_meet.jpg.asset.json";
 
 export const bundleBreakdown = {
-  headline: "പേഴ്‌സണൽ സപ്പോർട്ട് ബണ്ടിലിൽ നിങ്ങൾക്ക് ലഭിക്കുന്നതെല്ലാം",
+  headline: "Personal Support Bundle-ൽ നിങ്ങൾക്ക് ലഭിക്കുന്നതെല്ലാം",
   subtitle:
-    "എല്ലാ പ്രീമിയം കോഴ്‌സുകളും, ടൂൾകിറ്റുകളും, ലൈവ് മെന്റർഷിപ്പും ഒരൊറ്റ ബണ്ടിലിൽ ഇപ്പോൾ സ്വന്തമാക്കാം.",
-  totalValueLabel: "മൊത്തം മൂല്യം",
+    "എല്ലാ premium Courses-ഉം, Toolkits-ഉം, Live Mentorship-ഉം ഒരൊറ്റ Bundle-ൽ ഇപ്പോൾ സ്വന്തമാക്കാം.",
+  totalValueLabel: "Total Value",
   totalValue: "₹49,990",
-  offerBadge: "ഇന്ന് ഈ ബണ്ടിലിനൊപ്പം 100% സൗജന്യം (FREE)",
-  freeBadge: "ഈ ബണ്ടിലിനൊപ്പം സൗജന്യം",
+  offerBadge: "ഇന്ന് ഈ Bundle-നൊപ്പം 100% FREE",
+  freeBadge: "ഈ Bundle-നൊപ്പം FREE",
   items: [
     {
       image: selling.url,
-      tag: "കോഴ്‌സ് 01",
+      tag: "Course 01",
       title: "My Art Selling Process",
       price: "₹5,999",
       points: [
@@ -31,7 +31,7 @@ export const bundleBreakdown = {
     },
     {
       image: earnings.url,
-      tag: "കോഴ്‌സ് 02",
+      tag: "Course 02",
       title: "Artist Earnings Blueprint",
       price: "₹4,999",
       points: [
@@ -42,7 +42,7 @@ export const bundleBreakdown = {
     },
     {
       image: ads.url,
-      tag: "കോഴ്‌സ് 03",
+      tag: "Course 03",
       title: "Art Advertising Mastery",
       price: "₹5,999",
       points: [
@@ -53,7 +53,7 @@ export const bundleBreakdown = {
     },
     {
       image: content.url,
-      tag: "കോഴ്‌സ് 04",
+      tag: "Course 04",
       title: "Creative Content Creation",
       price: "₹3,999",
       points: [
@@ -64,7 +64,7 @@ export const bundleBreakdown = {
     },
     {
       image: social.url,
-      tag: "ടൂൾകിറ്റ് 05",
+      tag: "Toolkit 05",
       title: "Social Media Starter Kit",
       price: "₹2,999",
       points: [
@@ -75,7 +75,7 @@ export const bundleBreakdown = {
     },
     {
       image: days30.url,
-      tag: "ടൂൾകിറ്റ് 06",
+      tag: "Toolkit 06",
       title: "30 Days Social Media Contents",
       price: "₹2,999",
       points: [
@@ -86,7 +86,7 @@ export const bundleBreakdown = {
     },
     {
       image: ai.url,
-      tag: "കോഴ്‌സ് 07",
+      tag: "Course 07",
       title: "Mastering AI in Art",
       price: "₹3,999",
       points: [
@@ -97,7 +97,7 @@ export const bundleBreakdown = {
     },
     {
       image: teach.url,
-      tag: "കോഴ്‌സ് 08",
+      tag: "Course 08",
       title: "Teach Art Online",
       price: "₹4,999",
       points: [
@@ -108,7 +108,7 @@ export const bundleBreakdown = {
     },
     {
       image: weekly.url,
-      tag: "ലൈവ് മെന്റർഷിപ്പ് 09",
+      tag: "Live Mentorship 09",
       title: "Weekly Meetings & Live Mentorship",
       price: "₹9,999",
       points: [
@@ -119,7 +119,7 @@ export const bundleBreakdown = {
     },
     {
       image: community.url,
-      tag: "കമ്മ്യൂണിറ്റി 10",
+      tag: "Community 10",
       title: "VIP Artist Community Access",
       price: "₹4,999",
       points: [
