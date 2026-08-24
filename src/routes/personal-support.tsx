@@ -58,9 +58,6 @@ function PersonalSupportPage() {
         <h1 className="text-mal mt-3 text-2xl leading-snug font-bold text-foreground sm:text-3xl md:text-4xl">
           Personal Support benefits എന്തൊക്കെയാണ്?
         </h1>
-        <p className="text-mal mx-auto mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
-          {"\n"}
-        </p>
       </div>
 
       <div className="mx-auto w-full max-w-3xl px-5 pt-6 sm:px-6">
