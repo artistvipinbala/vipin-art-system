@@ -15,7 +15,6 @@ import { SpecialOffer } from "@/components/funnel/SpecialOffer";
 import { StickyJoinBar } from "@/components/funnel/StickyJoinBar";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
-import { WhyPayment } from "@/components/funnel/WhyPayment";
 import { brand, intake, media, offers } from "@/content/funnel";
 import { track } from "@/lib/track";
 
@@ -120,12 +119,7 @@ function PersonalSupportPage() {
         </div>
       </Section>
 
-      {/* 6 — WHY THERE IS A PRICE AT ALL */}
-      <Section tone="surface">
-        <WhyPayment />
-      </Section>
-
-      {/* 7 — DEGREE vs STARTING TODAY */}
+      {/* 6 — DEGREE vs STARTING TODAY */}
       <Section>
         <EduCompare />
         <div className="mt-10">
