@@ -1,6 +1,6 @@
 import { ShieldCheck, X } from "lucide-react";
 
-import { guarantee, intake } from "@/content/funnel";
+import { guarantee } from "@/content/funnel";
 
 export function Guarantee() {
   return (
