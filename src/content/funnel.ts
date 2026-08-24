@@ -634,8 +634,8 @@ export const valueStack = {
 };
 
 export const guarantee = {
-  headline: "നിങ്ങളുടെ risk കുറയ്ക്കാൻ",
-  body: "[GUARANTEE / REFUND TEXT — OWNER TO FINALIZE. Example: 7 ദിവസത്തിനുള്ളിൽ course കണ്ടിട്ട് ഇത് നിങ്ങൾക്ക് useful അല്ല എന്ന് തോന്നിയാൽ, WhatsApp-ൽ message ചെയ്താൽ full refund.]",
+  headline: "\n",
+  body: "\n",
   honest: {
     title: "ഇത് വാങ്ങരുത് — ഇങ്ങനെയാണെങ്കിൽ",
     points: [
