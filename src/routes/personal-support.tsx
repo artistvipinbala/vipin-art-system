@@ -119,12 +119,7 @@ function PersonalSupportPage() {
         </div>
       </Section>
 
-      {/* 6 — WHY THERE IS A PRICE AT ALL */}
-      <Section tone="surface">
-        <WhyPayment />
-      </Section>
-
-      {/* 7 — DEGREE vs STARTING TODAY */}
+      {/* 6 — DEGREE vs STARTING TODAY */}
       <Section>
         <EduCompare />
         <div className="mt-10">
