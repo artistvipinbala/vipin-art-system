@@ -710,13 +710,9 @@ export const vsl = {
  */
 export const specialOffer = {
   eyebrow: "ഇപ്പോൾ join ചെയ്യുന്നവർക്ക് മാത്രം",
-  headline: "Video കണ്ടിട്ട് ഇപ്പോൾ തന്നെ start ചെയ്യുന്നുണ്ടെങ്കിൽ, ഒരു extra ഉണ്ട്",
-  items: [
-    "1-on-1 personal onboarding call — നിങ്ങളുടെ art-നും audience-നും അനുസരിച്ച് plan ഒരുക്കാം",
-    "എന്റെ ready-made ad + landing page + WhatsApp automation templates",
-    "ആദ്യ 30 ദിവസം direct WhatsApp priority reply",
-  ],
-  note: "ഈ extra-കൾ ഈ session കണ്ടിട്ട് ഇന്ന് തന്നെ start ചെയ്യുന്നവർക്ക് വേണ്ടിയാണ് — കാരണം അവരെ ഞാൻ personally onboard ചെയ്യും. അതിന് ഒരു ദിവസം കുറച്ച് പേരെ മാത്രം എടുക്കാൻ പറ്റും.",
+  headline: "\n",
+  items: ["\n", "\n", "\n"],
+  note: "\n",
 };
 
 /**
