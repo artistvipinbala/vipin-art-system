@@ -14,7 +14,7 @@ export const links = {
   contact: "#",
   privacy: "/privacy",
   terms: "/terms",
-  refund: "/refund",
+  
 };
 
 export const media = {
