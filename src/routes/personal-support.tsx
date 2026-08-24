@@ -99,7 +99,7 @@ function PersonalSupportPage() {
             <PricingCards />
           </div>
           <p className="text-mal mt-5 text-center text-xs text-muted-foreground">
-            {intake.note}
+            {"\n"}
           </p>
         </div>
       </Section>

@@ -23,10 +23,7 @@ export function Guarantee() {
           ))}
         </ul>
         <p className="text-mal mt-5 border-t border-border pt-4 text-xs text-muted-foreground">
-          <span className="font-bold text-foreground">{intake.limitLabel}:</span> {intake.limit} ·{" "}
-          <span className="font-bold text-foreground">Next batch:</span> {intake.nextBatch}
-          <br />
-          {intake.note}
+          {"\n"}
         </p>
       </div>
     </div>

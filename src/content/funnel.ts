@@ -367,7 +367,7 @@ export const bundle = {
 
 /** Honest comparison against the traditional education route. */
 export const eduCompare = {
-  headline: "ഒരു കാര്യം ശാന്തമായി ആലോചിക്കൂ",
+  headline: "Remember 👐🏽",
   rows: [
     {
       title: "Normal ഒരു course / degree",
@@ -616,10 +616,10 @@ export const guarantee = {
 
 /** Real intake limit. Owner: keep this truthful or blank it out to hide. */
 export const intake = {
-  limitLabel: "Intake",
-  limit: "[X] people per batch",
-  nextBatch: "[NEXT BATCH DATE]",
-  note: "ഓരോ ആഴ്ചയിലും ഒരു limited number ആളുകളെ മാത്രം ഞാൻ അകത്തേക്ക് എടുക്കുന്നു — എല്ലാവർക്കും നേരിട്ട് reply കൊടുക്കാൻ വേണ്ടിയാണ്. Fake urgency അല്ല.",
+  limitLabel: "",
+  limit: "",
+  nextBatch: "",
+  note: "\n",
 };
 
 export const purchaseFaqs = [
