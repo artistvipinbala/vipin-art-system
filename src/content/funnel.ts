@@ -641,7 +641,7 @@ export const purchaseFaqs = [
   },
   {
     q: "Result കിട്ടാൻ എത്ര സമയം എടുക്കും?",
-    a: "Guarantee ചെയ്യുന്നില്ല. Consistent ആയി implement ചെയ്യുന്നവർക്ക് സാധാരണ ആദ്യ enquiries കുറച്ച് ആഴ്ചകൾക്കുള്ളിൽ കാണാൻ തുടങ്ങും. നിങ്ങളുടെ effort ആണ് factor.",
+    a: "Consistent ആയി implement ചെയ്യുന്നവർക്ക് സാധാരണ ആദ്യ enquiries കുറച്ച് ആഴ്ചകൾക്കുള്ളിൽ കാണാൻ തുടങ്ങും. നിങ്ങളുടെ effort ആണ് factor.",
   },
   {
     q: "Refund ഉണ്ടോ?",
