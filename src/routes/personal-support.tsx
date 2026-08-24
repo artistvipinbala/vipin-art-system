@@ -94,12 +94,8 @@ function PersonalSupportPage() {
         </div>
 
         <div id="pricing" className="mt-8 scroll-mt-6">
-          <SectionHeading className="text-xl sm:text-2xl">
-            ഒരു price. എല്ലാ support-ഉം ഉള്ളിൽ.
-          </SectionHeading>
-          <Lead>
-            Options ഇല്ല, upsell ഇല്ല. {offers.everything.price} — അതിൽ എല്ലാം ഉണ്ട്.
-          </Lead>
+          <SectionHeading className="text-xl sm:text-2xl">{"\n"}</SectionHeading>
+          <Lead>{"\n"}</Lead>
           <div className="mt-8">
             <PricingCards />
           </div>
