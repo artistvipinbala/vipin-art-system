@@ -10,13 +10,13 @@ import teach from "@/assets/bundle/teach_art.jpg.asset.json";
 import weekly from "@/assets/bundle/weekly_meet.jpg.asset.json";
 
 export const bundleBreakdown = {
-  headline: "പേഴ്‌സണൽ സപ്പോർട്ട് ബണ്ടിലിൽ നിങ്ങൾക്ക് ലഭിക്കുന്നതെല്ലാം",
+  headline: "Personal Support Bundle-ൽ നിങ്ങൾക്ക് ലഭിക്കുന്നതെല്ലാം",
   subtitle:
-    "എല്ലാ പ്രീമിയം കോഴ്‌സുകളും, ടൂൾകിറ്റുകളും, ലൈവ് മെന്റർഷിപ്പും ഒരൊറ്റ ബണ്ടിലിൽ ഇപ്പോൾ സ്വന്തമാക്കാം.",
-  totalValueLabel: "മൊത്തം മൂല്യം",
+    "എല്ലാ premium Courses-ഉം, Toolkits-ഉം, Live Mentorship-ഉം ഒരൊറ്റ Bundle-ൽ ഇപ്പോൾ സ്വന്തമാക്കാം.",
+  totalValueLabel: "Total Value",
   totalValue: "₹49,990",
-  offerBadge: "ഇന്ന് ഈ ബണ്ടിലിനൊപ്പം 100% സൗജന്യം (FREE)",
-  freeBadge: "ഈ ബണ്ടിലിനൊപ്പം സൗജന്യം",
+  offerBadge: "ഇന്ന് ഈ Bundle-നൊപ്പം 100% FREE",
+  freeBadge: "ഈ Bundle-നൊപ്പം FREE",
   items: [
     {
       image: selling.url,
