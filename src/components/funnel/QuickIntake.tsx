@@ -185,17 +185,17 @@ export function QuickIntake({
               key={option}
               type="button"
               onClick={() => pick(option, index)}
-              className={`text-mal flex w-full items-start gap-3 rounded-2xl border p-4 text-left text-[0.92rem] leading-relaxed transition-colors ${
+              className={`text-mal group flex w-full items-start gap-3 rounded-2xl border p-4 text-left text-[0.92rem] leading-relaxed transition-all duration-200 active:scale-[0.985] ${
                 active
-                  ? "border-primary bg-primary/10 font-semibold"
-                  : "border-sheet-border bg-sheet-field hover:border-primary/40"
+                  ? "border-primary bg-primary/10 font-semibold shadow-glow"
+                  : "border-sheet-border bg-sheet-field hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-card"
               }`}
             >
               <span
-                className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
+                className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-all ${
                   active
                     ? "border-primary bg-gradient-gold text-primary-foreground"
-                    : "border-sheet-border"
+                    : "border-sheet-border group-hover:border-primary/60"
                 }`}
               >
                 {active ? <Check className="h-3 w-3" /> : null}
@@ -206,11 +206,6 @@ export function QuickIntake({
         })}
       </div>
 
-      {pending ? (
-        <div className="mt-5">
-          <AckBanner text={ack} />
-        </div>
-      ) : null}
 
       {stage === 1 ? null : (
         <BackLink
