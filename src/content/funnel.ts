@@ -388,8 +388,7 @@ export const eduCompare = {
       ],
     },
   ],
-  closing:
-    "Price ഞാൻ കൂട്ടിവെച്ചിട്ടില്ല. ഇത് ചെയ്ത് result കാണുന്ന artists കൂടുന്നതാണ് എനിക്ക് കൂടുതൽ വലുത്.",
+  closing: "This is not a expense this is an lifetime investment",
 };
 
 /**
