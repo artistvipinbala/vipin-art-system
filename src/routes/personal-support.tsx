@@ -93,14 +93,7 @@ function PersonalSupportPage() {
         </div>
 
         <div id="pricing" className="mt-8 scroll-mt-6">
-          <SectionHeading className="text-xl sm:text-2xl">{"\n"}</SectionHeading>
-          <Lead>{"\n"}</Lead>
-          <div className="mt-8">
-            <PricingCards />
-          </div>
-          <p className="text-mal mt-5 text-center text-xs text-muted-foreground">
-            {"\n"}
-          </p>
+          <PricingCards />
         </div>
       </Section>
 
