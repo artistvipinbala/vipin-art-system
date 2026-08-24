@@ -15,7 +15,6 @@ import { SpecialOffer } from "@/components/funnel/SpecialOffer";
 import { StickyJoinBar } from "@/components/funnel/StickyJoinBar";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
-import { WhyPayment } from "@/components/funnel/WhyPayment";
 import { brand, intake, media, offers } from "@/content/funnel";
 import { track } from "@/lib/track";
 
