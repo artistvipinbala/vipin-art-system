@@ -42,15 +42,12 @@ export function QuickIntake({
 
   const step = stage === "final" ? 3 : stage === "not-watched" ? 1 : stage;
 
-  function advance(to: Stage, ackText: string, label: string) {
-    setPending(label);
+  function advance(to: Stage, ackText: string, _label: string) {
+    setPending("");
     setAck(ackText);
-    if (timer.current) window.clearTimeout(timer.current);
-    timer.current = window.setTimeout(() => {
-      setPending("");
-      setStage(to);
-    }, 1100);
+    setStage(to);
   }
+
 
   async function finish() {
     const problemLabel = problem !== null ? copy.steps.problem.options[problem]!.label : "";
