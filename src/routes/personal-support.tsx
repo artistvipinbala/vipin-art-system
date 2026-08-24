@@ -15,7 +15,7 @@ import { SpecialOffer } from "@/components/funnel/SpecialOffer";
 import { StickyJoinBar } from "@/components/funnel/StickyJoinBar";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
-import { brand, intake, media, offers } from "@/content/funnel";
+import { brand, media, offers } from "@/content/funnel";
 import { track } from "@/lib/track";
 
 const title = "Artist Income System — ₹5,999 | Artist Vipin Bala";
@@ -99,7 +99,7 @@ function PersonalSupportPage() {
             <PricingCards />
           </div>
           <p className="text-mal mt-5 text-center text-xs text-muted-foreground">
-            {intake.note}
+            {"\n"}
           </p>
         </div>
       </Section>
