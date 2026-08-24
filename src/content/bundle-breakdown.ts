@@ -20,7 +20,7 @@ export const bundleBreakdown = {
   items: [
     {
       image: selling.url,
-      tag: "കോഴ്‌സ് 01",
+      tag: "Course 01",
       title: "My Art Selling Process",
       price: "₹5,999",
       points: [
@@ -31,7 +31,7 @@ export const bundleBreakdown = {
     },
     {
       image: earnings.url,
-      tag: "കോഴ്‌സ് 02",
+      tag: "Course 02",
       title: "Artist Earnings Blueprint",
       price: "₹4,999",
       points: [
@@ -42,7 +42,7 @@ export const bundleBreakdown = {
     },
     {
       image: ads.url,
-      tag: "കോഴ്‌സ് 03",
+      tag: "Course 03",
       title: "Art Advertising Mastery",
       price: "₹5,999",
       points: [
@@ -53,7 +53,7 @@ export const bundleBreakdown = {
     },
     {
       image: content.url,
-      tag: "കോഴ്‌സ് 04",
+      tag: "Course 04",
       title: "Creative Content Creation",
       price: "₹3,999",
       points: [
@@ -64,7 +64,7 @@ export const bundleBreakdown = {
     },
     {
       image: social.url,
-      tag: "ടൂൾകിറ്റ് 05",
+      tag: "Toolkit 05",
       title: "Social Media Starter Kit",
       price: "₹2,999",
       points: [
@@ -75,7 +75,7 @@ export const bundleBreakdown = {
     },
     {
       image: days30.url,
-      tag: "ടൂൾകിറ്റ് 06",
+      tag: "Toolkit 06",
       title: "30 Days Social Media Contents",
       price: "₹2,999",
       points: [
@@ -86,7 +86,7 @@ export const bundleBreakdown = {
     },
     {
       image: ai.url,
-      tag: "കോഴ്‌സ് 07",
+      tag: "Course 07",
       title: "Mastering AI in Art",
       price: "₹3,999",
       points: [
@@ -97,7 +97,7 @@ export const bundleBreakdown = {
     },
     {
       image: teach.url,
-      tag: "കോഴ്‌സ് 08",
+      tag: "Course 08",
       title: "Teach Art Online",
       price: "₹4,999",
       points: [
@@ -108,7 +108,7 @@ export const bundleBreakdown = {
     },
     {
       image: weekly.url,
-      tag: "ലൈവ് മെന്റർഷിപ്പ് 09",
+      tag: "Live Mentorship 09",
       title: "Weekly Meetings & Live Mentorship",
       price: "₹9,999",
       points: [
@@ -119,7 +119,7 @@ export const bundleBreakdown = {
     },
     {
       image: community.url,
-      tag: "കമ്മ്യൂണിറ്റി 10",
+      tag: "Community 10",
       title: "VIP Artist Community Access",
       price: "₹4,999",
       points: [
