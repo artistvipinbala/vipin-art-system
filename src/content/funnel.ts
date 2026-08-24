@@ -14,7 +14,7 @@ export const links = {
   contact: "#",
   privacy: "/privacy",
   terms: "/terms",
-  refund: "/refund",
+  
 };
 
 export const media = {
@@ -503,10 +503,6 @@ export const faqs = [
     q: "Payment എങ്ങനെ ചെയ്യാം?",
     a: "Payment option page-ൽ ലഭ്യമാണ്. [PAYMENT GATEWAY PLACEHOLDER]",
   },
-  {
-    q: "Refund policy എന്താണ്?",
-    a: "[REFUND POLICY PLACEHOLDER — OWNER TO FINALIZE]",
-  },
 ];
 
 export const finalCta = {
@@ -642,10 +638,6 @@ export const purchaseFaqs = [
   {
     q: "Result കിട്ടാൻ എത്ര സമയം എടുക്കും?",
     a: "Consistent ആയി implement ചെയ്യുന്നവർക്ക് സാധാരണ ആദ്യ enquiries കുറച്ച് ആഴ്ചകൾക്കുള്ളിൽ കാണാൻ തുടങ്ങും. നിങ്ങളുടെ effort ആണ് factor.",
-  },
-  {
-    q: "Refund ഉണ്ടോ?",
-    a: "[REFUND POLICY PLACEHOLDER — OWNER TO FINALIZE]",
   },
 ];
 

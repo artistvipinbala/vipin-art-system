@@ -17,9 +17,6 @@ export function Footer() {
           <Link to="/terms" className="hover:text-primary">
             Terms &amp; Conditions
           </Link>
-          <Link to="/refund" className="hover:text-primary">
-            Refund Policy
-          </Link>
           <a href={links.contact} className="hover:text-primary">
             Contact
           </a>
