@@ -659,7 +659,7 @@ export const vsl = {
     line1: "ഈ training-ൽ പറഞ്ഞ കാര്യങ്ങൾ നിങ്ങളുടെ own art business-ൽ step-by-step ആയി implement ചെയ്യാൻ എന്റെ personal guidance വേണമെങ്കിൽ, എന്റെ Creative Success Path Program-ൽ join ചെയ്യാം",
     line2:
       "\n",
-    cta: "CLICK HERE FOR MY PERSONAL SUPPORT",
+    cta: "GET MY PERSONAL GUIDANCE",
     note: "\n",
   },
 };
