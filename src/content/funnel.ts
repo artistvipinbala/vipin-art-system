@@ -797,7 +797,7 @@ export const pageTop = {
 export const milestones = {
   eyebrow: "ART CLASSES",
   headline: "Art Class-കളിലൂടെ — 8,000 students",
-  sub: "കുറച്ച് മാസങ്ങൾക്കുള്ളിൽ എണ്ണായിരത്തോളം പേർ എന്റെ art class-കളിൽ join ചെയ്തു. കഴിഞ്ഞ കുറച്ച് ദിവസങ്ങളിലും ആളുകൾ join ചെയ്തുകൊണ്ടിരിക്കുന്നു — ഇത് പൂർണ്ണമായും automated ആണ്, ഞാൻ ഓരോ sale-നും പിന്നാലെ പോകേണ്ടതില്ല.\n\nscreenshort date 16/08/2026",
+  sub: "എന്റെ art knowledge ഒരു product ആക്കി, online ആയി thousands of students-ലേക്ക് എത്തിക്കാൻ കഴിഞ്ഞു.— ഇത് പൂർണ്ണമായും automated ആണ്, ഞാൻ ഓരോ sale-നും പിന്നാലെ പോകേണ്ടതില്ല. screenshort date 16/08/2026",
   imageCaption: "Class dashboard — join ചെയ്തവരുടെ live count",
   note: "ഇതേ രീതി നിങ്ങൾക്കും set ചെയ്യാൻ പറ്റും. ഇത് ഒരു number കാണിക്കാൻ വേണ്ടിയല്ല — ഇത് work ചെയ്യുന്നു എന്ന് പറയാൻ വേണ്ടിയാണ്.",
 };
@@ -817,7 +817,7 @@ export const results = {
     poster: "https://tagmango.com/staticassets/1698563250469.png",
     caption: "When I first earned 2 lakhs as an artist",
     quote:
-      '"Are artists always meant to struggle?" — ഈ ചോദ്യത്തിന് ഉത്തരം തേടി ഞാൻ പ്രാക്ടിക്കലായി വർക്ക് ചെയ്യുമ്പോൾ, artwork-കൾ ചെയ്തു മാത്രം monthly ₹2 Lakhs+ earn ചെയ്യാൻ സാധിച്ചു.',
+      "“ഞാനും ഒരിക്കൽ artwork ചെയ്യുന്നതിൽ മാത്രം focus ചെയ്തിരുന്ന artist ആയിരുന്നു. പക്ഷേ art skill മാത്രം income ഉണ്ടാക്കാൻ പോരെന്ന് മനസ്സിലായപ്പോൾ selling, positioning, content, customer acquisition എന്നിവ systematically പഠിച്ചു.”",
     quote2:
       "വരച്ചു കിട്ടിയ വരുമാനത്തിൽ നിന്ന് അമ്മക്ക് ഒരു ലക്ഷം രൂപ കൊടുത്തപ്പോൾ… നിങ്ങൾ ആഗ്രഹിക്കുന്നു എങ്കിൽ ഈ യാത്ര നിങ്ങൾക്കും possible ആണ്.",
     signature: '"We Can\'t Choose Art, Art Chooses Us"',
