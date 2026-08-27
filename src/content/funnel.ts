@@ -656,7 +656,7 @@ export const vsl = {
   /** Seconds of watch time before the personal-support option appears. */
   gateSeconds: 900,
   reveal: {
-    line1: "ഈ training-ൽ പറഞ്ഞ കാര്യങ്ങൾ നിങ്ങളുടെ own art business-ൽ step-by-step ആയി implement ചെയ്യാൻ എന്റെ personal guidance വേണമെങ്കിൽ, എന്റെ Creative Success Path Program-ൽ join ചെയ്യാം",
+    line1: "ഈ training-ൽ പറഞ്ഞ കാര്യങ്ങൾ നിങ്ങളുടെ own art journey-ൽ step-by-step ആയി implement ചെയ്യാൻ എന്റെ personal guidance വേണമെങ്കിൽ, എന്റെ Creative Success Path Program-ൽ join ചെയ്യാം",
     line2:
       "\n",
     cta: "GET MY PERSONAL GUIDANCE",
