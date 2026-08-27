@@ -817,7 +817,7 @@ export const results = {
     poster: "https://tagmango.com/staticassets/1698563250469.png",
     caption: "When I first earned 2 lakhs as an artist",
     quote:
-      '"Are artists always meant to struggle?" — ഈ ചോദ്യത്തിന് ഉത്തരം തേടി ഞാൻ പ്രാക്ടിക്കലായി വർക്ക് ചെയ്യുമ്പോൾ, artwork-കൾ ചെയ്തു മാത്രം monthly ₹2 Lakhs+ earn ചെയ്യാൻ സാധിച്ചു.',
+      "“ഞാനും ഒരിക്കൽ artwork ചെയ്യുന്നതിൽ മാത്രം focus ചെയ്തിരുന്ന artist ആയിരുന്നു. പക്ഷേ art skill മാത്രം income ഉണ്ടാക്കാൻ പോരെന്ന് മനസ്സിലായപ്പോൾ selling, positioning, content, customer acquisition എന്നിവ systematically പഠിച്ചു.”",
     quote2:
       "വരച്ചു കിട്ടിയ വരുമാനത്തിൽ നിന്ന് അമ്മക്ക് ഒരു ലക്ഷം രൂപ കൊടുത്തപ്പോൾ… നിങ്ങൾ ആഗ്രഹിക്കുന്നു എങ്കിൽ ഈ യാത്ര നിങ്ങൾക്കും possible ആണ്.",
     signature: '"We Can\'t Choose Art, Art Chooses Us"',
