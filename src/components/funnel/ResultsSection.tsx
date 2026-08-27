@@ -14,7 +14,7 @@ function SupportCta({ onClick }: { onClick?: (() => void) | undefined }) {
       <button
         type="button"
         onClick={onClick}
-        className="text-mal inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-primary px-8 text-[0.82rem] font-bold text-primary-foreground shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 sm:w-auto sm:text-[0.9rem]"
+        className="text-mal inline-flex min-h-14 w-full items-center justify-center rounded-xl bg-primary px-8 text-[0.82rem] font-bold text-ink-foreground shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 sm:w-auto sm:text-[0.9rem]"
       >
         {vsl.reveal.cta}
       </button>

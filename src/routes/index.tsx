@@ -171,9 +171,9 @@ function LandingPage() {
         <button
           type="button"
           onClick={goNext}
-          className="text-mal flex min-h-13 w-full items-center justify-center rounded-xl bg-primary px-5 text-[0.78rem] font-bold text-primary-foreground shadow-glow"
+          className="text-mal flex min-h-13 w-full items-center justify-center rounded-xl bg-primary px-5 text-[0.78rem] font-bold text-ink-foreground shadow-glow"
         >
-          CLICK HERE FOR MY PERSONAL SUPPORT
+          GET MY PERSONAL GUIDANCE
         </button>
       </div>
     </main>
