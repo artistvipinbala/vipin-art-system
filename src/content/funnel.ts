@@ -656,7 +656,7 @@ export const vsl = {
   /** Seconds of watch time before the personal-support option appears. */
   gateSeconds: 900,
   reveal: {
-    line1: "ഈ system നിങ്ങൾക്ക് ഒറ്റയ്ക്ക് figure out ചെയ്യേണ്ട\nStep-by-step ആയി implement ചെയ്യാൻ ഞാൻ നിങ്ങളെ guide ചെയ്യുന്ന program ആണ് \"Creative Success Path\"",
+    line1: "ഈ training-ൽ പറഞ്ഞ കാര്യങ്ങൾ നിങ്ങളുടെ own art business-ൽ step-by-step ആയി implement ചെയ്യാൻ എന്റെ personal guidance വേണമെങ്കിൽ, എന്റെ Creative Success Path Program-ൽ join ചെയ്യാം",
     line2:
       "\n",
     cta: "CLICK HERE FOR MY PERSONAL SUPPORT",
