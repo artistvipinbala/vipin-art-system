@@ -130,10 +130,7 @@ function LandingPage() {
           </div>
         </section>
 
-
-
-
-
+        <WhoIsThisFor />
 
         {/* The 5 short questions — asked in a popup before the offer page opens */}
         <Dialog open={showIntake} onOpenChange={setShowIntake}>
