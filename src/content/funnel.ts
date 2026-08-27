@@ -790,7 +790,7 @@ export const pageTop = {
   eyebrow: "MALAYALAM FREE TRAINING BY ARTIST VIPIN BALA",
   headline:
     "Art വരയ്ക്കാൻ അറിയാം… But നിങ്ങളുടെ Artwork-കൾക്കും Art Class-നും സ്ഥിരമായി customers/Students  കൊണ്ടുവരാൻ അറിയില്ലേ?",
-  sub: "നിങ്ങളുടെ art skill ഒരു income source ആക്കി മാറ്റാൻ വേണ്ട complete Art Selling System പഠിക്കാം — artwork sales, commissions, art classes എന്നിവ വഴി income generate ചെയ്യാനുള്ള practical methods",
+  sub: "നിങ്ങളുടെ art skill ഒരു income source ആക്കി മാറ്റാൻ വേണ്ട complete Art Selling System പഠിക്കാം ",
 };
 
 /** Achievement strip shown right under the first-screen video text. */
