@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { QuickIntake } from "@/components/funnel/QuickIntake";
 import { ResultsSection } from "@/components/funnel/ResultsSection";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
+import { WhoIsThisFor } from "@/components/funnel/WhoIsThisFor";
 import { brand, media, pageTop, vsl } from "@/content/funnel";
 import { track } from "@/lib/track";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
@@ -129,10 +130,7 @@ function LandingPage() {
           </div>
         </section>
 
-
-
-
-
+        <WhoIsThisFor />
 
         {/* The 5 short questions — asked in a popup before the offer page opens */}
         <Dialog open={showIntake} onOpenChange={setShowIntake}>
