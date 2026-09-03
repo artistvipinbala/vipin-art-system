@@ -105,7 +105,7 @@ function PersonalSupportPage() {
         </div>
         <WhyIShare />
         <div className="mt-10">
-          <JoinNowInline />
+          <JoinNowInline href={links.checkout} />
         </div>
       </Section>
 
@@ -116,7 +116,7 @@ function PersonalSupportPage() {
         </div>
         <EduCompare />
         <div className="mt-10">
-          <JoinNowInline />
+          <JoinNowInline href={links.checkout} />
         </div>
       </Section>
 
