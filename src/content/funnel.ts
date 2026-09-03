@@ -14,7 +14,9 @@ export const links = {
   contact: "#",
   privacy: "/privacy",
   terms: "/terms",
-  
+  // Live checkout link for the ₹5,999 Personal Support bundle
+  checkout:
+    "https://learn.artistvipinbala.com/web/checkout/64fd91d8f4b8b0c92d7a44d8?purchaseNow=true",
 };
 
 export const media = {
