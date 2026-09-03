@@ -15,7 +15,7 @@ import { Section, SectionHeading } from "@/components/funnel/Section";
 import { StickyJoinBar } from "@/components/funnel/StickyJoinBar";
 import { VslPlayer } from "@/components/funnel/VslPlayer";
 import { WhyIShare } from "@/components/funnel/WhyIShare";
-import { brand, media, offers } from "@/content/funnel";
+import { brand, links, media, offers } from "@/content/funnel";
 import { track } from "@/lib/track";
 
 const title = "Artist Income System — ₹5,999 | Artist Vipin Bala";
