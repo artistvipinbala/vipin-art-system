@@ -649,7 +649,7 @@ export const purchaseFaqs = [
  * after the viewer has watched `gateSeconds` of the video.
  */
 export const vsl = {
-  eyebrow: "OPEN SESSION · NO WEBINAR, NO SIGNUP",
+    eyebrow: "OPEN SESSION · NO WEBINAR",
   headline: "\n",
   sub: "ഞാൻ എന്റെ Artwork-കളും Art Class-കളും എങ്ങനെ Sell ചെയ്യുന്നു — ആ full system ഞാൻ ഇവിടെ open ആയി കാണിക്കുന്നു",
   belowVideo:
@@ -789,7 +789,7 @@ export const quickIntake = {
 
 /** Top-of-page block shown above the VSL headline on the first screen. */
 export const pageTop = {
-  eyebrow: "MALAYALAM FREE TRAINING BY ARTIST VIPIN BALA",
+    eyebrow: "MALAYALAM TRAINING BY ARTIST VIPIN BALA",
   headline:
     "Art വരയ്ക്കാൻ അറിയാം… But നിങ്ങളുടെ Artwork-കൾക്കും Art Class-നും സ്ഥിരമായി customers/Students  കൊണ്ടുവരാൻ അറിയില്ലേ?",
   sub: "നിങ്ങളുടെ art skill ഒരു income source ആക്കി മാറ്റാൻ വേണ്ട complete Art Selling System പഠിക്കാം ",
