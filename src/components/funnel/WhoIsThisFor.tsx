@@ -5,7 +5,7 @@ const forYou = [
   "Instagram/Facebook-ൽ artworks post ചെയ്യുന്നുണ്ടെങ്കിൽ",
   "Artwork ഉണ്ടെങ്കിലും regular orders കിട്ടുന്നില്ലെങ്കിൽ",
   "Commission works കിട്ടാൻ ആഗ്രഹിക്കുന്നുണ്ടെങ്കിൽ",
-  "Art class തുടങ്ങാൻ ആഗ്രഹിക്കുന്നുണ്ടെങ്കിൽ",
+  "Online Art Sales തുടങ്ങാൻ ആഗ്രഹിക്കുന്നുണ്ടെങ്കിൽ",
   "Already art sell ചെയ്യുന്നുണ്ടെങ്കിലും sales predictable അല്ലെങ്കിൽ",
   "Social media ഉപയോഗിക്കുന്നുണ്ടെങ്കിലും അതിൽ നിന്ന് customers വരുന്നില്ലെങ്കിൽ",
 ];

@@ -658,7 +658,7 @@ export const vsl = {
   /** Seconds of watch time before the personal-support option appears. */
   gateSeconds: 900,
   reveal: {
-    line1: "ഈ training-ൽ പറഞ്ഞ കാര്യങ്ങൾ നിങ്ങളുടെ own art journey-ൽ step-by-step ആയി implement ചെയ്യാൻ എന്റെ personal guidance വേണമെങ്കിൽ, എന്റെ Creative Success Path Program-ൽ join ചെയ്യാം",
+    line1: "Artworks എങ്ങനെ വിൽക്കാം എന്ന് മുകളിലെ വീഡിയോയിൽ വിശദമായി പറഞ്ഞിട്ടുണ്ട്. വീഡിയോ ഫ്രീയായി കണ്ടിട്ട് അതിൽ പറഞ്ഞ കാര്യങ്ങൾ ഓരോന്നായി നിങ്ങൾക്ക് തന്നെ ചെയ്തു നോക്കാം. 🎨\n\n\nചെയ്തു തുടങ്ങുമ്പോൾ നിങ്ങളുടെ Artwork-ന് ചേരുന്ന രീതിയിൽ ഓരോ ഘട്ടത്തിലും എന്റെ സഹായം വേണമെന്ന് തോന്നിയാൽ, താഴെയുള്ള ബട്ടൺ ക്ലിക്ക് ചെയ്യാം.",
     line2:
       "\n",
     cta: "GET MY PERSONAL GUIDANCE",
@@ -791,8 +791,8 @@ export const quickIntake = {
 export const pageTop = {
     eyebrow: "MALAYALAM TRAINING BY ARTIST VIPIN BALA",
   headline:
-    "Art വരയ്ക്കാൻ അറിയാം… But നിങ്ങളുടെ Artwork-കൾക്കും Art Class-നും സ്ഥിരമായി customers/Students  കൊണ്ടുവരാൻ അറിയില്ലേ?",
-  sub: "നിങ്ങളുടെ art skill ഒരു income source ആക്കി മാറ്റാൻ വേണ്ട complete Art Selling System പഠിക്കാം ",
+    "വരയ്ക്കാൻ അറിയാം… വരച്ച ചിത്രങ്ങൾ വിൽക്കാൻ പഠിക്കണോ? 🎨",
+  sub: "നിങ്ങളുടെ Artwork വാങ്ങാൻ താൽപര്യമുള്ള ആളുകളെ എങ്ങനെ കണ്ടെത്താം, ചിത്രങ്ങൾക്ക് എങ്ങനെ വില നിശ്ചയിക്കാം, ആദ്യത്തെ sale എങ്ങനെ നേടാം എന്ന് പഠിക്കാം.",
 };
 
 /** Achievement strip shown right under the first-screen video text. */
