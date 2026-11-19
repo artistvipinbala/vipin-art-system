@@ -57,7 +57,9 @@ function LandingPage() {
 
 
 
-  const headlineParts = pageTop.headline.split("Income");
+  const headlineParts = pageTop.headline.includes("Income")
+    ? pageTop.headline.split("Income")
+    : pageTop.headline.split("…");
 
   return (
     <main className="flex min-h-screen flex-col bg-background">
@@ -72,10 +74,11 @@ function LandingPage() {
             <h1 className="text-mal mx-auto mt-3 max-w-2xl text-[1.28rem] leading-[1.45] font-extrabold text-foreground sm:text-[1.9rem]">
               {headlineParts[0]}
               {headlineParts.length > 1 && (
-                <>
-                  <span className="text-primary">Income</span>
-                  {headlineParts.slice(1).join("Income")}
-                </>
+                <span className="headline-glow">
+                  {pageTop.headline.includes("Income")
+                    ? `Income${headlineParts.slice(1).join("Income")}`
+                    : `…${headlineParts.slice(1).join("…")}`}
+                </span>
               )}
             </h1>
 

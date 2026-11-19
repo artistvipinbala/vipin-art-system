@@ -201,6 +201,21 @@
   color: transparent;
 }
 
+/* Headline highlight: gold gradient text with a soft warm glow */
+@utility headline-glow {
+  background-image: linear-gradient(
+    100deg,
+    oklch(0.82 0.16 75) 0%,
+    oklch(0.755 0.165 60) 45%,
+    oklch(0.665 0.19 38) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 14px color-mix(in oklab, var(--primary) 55%, transparent))
+    drop-shadow(0 2px 22px color-mix(in oklab, var(--primary) 35%, transparent));
+}
+
 /* Cinematic dark band, used sparingly for contrast (e.g. the video stage) */
 @utility surface-ink {
   background-color: var(--ink);
