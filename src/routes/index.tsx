@@ -57,9 +57,8 @@ function LandingPage() {
 
 
 
-  const headlineParts = pageTop.headline.includes("Income")
-    ? pageTop.headline.split("Income")
-    : pageTop.headline.split("…");
+  const headlineEmoji = pageTop.headline.includes("🎨") ? "🎨" : "";
+  const headlineText = pageTop.headline.replace("🎨", "").trim();
 
   return (
     <main className="flex min-h-screen flex-col bg-background">
@@ -72,14 +71,8 @@ function LandingPage() {
             </p>
 
             <h1 className="text-mal mx-auto mt-3 max-w-2xl text-[1.28rem] leading-[1.45] font-extrabold text-foreground sm:text-[1.9rem]">
-              {headlineParts[0]}
-              {headlineParts.length > 1 && (
-                <span className="headline-glow">
-                  {pageTop.headline.includes("Income")
-                    ? `Income${headlineParts.slice(1).join("Income")}`
-                    : `…${headlineParts.slice(1).join("…")}`}
-                </span>
-              )}
+              <span className="headline-glow">{headlineText}</span>
+              {headlineEmoji && <span className="text-foreground"> {headlineEmoji}</span>}
             </h1>
 
             <p className="text-mal mx-auto mt-3 max-w-xl text-[0.8rem] leading-[1.75] text-muted-foreground sm:text-[0.92rem]">
